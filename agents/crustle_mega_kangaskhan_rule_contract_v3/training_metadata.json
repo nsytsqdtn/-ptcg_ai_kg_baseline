@@ -1,0 +1,40 @@
+{
+  "recorded_at": "2026-06-21T11:39:22.934460+00:00",
+  "config": {
+    "distill_games": 80,
+    "rollout_games": 40,
+    "eval_games": 50,
+    "iterations": 3,
+    "seed": 0,
+    "temperature": 1.0,
+    "top_k": 5,
+    "beta": 0.2,
+    "distill_epochs": 8,
+    "ppo_epochs": 4,
+    "gamma": 0.99,
+    "gae_lambda": 0.95,
+    "clip_range": 0.2,
+    "value_coef": 0.5,
+    "entropy_coef": 0.01,
+    "kl_rule_coef": 0.02,
+    "opponents": [
+      "mega_lucario_beginner",
+      "dragapult_rule_based"
+    ],
+    "trainer_python": "D:\\software\\anaconda\\envs\\sam2\\python.exe"
+  },
+  "artifacts": {
+    "baseline_export": "D:\\workspace\\ptcg\\agents\\crustle_mega_kangaskhan_rule_rl_p1\\baseline_model_export.json",
+    "distilled_export": "D:\\workspace\\ptcg\\agents\\crustle_mega_kangaskhan_rule_rl_p1\\distilled_model_export.json",
+    "trained_export": "D:\\workspace\\ptcg\\agents\\crustle_mega_kangaskhan_rule_rl_p1\\checkpoints\\ppo_iter_3.json",
+    "active_export": "D:\\workspace\\ptcg\\agents\\crustle_mega_kangaskhan_rule_rl_p1\\model_export.json",
+    "best_overall": "D:\\workspace\\ptcg\\agents\\crustle_mega_kangaskhan_rule_rl_p1\\checkpoints\\best_overall.json",
+    "best_vs_lucario": "D:\\workspace\\ptcg\\agents\\crustle_mega_kangaskhan_rule_rl_p1\\checkpoints\\best_vs_lucario.json",
+    "best_vs_dragapult": "D:\\workspace\\ptcg\\agents\\crustle_mega_kangaskhan_rule_rl_p1\\checkpoints\\best_vs_dragapult.json",
+    "most_stable": "D:\\workspace\\ptcg\\agents\\crustle_mega_kangaskhan_rule_rl_p1\\checkpoints\\most_stable.json",
+    "latest": "D:\\workspace\\ptcg\\agents\\crustle_mega_kangaskhan_rule_rl_p1\\checkpoints\\latest.json",
+    "selected_export": "ppo_iter_1",
+    "distill_dataset": "D:\\workspace\\ptcg\\agents\\crustle_mega_kangaskhan_rule_rl_p1\\distill_dataset.json",
+    "rollout_dataset": "D:\\workspace\\ptcg\\agents\\crustle_mega_kangaskhan_rule_rl_p1\\rollout_dataset.json"
+  }
+}
