@@ -49,7 +49,7 @@ def agent(obs_dict: dict) -> list[int]:
             snapshot=snapshot,
             plan=plan,
         )
-        scored = filter_emergency_actions(obs, scored, snapshot, plan)
+        scored = filter_emergency_actions(obs, scored, snapshot, plan, deck_knowledge=deck_knowledge)
         if not scored:
             return choose_safe_action(len(obs.select.option))
         selected = choose_by_plan(obs, scored, snapshot, plan, deck_knowledge)

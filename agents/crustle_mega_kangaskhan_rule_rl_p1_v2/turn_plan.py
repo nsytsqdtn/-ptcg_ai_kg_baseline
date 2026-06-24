@@ -187,15 +187,33 @@ class TurnPlan:
     priority: int = 0
     active_goal: str = "keep"
     search_goal: str | None = None
+    search_target_ids: list[int] = field(default_factory=list)
+    required_basic_ids: set[int] = field(default_factory=set)
+    target_field_count: int = 0
+    wants_active_crustle: bool = False
+    wants_crustle_evolution: bool = False
+    wants_dwebble_ascension: bool = False
+    wants_active_kang: bool = False
+    wants_kang_draw: bool = False
+    wants_kang_third_energy: bool = False
+    hilda_pair_preferences: list[tuple[int, int]] = field(default_factory=list)
+    petrel_target_ids: list[int] = field(default_factory=list)
+    poffin_basic_ids: list[int] = field(default_factory=list)
+    attach_target_role: str | None = None
+    attach_energy_preference: list[int] = field(default_factory=list)
     attach_target: str | None = None
     attach_energy_type: int | None = None
+    switch_target_role: str | None = None
     gust_target: int | None = None
     heal_card: int | None = None
+    heal_target_role: str | None = None
     attack_now: bool = False
     reasons: list[str] = field(default_factory=list)
     required_tags: set[str] = field(default_factory=set)
     forbidden_tags: set[str] = field(default_factory=set)
     must_prevent_no_active: bool = False
+    want_more_backup: bool = False
+    values_mist_energy: bool = False
     direct_win_available: bool = False
     close_pressure: bool = False
     can_make_crustle_wall_this_turn: bool = False
@@ -210,19 +228,24 @@ def _opponent_can_win_by_active_ko(snapshot: BoardSnapshot) -> bool:
 
 
 def must_prevent_no_active(snapshot: BoardSnapshot) -> bool:
-    turn = getattr(snapshot.state, "turn", 0)
-    early = turn <= 5
     if snapshot.bench_space <= 0:
         return False
-    if snapshot.wall_valid:
-        return False
     if snapshot.field_count <= 1:
-        return True
-    if early and snapshot.field_count < 3:
         return True
     if snapshot.active_under_ko_threat and snapshot.field_count < 3:
         return True
     if _opponent_can_win_by_active_ko(snapshot):
+        return True
+    return False
+
+
+def want_more_backup(snapshot: BoardSnapshot) -> bool:
+    turn = getattr(snapshot.state, "turn", 0)
+    if snapshot.bench_space <= 0:
+        return False
+    if turn <= 5 and snapshot.field_count < 3:
+        return True
+    if snapshot.matchup.name == "dragapult_ex" and snapshot.field_count < 3:
         return True
     return False
 
@@ -276,8 +299,8 @@ def direct_win_available(snapshot: BoardSnapshot) -> bool:
                 return True
     if snapshot.can_attack_now and snapshot.hand_counts[CardIds.PETREL] > 0 and snapshot.deck_knowledge is not None:
         can_find_gust = (
-            snapshot.deck_knowledge.deck_has(CardIds.BOSS_ORDERS) is not False
-            or snapshot.deck_knowledge.deck_has(CardIds.LISIA) is not False
+            snapshot.deck_knowledge.deck_has(CardIds.BOSS_ORDERS) is True
+            or snapshot.deck_knowledge.deck_has(CardIds.LISIA) is True
         )
         if can_find_gust:
             for card in snapshot.opponent_bench:
@@ -289,8 +312,8 @@ def direct_win_available(snapshot: BoardSnapshot) -> bool:
         snapshot.hand_counts[CardIds.PETREL] > 0
         and snapshot.deck_knowledge is not None
         and (
-            snapshot.deck_knowledge.deck_has(CardIds.BOSS_ORDERS) is not False
-            or snapshot.deck_knowledge.deck_has(CardIds.LISIA) is not False
+            snapshot.deck_knowledge.deck_has(CardIds.BOSS_ORDERS) is True
+            or snapshot.deck_knowledge.deck_has(CardIds.LISIA) is True
         )
     )
     for attacker in snapshot.bench:
@@ -361,7 +384,16 @@ def build_turn_plan(obs, deck_knowledge=None) -> tuple[BoardSnapshot, TurnPlan]:
     close_pressure = s.my_prizes_left <= 2
     wall_this_turn = can_make_crustle_wall_this_turn(s)
     prevent_no_active = must_prevent_no_active(s)
+    wants_backup = want_more_backup(s)
     heal_escape_card = _heal_escape_card(s)
+    default_hilda_pairs = [
+        (CardIds.CRUSTLE, CardIds.GROW_GRASS_ENERGY),
+        (CardIds.DWEBBLE, CardIds.GROW_GRASS_ENERGY),
+        (CardIds.MEGA_KANGASKHAN_EX, CardIds.SPIKY_ENERGY),
+    ]
+    if s.matchup.values_mist_energy:
+        default_hilda_pairs.insert(1, (CardIds.DWEBBLE, CardIds.MIST_ENERGY))
+        default_hilda_pairs.insert(2, (CardIds.CRUSTLE, CardIds.MIST_ENERGY))
 
     if can_win:
         return s, TurnPlan(
@@ -371,48 +403,104 @@ def build_turn_plan(obs, deck_knowledge=None) -> tuple[BoardSnapshot, TurnPlan]:
             reasons=["verified_win_candidate"],
             required_tags={"attack_finish"},
             forbidden_tags={"waste_setup"},
+            petrel_target_ids=[CardIds.BOSS_ORDERS, CardIds.LISIA],
+            search_target_ids=[],
+            switch_target_role="best_attacker",
             direct_win_available=True,
             close_pressure=close_pressure,
+            values_mist_energy=s.matchup.values_mist_energy,
         )
 
     if prevent_no_active:
         reasons.append("must_prevent_no_active")
-        search_goal = "basic"
+        required_basic_ids = {CardIds.DWEBBLE}
+        if s.kang_in_play == 0:
+            required_basic_ids.add(CardIds.MEGA_KANGASKHAN_EX)
         return s, TurnPlan(
             mode="survival_setup",
             priority=95,
             active_goal="keep",
-            search_goal=search_goal,
-            attach_target="none",
+            search_goal="basic_setup",
+            search_target_ids=[CardIds.DWEBBLE, CardIds.MEGA_KANGASKHAN_EX, CardIds.CRUSTLE, CardIds.GROW_GRASS_ENERGY, CardIds.MIST_ENERGY, CardIds.BASIC_GRASS],
+            required_basic_ids=required_basic_ids,
+            target_field_count=3,
+            hilda_pair_preferences=default_hilda_pairs,
+            petrel_target_ids=[CardIds.BUDDY_BUDDY_POFFIN, CardIds.HILDA, CardIds.ULTRA_BALL, CardIds.SWITCH],
+            poffin_basic_ids=[CardIds.DWEBBLE, CardIds.MEGA_KANGASKHAN_EX],
+            attach_target_role="none",
+            switch_target_role="safest_wall_or_tank",
             reasons=reasons,
             required_tags={"bench_basic", "search_basic"},
             forbidden_tags={"attack_end_turn", "retreat", "waste_supporter", "waste_gust"},
             must_prevent_no_active=True,
+            want_more_backup=wants_backup,
             close_pressure=close_pressure,
             can_make_crustle_wall_this_turn=wall_this_turn,
-        )
-
-    if s.active_under_ko_threat and s.active_is_kang and heal_escape_card is not None:
-        return s, TurnPlan(
-            mode="tank_and_heal",
-            priority=88,
-            active_goal="kang",
-            attach_target="kang",
-            heal_card=heal_escape_card,
-            reasons=["jumbo_escape_ko" if heal_escape_card == CardIds.JUMBO_ICE_CREAM else "bianca_escape_ko"],
-            required_tags={"heal_escape", "attach_kang_energy"},
-            close_pressure=close_pressure,
+            values_mist_energy=s.matchup.values_mist_energy,
         )
 
     if s.active_under_ko_threat and s.active_is_kang:
+        if heal_escape_card is not None:
+            return s, TurnPlan(
+                mode="tank_and_heal",
+                priority=88,
+                active_goal="kang",
+                wants_active_kang=True,
+                wants_kang_draw=True,
+                wants_kang_third_energy=s.active_energy < 3,
+                search_goal="heal_escape",
+                search_target_ids=[CardIds.MIST_ENERGY, CardIds.SPIKY_ENERGY, CardIds.GROW_GRASS_ENERGY, CardIds.BASIC_GRASS],
+                petrel_target_ids=[heal_escape_card, CardIds.SWITCH, CardIds.HERO_CAPE, CardIds.COMMUNITY_CENTER],
+                attach_target_role="active_kang",
+                attach_energy_preference=[CardIds.SPIKY_ENERGY, CardIds.MIST_ENERGY, CardIds.BASIC_GRASS, CardIds.GROW_GRASS_ENERGY],
+                switch_target_role="kang",
+                heal_card=heal_escape_card,
+                heal_target_role="active_kang",
+                reasons=["jumbo_escape_ko" if heal_escape_card == CardIds.JUMBO_ICE_CREAM else "bianca_escape_ko"],
+                required_tags={"heal_escape", "attach_kang_energy"},
+                close_pressure=close_pressure,
+                values_mist_energy=s.matchup.values_mist_energy,
+            )
         return s, TurnPlan(
             mode="prevent_loss",
             priority=90,
             heal_card=CardIds.JUMBO_ICE_CREAM,
             search_goal="heal_or_switch_or_basic",
+            search_target_ids=[CardIds.DWEBBLE, CardIds.MEGA_KANGASKHAN_EX, CardIds.MIST_ENERGY, CardIds.SPIKY_ENERGY],
+            petrel_target_ids=[CardIds.JUMBO_ICE_CREAM, CardIds.BIANCA_DEVOTION, CardIds.SWITCH, CardIds.BUDDY_BUDDY_POFFIN],
+            attach_target_role="active_kang",
+            attach_energy_preference=[CardIds.SPIKY_ENERGY, CardIds.MIST_ENERGY],
+            switch_target_role="safest_wall_or_tank",
+            heal_target_role="active_kang",
             reasons=["active_ko_threat"],
             required_tags={"heal_escape", "switch_safe"},
             close_pressure=close_pressure,
+            values_mist_energy=s.matchup.values_mist_energy,
+        )
+
+    if s.wall_online and s.wall_valid:
+        search_goal = "mist" if s.matchup.values_mist_energy else "disruption_or_heal"
+        targets = [CardIds.ERI, CardIds.XEROSIC, CardIds.HAND_TRIMMER, CardIds.HANDHELD_FAN, CardIds.JUMBO_ICE_CREAM]
+        if s.matchup.values_mist_energy:
+            targets.insert(0, CardIds.MIST_ENERGY)
+        return s, TurnPlan(
+            mode="wall_and_tax",
+            priority=80,
+            active_goal="crustle",
+            wants_active_crustle=True,
+            wants_crustle_evolution=True,
+            search_goal=search_goal,
+            search_target_ids=[CardIds.MIST_ENERGY, CardIds.GROW_GRASS_ENERGY, CardIds.BASIC_GRASS],
+            hilda_pair_preferences=default_hilda_pairs,
+            petrel_target_ids=targets,
+            attach_target_role="active_crustle",
+            attach_energy_preference=[CardIds.MIST_ENERGY, CardIds.SPIKY_ENERGY, CardIds.GROW_GRASS_ENERGY, CardIds.BASIC_GRASS],
+            switch_target_role="crustle",
+            reasons=["wall_online"],
+            required_tags={"keep_wall", "disruption_live"},
+            forbidden_tags={"expose_dwebble"},
+            close_pressure=close_pressure,
+            values_mist_energy=s.matchup.values_mist_energy,
         )
 
     if s.matchup.name == "dragapult_ex" and s.matchup.values_bench_protection and any(
@@ -425,12 +513,21 @@ def build_turn_plan(obs, deck_knowledge=None) -> tuple[BoardSnapshot, TurnPlan]:
             priority=88,
             active_goal="stabilize_bench",
             search_goal="mist_or_evolve",
-            attach_target="bench_core",
+            search_target_ids=[CardIds.MIST_ENERGY, CardIds.CRUSTLE, CardIds.DWEBBLE, CardIds.GROW_GRASS_ENERGY, CardIds.BASIC_GRASS],
+            required_basic_ids={CardIds.DWEBBLE},
+            wants_crustle_evolution=True,
+            hilda_pair_preferences=default_hilda_pairs,
+            petrel_target_ids=[CardIds.HILDA, CardIds.BUDDY_BUDDY_POFFIN, CardIds.ULTRA_BALL, CardIds.SWITCH],
+            poffin_basic_ids=[CardIds.DWEBBLE, CardIds.MEGA_KANGASKHAN_EX],
+            attach_target_role="bench_core",
+            attach_energy_preference=[CardIds.MIST_ENERGY, CardIds.GROW_GRASS_ENERGY, CardIds.BASIC_GRASS, CardIds.SPIKY_ENERGY],
+            switch_target_role="crustle_or_kang",
             reasons=["bench_under_dragapult_pressure"],
             required_tags={"mist_protect", "evolve_crustle", "bench_basic"},
             forbidden_tags={"waste_gust"},
             close_pressure=close_pressure,
             can_make_crustle_wall_this_turn=wall_this_turn,
+            values_mist_energy=True,
         )
 
     if wall_this_turn and s.matchup.prefers_crustle_wall:
@@ -439,26 +536,23 @@ def build_turn_plan(obs, deck_knowledge=None) -> tuple[BoardSnapshot, TurnPlan]:
             priority=85,
             active_goal="crustle",
             search_goal="crustle_piece",
-            attach_target="crustle",
+            search_target_ids=[CardIds.CRUSTLE, CardIds.DWEBBLE, CardIds.GROW_GRASS_ENERGY, CardIds.BASIC_GRASS, CardIds.MIST_ENERGY],
+            required_basic_ids={CardIds.DWEBBLE},
+            wants_active_crustle=True,
+            wants_crustle_evolution=True,
+            wants_dwebble_ascension=s.active_is_dwebble,
+            hilda_pair_preferences=default_hilda_pairs,
+            petrel_target_ids=[CardIds.HILDA, CardIds.BUDDY_BUDDY_POFFIN, CardIds.ULTRA_BALL, CardIds.SWITCH],
+            poffin_basic_ids=[CardIds.DWEBBLE, CardIds.MEGA_KANGASKHAN_EX],
+            attach_target_role="crustle_line",
+            attach_energy_preference=[CardIds.GROW_GRASS_ENERGY, CardIds.BASIC_GRASS, CardIds.MIST_ENERGY, CardIds.SPIKY_ENERGY],
+            switch_target_role="crustle",
             reasons=["wall_can_be_made"],
             required_tags={"evolve_crustle", "switch_crustle_setup"},
             forbidden_tags={"waste_gust"},
             can_make_crustle_wall_this_turn=True,
             close_pressure=close_pressure,
-        )
-
-    if s.wall_online:
-        search_goal = "mist" if s.matchup.values_mist_energy else "disruption_or_heal"
-        return s, TurnPlan(
-            mode="wall_and_tax",
-            priority=80,
-            active_goal="crustle",
-            search_goal=search_goal,
-            attach_target="crustle",
-            reasons=["wall_online"],
-            required_tags={"keep_wall", "disruption_live"},
-            forbidden_tags={"expose_dwebble"},
-            close_pressure=close_pressure,
+            values_mist_energy=s.matchup.values_mist_energy,
         )
 
     if s.matchup.name == "dragapult_ex" and s.matchup.values_bench_protection:
@@ -468,10 +562,19 @@ def build_turn_plan(obs, deck_knowledge=None) -> tuple[BoardSnapshot, TurnPlan]:
                 priority=75,
                 active_goal="crustle",
                 search_goal="crustle_piece",
-                attach_target="crustle",
+                search_target_ids=[CardIds.DWEBBLE, CardIds.CRUSTLE, CardIds.MIST_ENERGY, CardIds.GROW_GRASS_ENERGY, CardIds.BASIC_GRASS],
+                required_basic_ids={CardIds.DWEBBLE},
+                wants_crustle_evolution=True,
+                hilda_pair_preferences=default_hilda_pairs,
+                petrel_target_ids=[CardIds.HILDA, CardIds.BUDDY_BUDDY_POFFIN, CardIds.ULTRA_BALL],
+                poffin_basic_ids=[CardIds.DWEBBLE, CardIds.MEGA_KANGASKHAN_EX],
+                attach_target_role="crustle_line",
+                attach_energy_preference=[CardIds.MIST_ENERGY, CardIds.GROW_GRASS_ENERGY, CardIds.BASIC_GRASS],
+                switch_target_role="crustle",
                 reasons=["dragapult_wall_plus_mist"],
                 required_tags={"bench_dwebble", "evolve_crustle", "mist_protect"},
                 close_pressure=close_pressure,
+                values_mist_energy=True,
             )
 
     if s.crustle_in_play == 0 and (s.matchup.prefers_crustle_wall or s.opponent_active_is_ex):
@@ -480,10 +583,40 @@ def build_turn_plan(obs, deck_knowledge=None) -> tuple[BoardSnapshot, TurnPlan]:
             priority=75,
             active_goal="crustle",
             search_goal="crustle_piece",
-            attach_target="crustle",
+            search_target_ids=[CardIds.DWEBBLE, CardIds.CRUSTLE, CardIds.GROW_GRASS_ENERGY, CardIds.BASIC_GRASS, CardIds.MIST_ENERGY],
+            required_basic_ids={CardIds.DWEBBLE},
+            wants_crustle_evolution=True,
+            hilda_pair_preferences=default_hilda_pairs,
+            petrel_target_ids=[CardIds.HILDA, CardIds.BUDDY_BUDDY_POFFIN, CardIds.ULTRA_BALL],
+            poffin_basic_ids=[CardIds.DWEBBLE, CardIds.MEGA_KANGASKHAN_EX],
+            attach_target_role="crustle_line",
+            attach_energy_preference=[CardIds.GROW_GRASS_ENERGY, CardIds.BASIC_GRASS, CardIds.MIST_ENERGY],
+            switch_target_role="crustle",
             reasons=["need_crustle_wall"],
             required_tags={"bench_dwebble", "evolve_crustle"},
             close_pressure=close_pressure,
+            values_mist_energy=s.matchup.values_mist_energy,
+        )
+
+    if wants_backup:
+        return s, TurnPlan(
+            mode="setup_backup",
+            priority=58,
+            active_goal="stabilize",
+            search_goal="basic_setup",
+            search_target_ids=[CardIds.DWEBBLE, CardIds.MEGA_KANGASKHAN_EX, CardIds.CRUSTLE, CardIds.MIST_ENERGY, CardIds.GROW_GRASS_ENERGY],
+            required_basic_ids={CardIds.DWEBBLE, CardIds.MEGA_KANGASKHAN_EX},
+            target_field_count=3,
+            hilda_pair_preferences=default_hilda_pairs,
+            petrel_target_ids=[CardIds.BUDDY_BUDDY_POFFIN, CardIds.HILDA, CardIds.ULTRA_BALL],
+            poffin_basic_ids=[CardIds.DWEBBLE, CardIds.MEGA_KANGASKHAN_EX],
+            attach_target_role="best_setup_target",
+            attach_energy_preference=[CardIds.MIST_ENERGY, CardIds.GROW_GRASS_ENERGY, CardIds.BASIC_GRASS, CardIds.SPIKY_ENERGY],
+            switch_target_role="safest_wall_or_tank",
+            reasons=["want_more_backup"],
+            want_more_backup=True,
+            close_pressure=close_pressure,
+            values_mist_energy=s.matchup.values_mist_energy,
         )
 
     if s.active_is_kang or s.kang_in_play > 0:
@@ -492,19 +625,39 @@ def build_turn_plan(obs, deck_knowledge=None) -> tuple[BoardSnapshot, TurnPlan]:
                 mode="attack_continuity",
                 priority=60,
                 active_goal="kang",
-                attach_target="kang",
+                wants_active_kang=True,
+                wants_kang_draw=s.active_is_kang,
+                wants_kang_third_energy=True,
+                search_goal="kang_attack_pieces",
+                search_target_ids=[CardIds.MEGA_KANGASKHAN_EX, CardIds.SPIKY_ENERGY, CardIds.MIST_ENERGY, CardIds.GROW_GRASS_ENERGY, CardIds.BASIC_GRASS],
+                hilda_pair_preferences=default_hilda_pairs,
+                petrel_target_ids=[CardIds.HILDA, CardIds.LILLIE, CardIds.ULTRA_BALL, CardIds.JUMBO_ICE_CREAM],
+                attach_target_role="active_kang",
+                attach_energy_preference=[CardIds.SPIKY_ENERGY, CardIds.MIST_ENERGY, CardIds.GROW_GRASS_ENERGY, CardIds.BASIC_GRASS],
+                switch_target_role="kang",
                 reasons=["attack_continuity_risk"],
                 required_tags={"attach_kang_energy"},
                 close_pressure=close_pressure,
+                values_mist_energy=s.matchup.values_mist_energy,
             )
         return s, TurnPlan(
             mode="kang_engine",
             priority=65,
             active_goal="kang",
-            attach_target="kang",
+            wants_active_kang=True,
+            wants_kang_draw=True,
+            wants_kang_third_energy=s.active_energy < 3,
+            search_goal="kang_engine",
+            search_target_ids=[CardIds.MEGA_KANGASKHAN_EX, CardIds.SPIKY_ENERGY, CardIds.MIST_ENERGY, CardIds.GROW_GRASS_ENERGY, CardIds.BASIC_GRASS],
+            hilda_pair_preferences=default_hilda_pairs,
+            petrel_target_ids=[CardIds.HILDA, CardIds.LILLIE, CardIds.ULTRA_BALL, CardIds.JUMBO_ICE_CREAM],
+            attach_target_role="active_kang",
+            attach_energy_preference=[CardIds.SPIKY_ENERGY, CardIds.MIST_ENERGY, CardIds.GROW_GRASS_ENERGY, CardIds.BASIC_GRASS],
+            switch_target_role="kang",
             reasons=["kang_engine_available"],
             required_tags={"run_errand", "attach_kang_energy"},
             close_pressure=close_pressure,
+            values_mist_energy=s.matchup.values_mist_energy,
         )
 
     if s.kang_in_play == 0:
@@ -513,10 +666,18 @@ def build_turn_plan(obs, deck_knowledge=None) -> tuple[BoardSnapshot, TurnPlan]:
             priority=55,
             active_goal="kang",
             search_goal="kang",
-            attach_target="kang",
+            search_target_ids=[CardIds.MEGA_KANGASKHAN_EX, CardIds.SPIKY_ENERGY, CardIds.MIST_ENERGY, CardIds.GROW_GRASS_ENERGY, CardIds.BASIC_GRASS],
+            required_basic_ids={CardIds.MEGA_KANGASKHAN_EX},
+            hilda_pair_preferences=default_hilda_pairs,
+            petrel_target_ids=[CardIds.HILDA, CardIds.LILLIE, CardIds.ULTRA_BALL, CardIds.JUMBO_ICE_CREAM],
+            poffin_basic_ids=[CardIds.MEGA_KANGASKHAN_EX, CardIds.DWEBBLE],
+            attach_target_role="kang_line",
+            attach_energy_preference=[CardIds.SPIKY_ENERGY, CardIds.MIST_ENERGY, CardIds.GROW_GRASS_ENERGY, CardIds.BASIC_GRASS],
+            switch_target_role="kang",
             reasons=["need_kang_engine"],
             required_tags={"bench_kang"},
             close_pressure=close_pressure,
+            values_mist_energy=s.matchup.values_mist_energy,
         )
 
     if close_pressure:
@@ -526,9 +687,13 @@ def build_turn_plan(obs, deck_knowledge=None) -> tuple[BoardSnapshot, TurnPlan]:
             active_goal="attack",
             search_goal="gust",
             attack_now=True,
+            search_target_ids=[],
+            petrel_target_ids=[CardIds.BOSS_ORDERS, CardIds.LISIA, CardIds.ERI, CardIds.XEROSIC],
+            switch_target_role="best_attacker",
             reasons=["close_pressure"],
             required_tags={"boss_for_prize", "gust_low_hp", "gust_multi_prize"},
             close_pressure=True,
+            values_mist_energy=s.matchup.values_mist_energy,
         )
 
     return s, TurnPlan(
@@ -536,7 +701,15 @@ def build_turn_plan(obs, deck_knowledge=None) -> tuple[BoardSnapshot, TurnPlan]:
         priority=10,
         active_goal="keep",
         search_goal="resource",
+        search_target_ids=[CardIds.DWEBBLE, CardIds.MEGA_KANGASKHAN_EX, CardIds.CRUSTLE, CardIds.MIST_ENERGY, CardIds.GROW_GRASS_ENERGY],
+        hilda_pair_preferences=default_hilda_pairs,
+        petrel_target_ids=[CardIds.HILDA, CardIds.LILLIE, CardIds.ULTRA_BALL],
+        poffin_basic_ids=[CardIds.DWEBBLE, CardIds.MEGA_KANGASKHAN_EX],
+        attach_target_role="best_setup_target",
+        attach_energy_preference=[CardIds.MIST_ENERGY, CardIds.GROW_GRASS_ENERGY, CardIds.BASIC_GRASS, CardIds.SPIKY_ENERGY],
+        switch_target_role="safest_wall_or_tank",
         reasons=["default_stabilize"],
+        values_mist_energy=s.matchup.values_mist_energy,
     )
 
 

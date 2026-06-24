@@ -37,8 +37,8 @@ def _bench_finish_needs_switch(snapshot, deck_knowledge=None) -> bool:
     gust_live = bool(hand_ids & {CardIds.BOSS_ORDERS, CardIds.LISIA})
     if not gust_live and CardIds.PETREL in hand_ids and deck_knowledge is not None:
         gust_live = (
-            deck_knowledge.deck_has(CardIds.BOSS_ORDERS) is not False
-            or deck_knowledge.deck_has(CardIds.LISIA) is not False
+            deck_knowledge.deck_has(CardIds.BOSS_ORDERS) is True
+            or deck_knowledge.deck_has(CardIds.LISIA) is True
         )
     for attacker in getattr(snapshot, "bench", []) or []:
         damage = _estimate_attack_damage(attacker)
@@ -84,8 +84,8 @@ def try_finish_search(obs, snapshot, plan, deck_knowledge=None):
                     return [index]
     if CardIds.PETREL in hand_ids and deck_knowledge is not None:
         can_find_gust = (
-            deck_knowledge.deck_has(CardIds.BOSS_ORDERS) is not False
-            or deck_knowledge.deck_has(CardIds.LISIA) is not False
+            deck_knowledge.deck_has(CardIds.BOSS_ORDERS) is True
+            or deck_knowledge.deck_has(CardIds.LISIA) is True
         )
         if can_find_gust:
             for index, option in enumerate(getattr(obs.select, "option", []) or []):

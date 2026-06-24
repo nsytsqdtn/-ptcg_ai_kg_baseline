@@ -2554,3 +2554,91 @@ def test_crustle_kangaskhan_v2_rule_prior_penalizes_run_errand_when_safe_draws_e
 
     assert "low_deck_no_run_errand" in ability_result["reason_tags"]
     assert ability_result["total_logit"] < end_result["total_logit"]
+
+
+def test_crustle_kangaskhan_v2_rule_prior_hilda_play_only_opens_search_not_route_completion():
+    runtime = _load_crustle_module("runtime", agent_name="crustle_mega_kangaskhan_rule_rl_p1_v2")
+    rule_prior = _load_crustle_module("rule_prior", agent_name="crustle_mega_kangaskhan_rule_rl_p1_v2")
+    turn_plan = _load_crustle_module("turn_plan", agent_name="crustle_mega_kangaskhan_rule_rl_p1_v2")
+    from cg.api import OptionType
+
+    hilda = _fake_card(runtime.CardIds.HILDA, name="Hilda")
+    crustle = _fake_card(runtime.CardIds.CRUSTLE, name="Crustle")
+    obs = _fake_obs(
+        hand=[hilda, crustle],
+        active=_fake_card(runtime.CardIds.DWEBBLE, name="Dwebble", hp=70, max_hp=70, energies=[1]),
+        bench=[
+            _fake_card(runtime.CardIds.DWEBBLE, name="Dwebble", hp=70, max_hp=70, energies=[]),
+            _fake_card(runtime.CardIds.MEGA_KANGASKHAN_EX, name="Mega Kangaskhan ex", hp=230, max_hp=230, energies=[]),
+        ],
+        opponent_active=_fake_card(9101, name="Lucario ex", hp=280, max_hp=280, energies=[1, 1]),
+        options=[
+            SimpleNamespace(type=OptionType.PLAY, index=0),
+            SimpleNamespace(type=OptionType.EVOLVE, index=1),
+        ],
+    )
+
+    _, plan = turn_plan.build_turn_plan(obs)
+    assert plan.mode in {"setup_crustle_wall_now", "setup_crustle"}
+
+    hilda_result = rule_prior.score_option(obs, obs.select.option[0])
+    evolve_result = rule_prior.score_option(obs, obs.select.option[1])
+
+    assert hilda_result["total_logit"] < evolve_result["total_logit"]
+    assert "play_hilda_search_open" in hilda_result["reason_tags"]
+    assert "plan_search_goal_hilda" in hilda_result["reason_tags"]
+
+
+def test_crustle_kangaskhan_v2_rule_prior_to_hand_uses_turn_plan_targets_not_generic_search():
+    runtime = _load_crustle_module("runtime", agent_name="crustle_mega_kangaskhan_rule_rl_p1_v2")
+    rule_prior = _load_crustle_module("rule_prior", agent_name="crustle_mega_kangaskhan_rule_rl_p1_v2")
+    from cg.api import AreaType, OptionType, SelectContext
+
+    ultra = _fake_card(runtime.CardIds.ULTRA_BALL, name="Ultra Ball")
+    crustle = _fake_card(runtime.CardIds.CRUSTLE, name="Crustle")
+    random_supporter = _fake_card(runtime.CardIds.LILLIE, name="Lillie")
+    obs = _fake_obs(
+        hand=[ultra],
+        active=_fake_card(runtime.CardIds.MEGA_KANGASKHAN_EX, name="Mega Kangaskhan ex", hp=230, max_hp=230),
+        bench=[_fake_card(runtime.CardIds.DWEBBLE, name="Dwebble", hp=70, max_hp=70, energies=[])],
+        opponent_active=_fake_card(9102, name="Unknown ex", hp=290, max_hp=290, energies=[1]),
+        select_deck=[crustle, random_supporter],
+        options=[
+            SimpleNamespace(type=OptionType.CARD, area=AreaType.DECK, index=0, playerIndex=0),
+            SimpleNamespace(type=OptionType.CARD, area=AreaType.DECK, index=1, playerIndex=0),
+        ],
+        context=SelectContext.TO_HAND,
+        effect=ultra,
+    )
+
+    crustle_result = rule_prior.score_option(obs, obs.select.option[0])
+    random_result = rule_prior.score_option(obs, obs.select.option[1])
+
+    assert crustle_result["total_logit"] > random_result["total_logit"]
+    assert "plan_search_target" in crustle_result["reason_tags"]
+    assert "generic_search_target" not in random_result["reason_tags"]
+
+
+def test_crustle_kangaskhan_v2_turn_plan_exposes_explicit_plan_contract_fields():
+    runtime = _load_crustle_module("runtime", agent_name="crustle_mega_kangaskhan_rule_rl_p1_v2")
+    turn_plan = _load_crustle_module("turn_plan", agent_name="crustle_mega_kangaskhan_rule_rl_p1_v2")
+    from cg.api import OptionType
+
+    poffin = _fake_card(runtime.CardIds.BUDDY_BUDDY_POFFIN, name="Buddy-Buddy Poffin")
+    obs = _fake_obs(
+        hand=[poffin],
+        active=_fake_card(runtime.CardIds.MEGA_KANGASKHAN_EX, name="Mega Kangaskhan ex", hp=230, max_hp=230),
+        bench=[],
+        opponent_active=_fake_card(9103, name="Dragapult ex", hp=320, max_hp=320, energies=[1]),
+        options=[SimpleNamespace(type=OptionType.PLAY, index=0)],
+    )
+    obs.current.turn = 1
+
+    _, plan = turn_plan.build_turn_plan(obs)
+
+    assert plan.mode == "survival_setup"
+    assert runtime.CardIds.DWEBBLE in plan.required_basic_ids
+    assert runtime.CardIds.DWEBBLE in plan.search_target_ids
+    assert runtime.CardIds.BUDDY_BUDDY_POFFIN in plan.petrel_target_ids
+    assert plan.poffin_basic_ids
+    assert plan.switch_target_role is not None

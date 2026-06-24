@@ -3,15 +3,7 @@ from __future__ import annotations
 from cg.api import AreaType, SelectContext
 from turn_plan import build_state_view
 
-from selection_scorer import (
-    petrel_targets_for_state,
-    score_eri_discard,
-    score_gust_target,
-    score_hilda_target,
-    score_poffin_target,
-    score_switch_target,
-    score_ultra_ball_discard,
-)
+from selection_scorer import score_eri_discard, score_gust_target, score_petrel_target, score_ultra_ball_discard
 from runtime import CardIds, ENERGY_IDS, get_selected_card, normalize_selection, prize_count
 
 
@@ -38,6 +30,7 @@ def choose_hilda_pair(obs, scored, deck_state, deck_knowledge):
         if _deck_has(deck_knowledge, card.id) is False and obs.select.option[item.index].area == AreaType.DECK:
             continue
         candidates.append((item, card))
+    preferred_pairs = list(getattr(getattr(deck_state, "turn_plan", None), "hilda_pair_preferences", []) or [])
     pokemon_ids = {CardIds.DWEBBLE, CardIds.CRUSTLE, CardIds.MEGA_KANGASKHAN_EX}
     energy_ids = set(ENERGY_IDS)
     best = None
@@ -48,17 +41,16 @@ def choose_hilda_pair(obs, scored, deck_state, deck_knowledge):
         for e_item, e_card in candidates:
             if e_item.index == p_item.index or e_card.id not in energy_ids:
                 continue
-            p_score, _ = score_hilda_target(p_card.id, deck_state, deck_state.matchup, candidate_ids={c.id for _, c in candidates})
-            e_score, _ = score_hilda_target(e_card.id, deck_state, deck_state.matchup, paired_card_id=p_card.id, candidate_ids={c.id for _, c in candidates})
-            plan_bonus = 0.0
-            if deck_state.primary_plan in {"survival_setup", "setup_crustle", "setup_crustle_wall_now"}:
-                if p_card.id in {CardIds.DWEBBLE, CardIds.CRUSTLE}:
-                    plan_bonus += 80
-                if e_card.id in {CardIds.GROW_GRASS_ENERGY, CardIds.BASIC_GRASS}:
-                    plan_bonus += 50
-            if deck_state.matchup.name == "dragapult_ex" and e_card.id == CardIds.MIST_ENERGY:
-                plan_bonus += 70
-            total = p_score + e_score + plan_bonus
+            total = -50.0
+            for rank, pair in enumerate(preferred_pairs):
+                if pair == (p_card.id, e_card.id):
+                    total = 260.0 - rank * 15.0
+                    break
+            if total < 0 and p_card.id in {CardIds.DWEBBLE, CardIds.CRUSTLE, CardIds.MEGA_KANGASKHAN_EX}:
+                if p_card.id in set(getattr(getattr(deck_state, "turn_plan", None), "search_target_ids", []) or []):
+                    total += 80.0
+                if e_card.id in set(getattr(getattr(deck_state, "turn_plan", None), "attach_energy_preference", []) or []):
+                    total += 75.0
             if total > best_score:
                 best_score = total
                 best = [p_item.index, e_item.index]
@@ -69,6 +61,7 @@ def choose_hilda_pair(obs, scored, deck_state, deck_knowledge):
 
 def choose_poffin_basics(obs, scored, deck_state):
     minc, maxc = _min_max(obs)
+    targets = list(getattr(getattr(deck_state, "turn_plan", None), "poffin_basic_ids", []) or [])
     dwebble = []
     kang = []
     for item in scored:
@@ -80,9 +73,9 @@ def choose_poffin_basics(obs, scored, deck_state):
         elif card.id == CardIds.MEGA_KANGASKHAN_EX:
             kang.append(item.index)
     chosen: list[int] = []
-    if deck_state.dwebble_in_play == 0 and dwebble:
+    if CardIds.DWEBBLE in targets and dwebble:
         chosen.append(dwebble[0])
-    if len(chosen) < maxc and deck_state.kangaskhan_in_play == 0 and kang:
+    if len(chosen) < maxc and CardIds.MEGA_KANGASKHAN_EX in targets and kang:
         chosen.append(kang[0])
     if len(chosen) < maxc and dwebble:
         for i in dwebble:
@@ -132,7 +125,7 @@ def choose_eri_discards(obs, scored, deck_state):
 
 def choose_petrel_target(obs, scored, deck_state, deck_knowledge):
     minc, maxc = _min_max(obs)
-    targets = petrel_targets_for_state(deck_state)
+    targets = set(getattr(getattr(deck_state, "turn_plan", None), "petrel_target_ids", []) or [])
     ranked = []
     for item in scored:
         card = get_selected_card(obs, obs.select.option[item.index])
@@ -171,6 +164,7 @@ def choose_gust_target(obs, scored, deck_state):
 
 def choose_switch_target(obs, scored, deck_state):
     minc, maxc = _min_max(obs)
+    role = getattr(getattr(deck_state, "turn_plan", None), "switch_target_role", None)
     ranked = []
     yi = obs.current.yourIndex
     for item in scored:
@@ -178,7 +172,18 @@ def choose_switch_target(obs, scored, deck_state):
         card = get_selected_card(obs, option)
         if card is None or option.playerIndex != yi:
             continue
-        value, _ = score_switch_target(card.id, deck_state)
+        if role == "crustle":
+            value = 200.0 if card.id == CardIds.CRUSTLE else -80.0 if card.id == CardIds.DWEBBLE else 20.0
+        elif role == "kang":
+            value = 200.0 if card.id == CardIds.MEGA_KANGASKHAN_EX else -80.0 if card.id == CardIds.DWEBBLE else 20.0
+        elif role in {"crustle_or_kang", "safest_wall_or_tank"}:
+            value = 190.0 if card.id == CardIds.CRUSTLE else 180.0 if card.id == CardIds.MEGA_KANGASKHAN_EX else -80.0 if card.id == CardIds.DWEBBLE else 15.0
+        elif role == "best_attacker":
+            value = 200.0 if card.id == CardIds.MEGA_KANGASKHAN_EX else 120.0 if card.id == CardIds.CRUSTLE else -60.0
+        elif role == "none":
+            value = -200.0
+        else:
+            value = 10.0
         ranked.append((value, item.index))
     ranked.sort(key=lambda x: x[0], reverse=True)
     chosen = [idx for score, idx in ranked if score > 0][:maxc]

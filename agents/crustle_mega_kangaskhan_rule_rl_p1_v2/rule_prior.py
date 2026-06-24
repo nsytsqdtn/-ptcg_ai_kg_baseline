@@ -5,13 +5,110 @@ from cg.api import AreaType, OptionType, SelectContext
 from line_evaluator import score_line_progress
 from turn_plan import build_state_view, build_turn_plan
 from runtime import CardIds, ENERGY_IDS, damage_taken, energy_count, is_basic_pokemon, make_rule_prior_result, prize_count
-from selection_scorer import score_gust_target, score_hilda_target, score_petrel_target, score_poffin_target, score_switch_target, score_ultra_ball_discard
+from selection_scorer import score_gust_target, score_ultra_ball_discard
 
 
 SUPPORTERS = {CardIds.BOSS_ORDERS, CardIds.ERI, CardIds.BIANCA_DEVOTION, CardIds.XEROSIC, CardIds.LISIA, CardIds.PETREL, CardIds.HILDA, CardIds.LILLIE}
 CORE_SEARCH = {CardIds.BUDDY_BUDDY_POFFIN, CardIds.HILDA, CardIds.ULTRA_BALL, CardIds.PETREL, CardIds.POKEGEAR}
 HEAL_CARDS = {CardIds.JUMBO_ICE_CREAM, CardIds.BIANCA_DEVOTION}
 DISRUPTION_CARDS = {CardIds.ERI, CardIds.XEROSIC, CardIds.HAND_TRIMMER, CardIds.HANDHELD_FAN}
+
+
+def _plan_targets(deck_state) -> set[int]:
+    plan = getattr(deck_state, "turn_plan", None)
+    if plan is None:
+        return set()
+    return set(getattr(plan, "search_target_ids", []) or [])
+
+
+def _plan_petrel_targets(deck_state) -> set[int]:
+    plan = getattr(deck_state, "turn_plan", None)
+    if plan is None:
+        return set()
+    return set(getattr(plan, "petrel_target_ids", []) or [])
+
+
+def _plan_hilda_pairs(deck_state) -> list[tuple[int, int]]:
+    plan = getattr(deck_state, "turn_plan", None)
+    if plan is None:
+        return []
+    return list(getattr(plan, "hilda_pair_preferences", []) or [])
+
+
+def _plan_poffin_targets(deck_state) -> list[int]:
+    plan = getattr(deck_state, "turn_plan", None)
+    if plan is None:
+        return []
+    return list(getattr(plan, "poffin_basic_ids", []) or [])
+
+
+def _plan_attach_prefers(deck_state, card_id: int) -> bool:
+    plan = getattr(deck_state, "turn_plan", None)
+    if plan is None:
+        return False
+    return card_id in set(getattr(plan, "attach_energy_preference", []) or [])
+
+
+def _plan_switch_role(deck_state) -> str | None:
+    plan = getattr(deck_state, "turn_plan", None)
+    if plan is None:
+        return None
+    return getattr(plan, "switch_target_role", None)
+
+
+def _target_role(card_id: int) -> str:
+    if card_id == CardIds.CRUSTLE:
+        return "crustle"
+    if card_id == CardIds.DWEBBLE:
+        return "dwebble"
+    if card_id == CardIds.MEGA_KANGASKHAN_EX:
+        return "kang"
+    return "other"
+
+
+def _hilda_choice_score(card_id: int, deck_state) -> tuple[float, str | None]:
+    best = (-30.0, None)
+    for pokemon_id, energy_id in _plan_hilda_pairs(deck_state):
+        if card_id == pokemon_id:
+            return 180.0, "plan_hilda_pair_pokemon"
+        if card_id == energy_id:
+            best = max(best, (165.0, "plan_hilda_pair_energy"), key=lambda x: x[0])
+    if card_id in _plan_targets(deck_state):
+        return 95.0, "plan_search_target"
+    return -20.0, None
+
+
+def _petrel_choice_score(card_id: int, deck_state) -> tuple[float, str | None]:
+    if card_id in _plan_petrel_targets(deck_state):
+        return 185.0, "plan_petrel_target"
+    return -25.0, None
+
+
+def _poffin_choice_score(card_id: int, deck_state) -> tuple[float, str | None]:
+    targets = _plan_poffin_targets(deck_state)
+    if card_id in targets:
+        return 180.0 - 10.0 * targets.index(card_id), "plan_poffin_target"
+    return -35.0, None
+
+
+def _switch_choice_score(card_id: int, deck_state) -> tuple[float, str | None]:
+    role = _plan_switch_role(deck_state)
+    target = _target_role(card_id)
+    if role == "crustle" and card_id == CardIds.CRUSTLE:
+        return 170.0, "plan_switch_target"
+    if role == "kang" and card_id == CardIds.MEGA_KANGASKHAN_EX:
+        return 170.0, "plan_switch_target"
+    if role == "best_attacker" and card_id == CardIds.MEGA_KANGASKHAN_EX:
+        return 150.0, "plan_switch_target"
+    if role == "crustle_or_kang" and target in {"crustle", "kang"}:
+        return 150.0 if target == "crustle" else 140.0, "plan_switch_target"
+    if role == "safest_wall_or_tank" and target in {"crustle", "kang"}:
+        return 145.0 if target == "crustle" else 135.0, "plan_switch_target"
+    if role == "none":
+        return -120.0, "forbidden_switch_target"
+    if card_id == CardIds.DWEBBLE:
+        return -60.0, "avoid_expose_dwebble"
+    return -10.0, None
 
 
 def _get_card(obs, area, index, player_index):
@@ -115,7 +212,7 @@ def _score_energy_attach(card_id: int, target, target_area, deck_state, add):
         else:
             add("resource", -20.0, "bad_grow_grass_target")
     elif card_id == CardIds.MIST_ENERGY:
-        if deck_state.matchup.values_mist_energy and target_id in {CardIds.DWEBBLE, CardIds.CRUSTLE, CardIds.MEGA_KANGASKHAN_EX}:
+        if _plan_attach_prefers(deck_state, card_id) and target_id in {CardIds.DWEBBLE, CardIds.CRUSTLE, CardIds.MEGA_KANGASKHAN_EX}:
             add("survival", 135.0, "mist_protect")
         elif target_id in {CardIds.CRUSTLE, CardIds.MEGA_KANGASKHAN_EX}:
             add("survival", 48.0, "mist_core")
@@ -136,11 +233,13 @@ def _score_energy_attach(card_id: int, target, target_area, deck_state, add):
 
 
 def _score_play_card(obs, card, deck_state, state, active, add, deck_knowledge=None):
-    mode = deck_state.primary_plan
+    plan = getattr(deck_state, "turn_plan", None)
     my_state = state.players[state.yourIndex]
-    hand_ids = {getattr(c, "id", None) for c in getattr(my_state, "hand", []) or [] if c is not None}
     safe_draws = getattr(deck_state, "safe_draws", _safe_draws(my_state))
     supporter_ok = _supporter_available(state)
+    search_targets = _plan_targets(deck_state)
+    petrel_targets = _plan_petrel_targets(deck_state)
+    poffin_targets = set(_plan_poffin_targets(deck_state))
 
     if deck_state.must_bench_basic:
         if card.id in {CardIds.DWEBBLE, CardIds.MEGA_KANGASKHAN_EX} and deck_state.bench_space > 0:
@@ -151,19 +250,20 @@ def _score_play_card(obs, card, deck_state, state, active, add, deck_knowledge=N
             add("sequencing", -250.0, "off_plan_before_bench")
 
     if card.id == CardIds.DWEBBLE:
-        add("setup", 220.0 if mode in {"survival_setup", "setup_crustle", "setup_crustle_wall_now", "protect_bench_vs_dragapult"} else 80.0, "play_dwebble")
+        add("setup", 240.0 if card.id in getattr(plan, "required_basic_ids", set()) else 90.0, "play_dwebble")
     elif card.id == CardIds.MEGA_KANGASKHAN_EX:
-        add("setup", 205.0 if mode in {"survival_setup", "setup_kangaskhan", "kang_engine"} else 75.0, "play_kang")
+        add("setup", 230.0 if card.id in getattr(plan, "required_basic_ids", set()) else 85.0, "play_kang")
     elif card.id == CardIds.CRUSTLE:
-        # Usually EVOLVE handles it, but keep safe if engine represents it as PLAY.
-        add("setup", 180.0 if mode in {"setup_crustle", "setup_crustle_wall_now", "wall_and_tax"} else 55.0, "play_crustle")
+        add("setup", 110.0 if getattr(plan, "wants_crustle_evolution", False) else 20.0, "play_crustle")
     elif card.id == CardIds.BUDDY_BUDDY_POFFIN:
         live = _any_live(deck_knowledge, {CardIds.DWEBBLE, CardIds.MEGA_KANGASKHAN_EX})
         if live is False:
             add("resource", -220.0, "poffin_no_live_basic")
         else:
-            value = 240.0 if mode == "survival_setup" else 165.0 if mode in {"setup_crustle", "setup_kangaskhan", "protect_bench_vs_dragapult"} else 50.0
-            add("setup", value, "play_poffin")
+            if getattr(plan, "mode", None) == "survival_setup":
+                add("setup", 140.0 if poffin_targets else 20.0, "play_poffin_search_open")
+            else:
+                add("setup", 65.0 if poffin_targets else 10.0, "play_poffin_search_open")
     elif card.id == CardIds.HILDA:
         if not supporter_ok:
             add("resource", -300.0, "supporter_already_used")
@@ -175,40 +275,41 @@ def _score_play_card(obs, card, deck_state, state, active, add, deck_knowledge=N
             if live is False:
                 add("setup", -180.0, "hilda_no_live_target")
             else:
-                value = 210.0 if mode in {"survival_setup", "setup_crustle", "setup_crustle_wall_now", "protect_bench_vs_dragapult"} else 130.0 if mode in {"setup_kangaskhan", "kang_engine", "attack_continuity"} else 55.0
-                add("setup", value, "play_hilda")
+                if getattr(plan, "mode", None) == "survival_setup":
+                    add("setup", 12.0 if getattr(plan, "search_goal", None) else 2.0, "play_hilda_search_open")
+                else:
+                    add("setup", 28.0 if getattr(plan, "search_goal", None) else 4.0, "play_hilda_search_open")
+                if getattr(plan, "search_goal", None) is not None:
+                    add("plan_alignment", 18.0, f"plan_search_goal_hilda")
     elif card.id == CardIds.ULTRA_BALL:
         live = _any_live(deck_knowledge, {CardIds.DWEBBLE, CardIds.CRUSTLE, CardIds.MEGA_KANGASKHAN_EX})
         if live is False:
             add("resource", -220.0, "ultra_no_live_core")
         else:
-            value = 190.0 if mode in {"survival_setup", "setup_crustle", "setup_crustle_wall_now", "protect_bench_vs_dragapult"} else 115.0
-            add("setup", value, "play_ultra_ball")
+            if getattr(plan, "mode", None) == "survival_setup":
+                add("setup", 85.0 if search_targets else 18.0, "play_ultra_ball_search_open")
+            else:
+                add("setup", 45.0 if search_targets else 12.0, "play_ultra_ball_search_open")
             add("risk", -45.0, "ultra_discard_cost")
     elif card.id == CardIds.POKEGEAR:
         if safe_draws < 1:
             add("resource", -120.0, "low_deck_no_pokegear")
         else:
             _low_deck_gate(deck_state, add, hard_tag="low_deck_no_pokegear", soft_tag="thin_deck_pokegear", soft_penalty=-50.0)
-            add("resource", 85.0 if mode in {"survival_setup", "setup_crustle", "kang_engine", "protect_bench_vs_dragapult"} else 30.0, "play_pokegear")
+            add("resource", 35.0 if supporter_ok else -25.0, "play_pokegear")
     elif card.id == CardIds.PETREL:
         if not supporter_ok:
             add("resource", -300.0, "supporter_already_used")
         else:
             _low_deck_gate(deck_state, add, hard_tag="low_deck_no_petrel", soft_tag="thin_deck_petrel", soft_penalty=-55.0)
-            targets = {CardIds.BUDDY_BUDDY_POFFIN, CardIds.HILDA, CardIds.ULTRA_BALL}
-            if mode == "finish":
-                targets = {CardIds.BOSS_ORDERS, CardIds.LISIA}
-            elif mode == "wall_and_tax":
-                targets = {CardIds.ERI, CardIds.XEROSIC, CardIds.HAND_TRIMMER, CardIds.HANDHELD_FAN, CardIds.JUMBO_ICE_CREAM}
-            elif mode == "prevent_loss":
-                targets = {CardIds.JUMBO_ICE_CREAM, CardIds.BIANCA_DEVOTION, CardIds.SWITCH}
-            live = _any_live(deck_knowledge, targets)
+            live = _any_live(deck_knowledge, petrel_targets)
             if live is False:
                 add("resource", -160.0, "petrel_no_live_target")
             else:
-                value = 160.0 if mode in {"survival_setup", "setup_crustle", "setup_crustle_wall_now", "finish", "prevent_loss", "protect_bench_vs_dragapult"} else 85.0
-                add("resource", value, "play_petrel")
+                if getattr(plan, "mode", None) == "survival_setup":
+                    add("resource", 35.0 if petrel_targets else 6.0, "play_petrel_search_open")
+                else:
+                    add("resource", 32.0 if petrel_targets else 6.0, "play_petrel_search_open")
     elif card.id == CardIds.LILLIE:
         if not supporter_ok:
             add("resource", -300.0, "supporter_already_used")
@@ -218,22 +319,22 @@ def _score_play_card(obs, card, deck_state, state, active, add, deck_knowledge=N
             add("resource", -160.0, "low_deck_no_lillie")
         else:
             _low_deck_gate(deck_state, add, hard_tag="low_deck_no_lillie", soft_tag="thin_deck_lillie", soft_penalty=-70.0)
-            add("resource", 115.0 if mode in {"kang_engine", "stabilize", "setup_kangaskhan"} else 35.0, "play_lillie")
+            add("resource", 90.0 if CardIds.LILLIE in search_targets else 25.0, "play_lillie")
     elif card.id == CardIds.BOSS_ORDERS:
         if not supporter_ok:
             add("resource", -300.0, "supporter_already_used")
-        elif mode == "finish" or deck_state.gust_for_win:
+        elif getattr(plan, "mode", None) == "finish" or deck_state.gust_for_win:
             add("prize", 240.0, "boss_for_win")
         elif deck_state.gust_for_prize:
             add("prize", 125.0, "boss_for_prize")
-        elif deck_state.gust_for_stall and mode in {"wall_and_tax", "disruption_loop", "close_pressure"}:
+        elif deck_state.gust_for_stall and getattr(plan, "gust_target", None) is not None:
             add("disruption", 90.0, "boss_for_stall")
         else:
             add("resource", -90.0, "preserve_boss")
     elif card.id == CardIds.LISIA:
         if not supporter_ok:
             add("resource", -300.0, "supporter_already_used")
-        elif mode == "finish" or deck_state.gust_for_win:
+        elif getattr(plan, "mode", None) == "finish" or deck_state.gust_for_win:
             add("prize", 220.0, "lisia_for_win")
         elif deck_state.matchup.values_gust_on_setup_targets:
             add("disruption", 105.0, "lisia_setup_target")
@@ -262,22 +363,22 @@ def _score_play_card(obs, card, deck_state, state, active, add, deck_knowledge=N
             and not deck_state.can_make_crustle_wall_this_turn
         ):
             add("sequencing", -220.0, "avoid_switch_expose_dwebble")
-        elif mode in {"setup_crustle_wall_now", "wall_and_tax", "kang_engine", "prevent_loss", "protect_bench_vs_dragapult"}:
-            add("survival", 150.0, "play_switch_plan")
+        elif getattr(plan, "switch_target_role", None):
+            add("survival", 55.0, "play_switch_plan")
         else:
             add("resource", -25.0, "preserve_switch")
     elif card.id in DISRUPTION_CARDS:
-        if mode in {"wall_and_tax", "disruption_loop", "close_pressure"}:
+        if card.id in search_targets or card.id in petrel_targets:
             add("disruption", 120.0, "play_disruption")
         else:
             add("resource", -45.0, "early_disruption")
     elif card.id == CardIds.HERO_CAPE:
-        if mode in {"kang_engine", "prevent_loss"} or deck_state.active_is_kangaskhan:
+        if card.id in search_targets or deck_state.active_is_kangaskhan:
             add("survival", 135.0, "play_hero_cape")
         else:
             add("survival", 35.0, "hero_cape_fallback")
     elif card.id in {CardIds.COMMUNITY_CENTER, CardIds.ROCKET_FACTORY, CardIds.FESTIVAL_GROUNDS}:
-        add("resource", 35.0 if mode in {"wall_and_tax", "kang_engine"} else 5.0, "play_stadium")
+        add("resource", 35.0 if card.id in search_targets or getattr(plan, "mode", None) in {"wall_and_tax", "kang_engine"} else 5.0, "play_stadium")
     elif card.id in ENERGY_IDS:
         add("resource", 12.0, "energy_in_hand")
 
@@ -298,34 +399,32 @@ def _score_card_choice(obs, card, option, context, my_index, deck_state, add, de
             add("setup", 205.0 if deck_state.kangaskhan_in_play == 0 else 90.0, "bench_kang")
     elif context == SelectContext.TO_HAND:
         if effect_id == CardIds.HILDA:
-            value, tag = score_hilda_target(card.id, deck_state, deck_state.matchup, candidate_ids={getattr(c, "id", None) for c in getattr(obs.select, "deck", []) or [] if c is not None})
+            value, tag = _hilda_choice_score(card.id, deck_state)
             add("setup", value, tag)
         elif effect_id == CardIds.PETREL:
-            value, tag = score_petrel_target(card.id, deck_state)
+            value, tag = _petrel_choice_score(card.id, deck_state)
             add("resource", value, tag)
+        elif effect_id == CardIds.BUDDY_BUDDY_POFFIN:
+            value, tag = _poffin_choice_score(card.id, deck_state)
+            add("setup", value, tag)
         else:
-            # Generic search target.
-            if card.id == CardIds.CRUSTLE and deck_state.setup_missing_crustle:
-                add("setup", 135.0, "select_crustle")
-            elif card.id == CardIds.DWEBBLE and deck_state.dwebble_in_play == 0:
-                add("setup", 120.0, "select_dwebble")
-            elif card.id == CardIds.MEGA_KANGASKHAN_EX and deck_state.kangaskhan_in_play == 0:
-                add("setup", 110.0, "select_kang")
-            elif card.id in ENERGY_IDS:
-                add("attack_continuity", 75.0, "select_energy")
+            if card.id in _plan_targets(deck_state):
+                add("setup", 145.0, "plan_search_target")
             else:
-                add("resource", 25.0, "generic_search_target")
+                add("resource", -25.0, "off_plan_search_target")
     elif context in {SelectContext.SWITCH, SelectContext.TO_ACTIVE}:
         if option.playerIndex == my_index:
-            value, tag = score_switch_target(card.id, deck_state)
+            value, tag = _switch_choice_score(card.id, deck_state)
             add("survival", value, tag)
         else:
             value, tag = score_gust_target(card, deck_state)
             add("prize", value, tag)
     elif context == SelectContext.ATTACH_FROM:
         if card.id in ENERGY_IDS:
-            value, tag = score_hilda_target(card.id, deck_state, deck_state.matchup)
-            add("attack_continuity", value, tag)
+            if _plan_attach_prefers(deck_state, card.id):
+                add("attack_continuity", 140.0, "plan_attach_energy")
+            else:
+                add("attack_continuity", -20.0, "off_plan_attach_energy")
     elif context == SelectContext.DISCARD and option.playerIndex == my_index and option.area == AreaType.HAND:
         if effect_id == CardIds.ULTRA_BALL:
             score, tag = score_ultra_ball_discard(card.id, deck_state)
@@ -404,19 +503,17 @@ def score_option_for_plan(obs, option, snapshot, plan, deck_knowledge=None) -> d
             action_tags |= {"bench_kang", "bench_basic", "play_kang"}
         elif card.id == CardIds.BUDDY_BUDDY_POFFIN:
             action_tags |= {"play_poffin", "search_basic"}
-            # Enable search but do not pretend it already solved the missing piece.
-            add("setup", 8.0, "poffin_enables_setup")
         elif card.id == CardIds.HILDA:
             action_tags.add("play_hilda")
-            if deck_state.primary_plan in {"survival_setup", "setup_crustle", "setup_crustle_wall_now", "protect_bench_vs_dragapult"}:
+            if getattr(plan, "search_goal", None):
                 action_tags.add("search_basic")
         elif card.id == CardIds.ULTRA_BALL:
             action_tags |= {"play_ultra_ball", "search_basic"}
         elif card.id == CardIds.PETREL:
             action_tags.add("play_petrel")
-            if deck_state.primary_plan == "survival_setup":
+            if getattr(plan, "search_goal", None):
                 action_tags.add("search_basic")
-            if deck_state.primary_plan in {"wall_and_tax", "disruption_loop", "close_pressure"}:
+            if _plan_petrel_targets(deck_state):
                 action_tags.add("disruption_live")
         elif card.id == CardIds.SWITCH:
             action_tags.add("switch_safe")
@@ -446,7 +543,7 @@ def score_option_for_plan(obs, option, snapshot, plan, deck_knowledge=None) -> d
     elif option.type == OptionType.EVOLVE:
         card = my_state.hand[option.index]
         if card.id == CardIds.CRUSTLE:
-            add("setup", 260.0 if deck_state.primary_plan in {"setup_crustle", "setup_crustle_wall_now", "wall_and_tax", "survival_setup"} else 110.0, "evolve_crustle")
+            add("setup", 260.0 if getattr(plan, "wants_crustle_evolution", False) else 110.0, "evolve_crustle")
             action_tags.add("evolve_crustle")
         else:
             add("setup", 50.0, "evolve_other")
@@ -462,17 +559,17 @@ def score_option_for_plan(obs, option, snapshot, plan, deck_knowledge=None) -> d
                 add("resource", -140.0, "low_deck_no_run_errand")
             else:
                 _low_deck_gate(deck_state, add, hard_tag="low_deck_no_run_errand", soft_tag="thin_deck_run_errand", soft_penalty=-75.0)
-                add("resource", 170.0 if deck_state.primary_plan in {"kang_engine", "stabilize", "setup_kangaskhan"} else 65.0, "run_errand")
+                add("resource", 170.0 if getattr(plan, "wants_kang_draw", False) else 65.0, "run_errand")
                 action_tags.add("run_errand")
         else:
             add("generic", 15.0, "ability")
     elif option.type == OptionType.RETREAT:
-        if deck_state.primary_plan in {"setup_crustle_wall_now", "wall_and_tax"}:
+        if getattr(plan, "switch_target_role", None) in {"crustle", "crustle_or_kang", "safest_wall_or_tank"}:
             add("survival", 140.0, "retreat_to_wall")
             action_tags.add("switch_safe")
-        elif deck_state.primary_plan in {"kang_engine", "setup_kangaskhan", "attack_continuity"}:
+        elif getattr(plan, "switch_target_role", None) in {"kang", "best_attacker"}:
             add("resource", 95.0, "retreat_to_kang")
-        elif deck_state.primary_plan == "prevent_loss":
+        elif getattr(plan, "mode", None) == "prevent_loss":
             add("survival", 100.0, "retreat_prevent_loss")
             action_tags |= {"retreat", "heal_escape"}
         else:
@@ -488,7 +585,7 @@ def score_option_for_plan(obs, option, snapshot, plan, deck_knowledge=None) -> d
                     add("sequencing", -10000.0, "ascension_before_bench_forbidden")
                     action_tags.add("attack_end_turn")
                 else:
-                    add("setup", 210.0 if deck_state.primary_plan in {"setup_crustle", "setup_crustle_wall_now"} else 60.0, "ascension")
+                    add("setup", 210.0 if getattr(plan, "wants_dwebble_ascension", False) else 60.0, "ascension")
                     action_tags.add("ascension")
             elif active.id == CardIds.CRUSTLE:
                 add("survival", 145.0 if deck_state.wall_online else 60.0, "crustle_attack")
@@ -496,7 +593,7 @@ def score_option_for_plan(obs, option, snapshot, plan, deck_knowledge=None) -> d
                 if opponent_active is not None and getattr(opponent_active, "hp", 999) <= 120:
                     add("prize", 90.0, "crustle_ko")
             elif active.id == CardIds.MEGA_KANGASKHAN_EX:
-                add("attack_continuity", 135.0 if deck_state.primary_plan in {"kang_engine", "finish", "close_pressure", "attack_continuity"} else 55.0, "kang_attack")
+                add("attack_continuity", 135.0 if getattr(plan, "wants_active_kang", False) or getattr(plan, "mode", None) in {"finish", "close_pressure"} else 55.0, "kang_attack")
                 action_tags.add("kang_attack")
                 if opponent_active is not None and getattr(opponent_active, "hp", 999) <= 200:
                     add("prize", 100.0, "kang_ko")
@@ -510,7 +607,7 @@ def score_option_for_plan(obs, option, snapshot, plan, deck_knowledge=None) -> d
         add("sequencing", -650.0, "forbidden_before_bench")
     if deck_state.must_bench_basic and option.type == OptionType.ATTACH:
         add("sequencing", -220.0, "attach_after_bench")
-    if option.type == OptionType.PLAY and deck_state.primary_plan == "wall_and_tax" and not (breakdown.get("survival", 0) > 0 or breakdown.get("disruption", 0) > 0 or breakdown.get("attack_continuity", 0) > 0):
+    if option.type == OptionType.PLAY and getattr(plan, "mode", None) == "wall_and_tax" and not (breakdown.get("survival", 0) > 0 or breakdown.get("disruption", 0) > 0 or breakdown.get("attack_continuity", 0) > 0):
         add("sequencing", -40.0, "off_plan_play")
 
     line_progress = score_line_progress(action_tags, deck_state.line_states)
