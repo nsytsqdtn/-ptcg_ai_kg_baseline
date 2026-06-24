@@ -1,0 +1,1304 @@
+- generic [ref=e2]:
+  - generic [ref=e3]:
+    - generic [ref=e4]:
+      - generic [ref=e5]: dragapult_rule_based vs mega_lucario_beginner
+      - generic [ref=e6]: "记录时间: 2026-06-18T05:09:43.738573+00:00"
+    - generic [ref=e7]:
+      - generic [ref=e8]: winner=0 turn=12 steps=189
+      - generic [ref=e9]: 当前步骤 1 / 188
+  - generic [ref=e10]:
+    - button "上一手" [ref=e11]
+    - button "下一手" [ref=e12]
+    - generic [ref=e13]: 跳转回合
+    - combobox "跳转回合" [ref=e14]:
+      - option "准备阶段" [selected]
+      - option "第 1 回合"
+      - option "第 2 回合"
+      - option "第 3 回合"
+      - option "第 4 回合"
+      - option "第 5 回合"
+      - option "第 6 回合"
+      - option "第 7 回合"
+      - option "第 8 回合"
+      - option "第 9 回合"
+      - option "第 10 回合"
+      - option "第 11 回合"
+      - option "第 12 回合"
+    - generic [ref=e15]: 跳转步骤
+    - combobox "跳转步骤" [ref=e16]:
+      - option "步骤 1 / 回合 0 / 玩家 0" [selected]
+      - option "步骤 2 / 回合 0 / 玩家 1"
+      - option "步骤 3 / 回合 0 / 玩家 0"
+      - option "步骤 4 / 回合 0 / 玩家 0"
+      - option "步骤 5 / 回合 1 / 玩家 1"
+      - option "步骤 6 / 回合 1 / 玩家 1"
+      - option "步骤 7 / 回合 1 / 玩家 1"
+      - option "步骤 8 / 回合 1 / 玩家 1"
+      - option "步骤 9 / 回合 1 / 玩家 1"
+      - option "步骤 10 / 回合 1 / 玩家 1"
+      - option "步骤 11 / 回合 1 / 玩家 1"
+      - option "步骤 12 / 回合 1 / 玩家 1"
+      - option "步骤 13 / 回合 1 / 玩家 1"
+      - option "步骤 14 / 回合 1 / 玩家 1"
+      - option "步骤 15 / 回合 1 / 玩家 1"
+      - option "步骤 16 / 回合 1 / 玩家 1"
+      - option "步骤 17 / 回合 1 / 玩家 1"
+      - option "步骤 18 / 回合 1 / 玩家 1"
+      - option "步骤 19 / 回合 1 / 玩家 1"
+      - option "步骤 20 / 回合 2 / 玩家 0"
+      - option "步骤 21 / 回合 2 / 玩家 0"
+      - option "步骤 22 / 回合 2 / 玩家 0"
+      - option "步骤 23 / 回合 2 / 玩家 0"
+      - option "步骤 24 / 回合 2 / 玩家 0"
+      - option "步骤 25 / 回合 2 / 玩家 0"
+      - option "步骤 26 / 回合 2 / 玩家 0"
+      - option "步骤 27 / 回合 2 / 玩家 0"
+      - option "步骤 28 / 回合 2 / 玩家 0"
+      - option "步骤 29 / 回合 3 / 玩家 1"
+      - option "步骤 30 / 回合 3 / 玩家 1"
+      - option "步骤 31 / 回合 3 / 玩家 1"
+      - option "步骤 32 / 回合 3 / 玩家 1"
+      - option "步骤 33 / 回合 3 / 玩家 1"
+      - option "步骤 34 / 回合 3 / 玩家 1"
+      - option "步骤 35 / 回合 3 / 玩家 1"
+      - option "步骤 36 / 回合 3 / 玩家 1"
+      - option "步骤 37 / 回合 3 / 玩家 1"
+      - option "步骤 38 / 回合 3 / 玩家 1"
+      - option "步骤 39 / 回合 3 / 玩家 1"
+      - option "步骤 40 / 回合 3 / 玩家 1"
+      - option "步骤 41 / 回合 3 / 玩家 1"
+      - option "步骤 42 / 回合 3 / 玩家 1"
+      - option "步骤 43 / 回合 3 / 玩家 1"
+      - option "步骤 44 / 回合 3 / 玩家 1"
+      - option "步骤 45 / 回合 3 / 玩家 1"
+      - option "步骤 46 / 回合 4 / 玩家 0"
+      - option "步骤 47 / 回合 4 / 玩家 0"
+      - option "步骤 48 / 回合 4 / 玩家 0"
+      - option "步骤 49 / 回合 4 / 玩家 0"
+      - option "步骤 50 / 回合 4 / 玩家 0"
+      - option "步骤 51 / 回合 4 / 玩家 0"
+      - option "步骤 52 / 回合 4 / 玩家 0"
+      - option "步骤 53 / 回合 4 / 玩家 0"
+      - option "步骤 54 / 回合 4 / 玩家 0"
+      - option "步骤 55 / 回合 4 / 玩家 0"
+      - option "步骤 56 / 回合 4 / 玩家 0"
+      - option "步骤 57 / 回合 5 / 玩家 1"
+      - option "步骤 58 / 回合 5 / 玩家 1"
+      - option "步骤 59 / 回合 5 / 玩家 1"
+      - option "步骤 60 / 回合 5 / 玩家 1"
+      - option "步骤 61 / 回合 5 / 玩家 1"
+      - option "步骤 62 / 回合 5 / 玩家 1"
+      - option "步骤 63 / 回合 5 / 玩家 1"
+      - option "步骤 64 / 回合 5 / 玩家 1"
+      - option "步骤 65 / 回合 5 / 玩家 1"
+      - option "步骤 66 / 回合 5 / 玩家 1"
+      - option "步骤 67 / 回合 5 / 玩家 0"
+      - option "步骤 68 / 回合 6 / 玩家 0"
+      - option "步骤 69 / 回合 6 / 玩家 0"
+      - option "步骤 70 / 回合 6 / 玩家 0"
+      - option "步骤 71 / 回合 6 / 玩家 0"
+      - option "步骤 72 / 回合 6 / 玩家 0"
+      - option "步骤 73 / 回合 6 / 玩家 0"
+      - option "步骤 74 / 回合 6 / 玩家 0"
+      - option "步骤 75 / 回合 6 / 玩家 0"
+      - option "步骤 76 / 回合 6 / 玩家 0"
+      - option "步骤 77 / 回合 6 / 玩家 0"
+      - option "步骤 78 / 回合 6 / 玩家 0"
+      - option "步骤 79 / 回合 6 / 玩家 0"
+      - option "步骤 80 / 回合 6 / 玩家 0"
+      - option "步骤 81 / 回合 6 / 玩家 0"
+      - option "步骤 82 / 回合 6 / 玩家 0"
+      - option "步骤 83 / 回合 6 / 玩家 0"
+      - option "步骤 84 / 回合 6 / 玩家 0"
+      - option "步骤 85 / 回合 6 / 玩家 0"
+      - option "步骤 86 / 回合 6 / 玩家 0"
+      - option "步骤 87 / 回合 6 / 玩家 0"
+      - option "步骤 88 / 回合 6 / 玩家 0"
+      - option "步骤 89 / 回合 6 / 玩家 0"
+      - option "步骤 90 / 回合 6 / 玩家 0"
+      - option "步骤 91 / 回合 6 / 玩家 0"
+      - option "步骤 92 / 回合 6 / 玩家 0"
+      - option "步骤 93 / 回合 6 / 玩家 0"
+      - option "步骤 94 / 回合 6 / 玩家 0"
+      - option "步骤 95 / 回合 6 / 玩家 0"
+      - option "步骤 96 / 回合 6 / 玩家 0"
+      - option "步骤 97 / 回合 6 / 玩家 0"
+      - option "步骤 98 / 回合 6 / 玩家 0"
+      - option "步骤 99 / 回合 6 / 玩家 0"
+      - option "步骤 100 / 回合 6 / 玩家 0"
+      - option "步骤 101 / 回合 7 / 玩家 1"
+      - option "步骤 102 / 回合 7 / 玩家 1"
+      - option "步骤 103 / 回合 7 / 玩家 1"
+      - option "步骤 104 / 回合 7 / 玩家 1"
+      - option "步骤 105 / 回合 7 / 玩家 1"
+      - option "步骤 106 / 回合 7 / 玩家 1"
+      - option "步骤 107 / 回合 7 / 玩家 1"
+      - option "步骤 108 / 回合 7 / 玩家 1"
+      - option "步骤 109 / 回合 7 / 玩家 1"
+      - option "步骤 110 / 回合 7 / 玩家 1"
+      - option "步骤 111 / 回合 7 / 玩家 1"
+      - option "步骤 112 / 回合 8 / 玩家 0"
+      - option "步骤 113 / 回合 8 / 玩家 0"
+      - option "步骤 114 / 回合 8 / 玩家 0"
+      - option "步骤 115 / 回合 8 / 玩家 0"
+      - option "步骤 116 / 回合 8 / 玩家 0"
+      - option "步骤 117 / 回合 8 / 玩家 0"
+      - option "步骤 118 / 回合 8 / 玩家 0"
+      - option "步骤 119 / 回合 8 / 玩家 0"
+      - option "步骤 120 / 回合 8 / 玩家 0"
+      - option "步骤 121 / 回合 8 / 玩家 0"
+      - option "步骤 122 / 回合 8 / 玩家 0"
+      - option "步骤 123 / 回合 9 / 玩家 1"
+      - option "步骤 124 / 回合 9 / 玩家 1"
+      - option "步骤 125 / 回合 9 / 玩家 1"
+      - option "步骤 126 / 回合 9 / 玩家 1"
+      - option "步骤 127 / 回合 9 / 玩家 1"
+      - option "步骤 128 / 回合 9 / 玩家 1"
+      - option "步骤 129 / 回合 9 / 玩家 1"
+      - option "步骤 130 / 回合 9 / 玩家 1"
+      - option "步骤 131 / 回合 9 / 玩家 1"
+      - option "步骤 132 / 回合 9 / 玩家 1"
+      - option "步骤 133 / 回合 9 / 玩家 1"
+      - option "步骤 134 / 回合 9 / 玩家 0"
+      - option "步骤 135 / 回合 10 / 玩家 0"
+      - option "步骤 136 / 回合 10 / 玩家 0"
+      - option "步骤 137 / 回合 10 / 玩家 0"
+      - option "步骤 138 / 回合 10 / 玩家 0"
+      - option "步骤 139 / 回合 10 / 玩家 0"
+      - option "步骤 140 / 回合 10 / 玩家 0"
+      - option "步骤 141 / 回合 10 / 玩家 0"
+      - option "步骤 142 / 回合 10 / 玩家 0"
+      - option "步骤 143 / 回合 10 / 玩家 0"
+      - option "步骤 144 / 回合 10 / 玩家 0"
+      - option "步骤 145 / 回合 10 / 玩家 0"
+      - option "步骤 146 / 回合 10 / 玩家 0"
+      - option "步骤 147 / 回合 10 / 玩家 0"
+      - option "步骤 148 / 回合 10 / 玩家 0"
+      - option "步骤 149 / 回合 10 / 玩家 0"
+      - option "步骤 150 / 回合 10 / 玩家 0"
+      - option "步骤 151 / 回合 10 / 玩家 0"
+      - option "步骤 152 / 回合 10 / 玩家 0"
+      - option "步骤 153 / 回合 10 / 玩家 0"
+      - option "步骤 154 / 回合 10 / 玩家 0"
+      - option "步骤 155 / 回合 10 / 玩家 0"
+      - option "步骤 156 / 回合 11 / 玩家 1"
+      - option "步骤 157 / 回合 11 / 玩家 1"
+      - option "步骤 158 / 回合 11 / 玩家 1"
+      - option "步骤 159 / 回合 11 / 玩家 1"
+      - option "步骤 160 / 回合 11 / 玩家 1"
+      - option "步骤 161 / 回合 11 / 玩家 1"
+      - option "步骤 162 / 回合 11 / 玩家 1"
+      - option "步骤 163 / 回合 11 / 玩家 1"
+      - option "步骤 164 / 回合 11 / 玩家 1"
+      - option "步骤 165 / 回合 11 / 玩家 1"
+      - option "步骤 166 / 回合 11 / 玩家 1"
+      - option "步骤 167 / 回合 11 / 玩家 1"
+      - option "步骤 168 / 回合 11 / 玩家 1"
+      - option "步骤 169 / 回合 11 / 玩家 1"
+      - option "步骤 170 / 回合 11 / 玩家 1"
+      - option "步骤 171 / 回合 11 / 玩家 0"
+      - option "步骤 172 / 回合 12 / 玩家 0"
+      - option "步骤 173 / 回合 12 / 玩家 0"
+      - option "步骤 174 / 回合 12 / 玩家 0"
+      - option "步骤 175 / 回合 12 / 玩家 0"
+      - option "步骤 176 / 回合 12 / 玩家 0"
+      - option "步骤 177 / 回合 12 / 玩家 0"
+      - option "步骤 178 / 回合 12 / 玩家 0"
+      - option "步骤 179 / 回合 12 / 玩家 0"
+      - option "步骤 180 / 回合 12 / 玩家 0"
+      - option "步骤 181 / 回合 12 / 玩家 0"
+      - option "步骤 182 / 回合 12 / 玩家 0"
+      - option "步骤 183 / 回合 12 / 玩家 0"
+      - option "步骤 184 / 回合 12 / 玩家 0"
+      - option "步骤 185 / 回合 12 / 玩家 0"
+      - option "步骤 186 / 回合 12 / 玩家 0"
+      - option "步骤 187 / 回合 12 / 玩家 0"
+      - option "步骤 188 / 回合 12 / 玩家 0"
+  - generic [ref=e17]:
+    - generic [ref=e19]:
+      - generic [ref=e21]:
+        - generic [ref=e22]: dragapult_rule_based 手牌 (0)
+        - generic [ref=e24]: 空
+      - generic [ref=e25]:
+        - generic [ref=e26]:
+          - generic [ref=e27]:
+            - generic [ref=e28]: 当前回合
+            - generic [ref=e29]: 准备阶段
+          - generic [ref=e30]:
+            - generic [ref=e31]: 当前行动玩家
+            - generic [ref=e32]: 玩家 0 (dragapult_rule_based)
+          - generic [ref=e33]:
+            - generic [ref=e34]: 我方牌库 / 弃牌 / 奖赏
+            - generic [ref=e35]: 60 / 0 / 0
+          - generic [ref=e36]:
+            - generic [ref=e37]: 对方牌库 / 弃牌 / 奖赏
+            - generic [ref=e38]: 60 / 0 / 0
+        - generic [ref=e39]:
+          - generic [ref=e40]: 我方战斗位
+          - generic [ref=e42]: 空
+        - generic [ref=e43]:
+          - generic [ref=e44]: 我方备战区
+          - generic [ref=e46]: 空
+        - generic [ref=e47]:
+          - generic [ref=e48]: 对方战斗位
+          - generic [ref=e50]: 空
+        - generic [ref=e51]:
+          - generic [ref=e52]: 对方备战区
+          - generic [ref=e54]: 空
+        - generic [ref=e55]:
+          - generic [ref=e56]: 场地
+          - generic [ref=e58]: 空
+      - generic [ref=e60]:
+        - generic [ref=e61]: mega_lucario_beginner 手牌 (0)
+        - generic [ref=e63]: 空
+    - complementary [ref=e64]:
+      - heading "步骤时间线" [level=3] [ref=e65]
+      - generic [ref=e66]:
+        - generic [ref=e67]:
+          - generic [ref=e68]: 步骤 1 · 回合 0 · 玩家 0
+          - generic [ref=e69]: "手牌快照: 未知 执行动作: NO"
+          - generic [ref=e70]:
+            - generic [ref=e71]: • 玩家 1 抽到了 Mega Lucario ex
+            - generic [ref=e72]: • 玩家 1 抽到了 Solrock
+            - generic [ref=e73]: • 玩家 1 抽到了 Dusk Ball
+            - generic [ref=e74]: "• 玩家 1 抽到了 Basic {F} Energy"
+            - generic [ref=e75]: • 玩家 1 抽到了 Mega Lucario ex
+            - generic [ref=e76]: • 玩家 1 抽到了 Fighting Gong
+        - generic [ref=e77]:
+          - generic [ref=e78]: 步骤 2 · 回合 0 · 玩家 1
+          - generic [ref=e79]: "手牌快照: Mega Lucario ex, Solrock, Dusk Ball, Basic {F} Energy, Mega Lucario ex, Fighting Gong, Poké Pad 执行动作: 选择 Solrock"
+          - generic [ref=e80]:
+            - generic [ref=e81]: • DRAW_REVERSE
+            - generic [ref=e82]: • DRAW_REVERSE
+            - generic [ref=e83]: • DRAW_REVERSE
+            - generic [ref=e84]: • DRAW_REVERSE
+            - generic [ref=e85]: • DRAW_REVERSE
+            - generic [ref=e86]: • DRAW_REVERSE
+        - generic [ref=e87]:
+          - generic [ref=e88]: 步骤 3 · 回合 0 · 玩家 0
+          - generic [ref=e89]: "手牌快照: Latias ex, Drakloak, Basic {R} Energy, Dreepy, Drakloak, Crushing Hammer, Meowth ex 执行动作: 选择 Dreepy"
+          - generic [ref=e90]:
+            - generic [ref=e91]: • 玩家 0 将 Dreepy 从 HAND 移动到 ACTIVE
+            - generic [ref=e92]: • MOVE_CARD_REVERSE
+            - generic [ref=e93]: • MOVE_CARD_REVERSE
+            - generic [ref=e94]: • MOVE_CARD_REVERSE
+            - generic [ref=e95]: • MOVE_CARD_REVERSE
+            - generic [ref=e96]: • MOVE_CARD_REVERSE
+        - generic [ref=e97]:
+          - generic [ref=e98]: 步骤 4 · 回合 0 · 玩家 0
+          - generic [ref=e99]: "手牌快照: Latias ex, Drakloak, Basic {R} Energy, Drakloak, Crushing Hammer, Meowth ex 执行动作: SETUP_BENCH_POKEMON: 未记录具体选择"
+          - generic [ref=e100]:
+            - generic [ref=e101]: • 玩家 1 将 Solrock 从 HAND 移动到 ACTIVE
+            - generic [ref=e102]: • MOVE_CARD_REVERSE
+            - generic [ref=e103]: • MOVE_CARD_REVERSE
+            - generic [ref=e104]: • MOVE_CARD_REVERSE
+            - generic [ref=e105]: • MOVE_CARD_REVERSE
+            - generic [ref=e106]: • MOVE_CARD_REVERSE
+        - generic [ref=e107]:
+          - generic [ref=e108]: 步骤 5 · 回合 1 · 玩家 1
+          - generic [ref=e109]: "手牌快照: Mega Lucario ex, Dusk Ball, Basic {F} Energy, Mega Lucario ex, Fighting Gong, Poké Pad, Lunatone 执行动作: 打出 手牌"
+          - generic [ref=e111]: • 玩家 1 打出了 Lunatone
+        - generic [ref=e112]:
+          - generic [ref=e113]: 步骤 6 · 回合 1 · 玩家 1
+          - generic [ref=e114]: "手牌快照: Mega Lucario ex, Dusk Ball, Basic {F} Energy, Mega Lucario ex, Fighting Gong, Poké Pad 执行动作: ABILITY"
+          - generic [ref=e116]: • 无可读事件
+        - generic [ref=e117]:
+          - generic [ref=e118]: 步骤 7 · 回合 1 · 玩家 1
+          - generic [ref=e119]: "手牌快照: Mega Lucario ex, Dusk Ball, Basic {F} Energy, Mega Lucario ex, Fighting Gong, Poké Pad 执行动作: 选择 Basic {F} Energy"
+          - generic [ref=e120]:
+            - generic [ref=e121]: "• 玩家 1 将 Basic {F} Energy 从 HAND 移动到 DISCARD"
+            - generic [ref=e122]: • 玩家 1 抽到了 Lillie's Determination
+            - generic [ref=e123]: • 玩家 1 抽到了 Poké Pad
+            - generic [ref=e124]: • 玩家 1 抽到了 Premium Power Pro
+        - generic [ref=e125]:
+          - generic [ref=e126]: 步骤 8 · 回合 1 · 玩家 1
+          - generic [ref=e127]: "手牌快照: Mega Lucario ex, Dusk Ball, Mega Lucario ex, Fighting Gong, Poké Pad, Lillie's Determination, Poké Pad, Premium Power Pro 执行动作: 打出 手牌"
+          - generic [ref=e128]:
+            - generic [ref=e129]: • 玩家 1 打出了 Dusk Ball
+            - generic [ref=e130]: • 玩家 1 将 Riolu 从 DECK 移动到 LOOKING
+            - generic [ref=e131]: • 玩家 1 将 Solrock 从 DECK 移动到 LOOKING
+            - generic [ref=e132]: • 玩家 1 将 Lunatone 从 DECK 移动到 LOOKING
+            - generic [ref=e133]: "• 玩家 1 将 Basic {F} Energy 从 DECK 移动到 LOOKING"
+            - generic [ref=e134]: "• 玩家 1 将 Basic {F} Energy 从 DECK 移动到 LOOKING"
+        - generic [ref=e135]:
+          - generic [ref=e136]: 步骤 9 · 回合 1 · 玩家 1
+          - generic [ref=e137]: "手牌快照: Mega Lucario ex, Mega Lucario ex, Fighting Gong, Poké Pad, Lillie's Determination, Poké Pad, Premium Power Pro 执行动作: 选择 Riolu"
+          - generic [ref=e138]:
+            - generic [ref=e139]: • 玩家 1 将 Riolu 从 LOOKING 移动到 HAND
+            - generic [ref=e140]: • 玩家 1 将 Solrock 从 LOOKING 移动到 DECK
+            - generic [ref=e141]: • 玩家 1 将 Lunatone 从 LOOKING 移动到 DECK
+            - generic [ref=e142]: "• 玩家 1 将 Basic {F} Energy 从 LOOKING 移动到 DECK"
+            - generic [ref=e143]: "• 玩家 1 将 Basic {F} Energy 从 LOOKING 移动到 DECK"
+            - generic [ref=e144]: • 玩家 1 将 Lillie's Determination 从 LOOKING 移动到 DECK
+        - generic [ref=e145]:
+          - generic [ref=e146]: 步骤 10 · 回合 1 · 玩家 1
+          - generic [ref=e147]: "手牌快照: Mega Lucario ex, Mega Lucario ex, Fighting Gong, Poké Pad, Lillie's Determination, Poké Pad, Premium Power Pro, Riolu 执行动作: 打出 手牌"
+          - generic [ref=e149]: • 玩家 1 打出了 Riolu
+        - generic [ref=e150]:
+          - generic [ref=e151]: 步骤 11 · 回合 1 · 玩家 1
+          - generic [ref=e152]: "手牌快照: Mega Lucario ex, Mega Lucario ex, Fighting Gong, Poké Pad, Lillie's Determination, Poké Pad, Premium Power Pro 执行动作: 打出 手牌"
+          - generic [ref=e154]: • 玩家 1 打出了 Fighting Gong
+        - generic [ref=e155]:
+          - generic [ref=e156]: 步骤 12 · 回合 1 · 玩家 1
+          - generic [ref=e157]: "手牌快照: Mega Lucario ex, Mega Lucario ex, Poké Pad, Lillie's Determination, Poké Pad, Premium Power Pro 执行动作: 选择 Basic {F} Energy"
+          - generic [ref=e158]:
+            - generic [ref=e159]: "• 玩家 1 将 Basic {F} Energy 从 DECK 移动到 HAND"
+            - generic [ref=e160]: • SHUFFLE
+        - generic [ref=e161]:
+          - generic [ref=e162]: 步骤 13 · 回合 1 · 玩家 1
+          - generic [ref=e163]: "手牌快照: Mega Lucario ex, Mega Lucario ex, Poké Pad, Lillie's Determination, Poké Pad, Premium Power Pro, Basic {F} Energy 执行动作: 打出 手牌"
+          - generic [ref=e165]: • 玩家 1 打出了 Poké Pad
+        - generic [ref=e166]:
+          - generic [ref=e167]: 步骤 14 · 回合 1 · 玩家 1
+          - generic [ref=e168]: "手牌快照: Mega Lucario ex, Mega Lucario ex, Lillie's Determination, Poké Pad, Premium Power Pro, Basic {F} Energy 执行动作: 选择 Makuhita"
+          - generic [ref=e169]:
+            - generic [ref=e170]: • 玩家 1 将 Makuhita 从 DECK 移动到 HAND
+            - generic [ref=e171]: • SHUFFLE
+        - generic [ref=e172]:
+          - generic [ref=e173]: 步骤 15 · 回合 1 · 玩家 1
+          - generic [ref=e174]: "手牌快照: Mega Lucario ex, Mega Lucario ex, Lillie's Determination, Poké Pad, Premium Power Pro, Basic {F} Energy, Makuhita 执行动作: 打出 手牌"
+          - generic [ref=e176]: • 玩家 1 打出了 Makuhita
+        - generic [ref=e177]:
+          - generic [ref=e178]: 步骤 16 · 回合 1 · 玩家 1
+          - generic [ref=e179]: "手牌快照: Mega Lucario ex, Mega Lucario ex, Lillie's Determination, Poké Pad, Premium Power Pro, Basic {F} Energy 执行动作: 打出 手牌"
+          - generic [ref=e181]: • 玩家 1 打出了 Poké Pad
+        - generic [ref=e182]:
+          - generic [ref=e183]: 步骤 17 · 回合 1 · 玩家 1
+          - generic [ref=e184]: "手牌快照: Mega Lucario ex, Mega Lucario ex, Lillie's Determination, Premium Power Pro, Basic {F} Energy 执行动作: 选择 Hariyama"
+          - generic [ref=e185]:
+            - generic [ref=e186]: • 玩家 1 将 Hariyama 从 DECK 移动到 HAND
+            - generic [ref=e187]: • SHUFFLE
+        - generic [ref=e188]:
+          - generic [ref=e189]: 步骤 18 · 回合 1 · 玩家 1
+          - generic [ref=e190]: "手牌快照: Mega Lucario ex, Mega Lucario ex, Lillie's Determination, Premium Power Pro, Basic {F} Energy, Hariyama 执行动作: 附加 卡牌"
+          - generic [ref=e192]: "• 玩家 1 将 Basic {F} Energy 附加到 Riolu"
+        - generic [ref=e193]:
+          - generic [ref=e194]: 步骤 19 · 回合 1 · 玩家 1
+          - generic [ref=e195]: "手牌快照: Mega Lucario ex, Mega Lucario ex, Lillie's Determination, Premium Power Pro, Hariyama 执行动作: 结束回合"
+          - generic [ref=e196]:
+            - generic [ref=e197]: • TURN_START
+            - generic [ref=e198]: • DRAW_REVERSE
+            - generic [ref=e199]: • 玩家 1 打出了 Lunatone
+            - generic [ref=e200]: "• 玩家 1 将 Basic {F} Energy 从 HAND 移动到 DISCARD"
+            - generic [ref=e201]: • DRAW_REVERSE
+            - generic [ref=e202]: • DRAW_REVERSE
+        - generic [ref=e203]:
+          - generic [ref=e204]: 步骤 20 · 回合 2 · 玩家 0
+          - generic [ref=e205]: "手牌快照: Latias ex, Drakloak, Basic {R} Energy, Drakloak, Crushing Hammer, Meowth ex, Lillie's Determination 执行动作: 打出 手牌"
+          - generic [ref=e207]: • 玩家 0 打出了 Latias ex
+        - generic [ref=e208]:
+          - generic [ref=e209]: 步骤 21 · 回合 2 · 玩家 0
+          - generic [ref=e210]: "手牌快照: Drakloak, Basic {R} Energy, Drakloak, Crushing Hammer, Meowth ex, Lillie's Determination 执行动作: 打出 手牌"
+          - generic [ref=e211]:
+            - generic [ref=e212]: • 玩家 0 打出了 Crushing Hammer
+            - generic [ref=e213]: • COIN
+        - generic [ref=e214]:
+          - generic [ref=e215]: 步骤 22 · 回合 2 · 玩家 0
+          - generic [ref=e216]: "手牌快照: Drakloak, Basic {R} Energy, Drakloak, Meowth ex, Lillie's Determination 执行动作: 附加 卡牌"
+          - generic [ref=e218]: "• 玩家 0 将 Basic {R} Energy 附加到 Dreepy"
+        - generic [ref=e219]:
+          - generic [ref=e220]: 步骤 23 · 回合 2 · 玩家 0
+          - generic [ref=e221]: "手牌快照: Drakloak, Drakloak, Meowth ex, Lillie's Determination 执行动作: 打出 手牌"
+          - generic [ref=e222]:
+            - generic [ref=e223]: • 玩家 0 打出了 Lillie's Determination
+            - generic [ref=e224]: • 玩家 0 将 Drakloak 从 HAND 移动到 DECK
+            - generic [ref=e225]: • 玩家 0 将 Drakloak 从 HAND 移动到 DECK
+            - generic [ref=e226]: • 玩家 0 将 Meowth ex 从 HAND 移动到 DECK
+            - generic [ref=e227]: • SHUFFLE
+            - generic [ref=e228]: • 玩家 0 抽到了 Boss’s Orders
+        - generic [ref=e229]:
+          - generic [ref=e230]: 步骤 24 · 回合 2 · 玩家 0
+          - generic [ref=e231]: "手牌快照: Boss’s Orders, Night Stretcher, Crispin, Team Rocket's Watchtower, Crispin, Boss’s Orders, Fezandipiti ex, Buddy-Buddy Poffin 执行动作: 打出 手牌"
+          - generic [ref=e233]: • 玩家 0 打出了 Buddy-Buddy Poffin
+        - generic [ref=e234]:
+          - generic [ref=e235]: 步骤 25 · 回合 2 · 玩家 0
+          - generic [ref=e236]: "手牌快照: Boss’s Orders, Night Stretcher, Crispin, Team Rocket's Watchtower, Crispin, Boss’s Orders, Fezandipiti ex 执行动作: 选择 Budew；选择 Dreepy"
+          - generic [ref=e237]:
+            - generic [ref=e238]: • 玩家 0 将 Budew 从 DECK 移动到 BENCH
+            - generic [ref=e239]: • 玩家 0 将 Dreepy 从 DECK 移动到 BENCH
+            - generic [ref=e240]: • SHUFFLE
+        - generic [ref=e241]:
+          - generic [ref=e242]: 步骤 26 · 回合 2 · 玩家 0
+          - generic [ref=e243]: "手牌快照: Boss’s Orders, Night Stretcher, Crispin, Team Rocket's Watchtower, Crispin, Boss’s Orders, Fezandipiti ex 执行动作: RETREAT"
+          - generic [ref=e245]: • 无可读事件
+        - generic [ref=e246]:
+          - generic [ref=e247]: 步骤 27 · 回合 2 · 玩家 0
+          - generic [ref=e248]: "手牌快照: Boss’s Orders, Night Stretcher, Crispin, Team Rocket's Watchtower, Crispin, Boss’s Orders, Fezandipiti ex 执行动作: 选择 Budew"
+          - generic [ref=e250]: • SWITCH
+        - generic [ref=e251]:
+          - generic [ref=e252]: 步骤 28 · 回合 2 · 玩家 0
+          - generic [ref=e253]: "手牌快照: Boss’s Orders, Night Stretcher, Crispin, Team Rocket's Watchtower, Crispin, Boss’s Orders, Fezandipiti ex 执行动作: 使用招式 Itchy Pollen"
+          - generic [ref=e254]:
+            - generic [ref=e255]: • TURN_END
+            - generic [ref=e256]: • TURN_START
+            - generic [ref=e257]: • DRAW_REVERSE
+            - generic [ref=e258]: • 玩家 0 打出了 Latias ex
+            - generic [ref=e259]: • 玩家 0 打出了 Crushing Hammer
+            - generic [ref=e260]: • COIN
+        - generic [ref=e261]:
+          - generic [ref=e262]: 步骤 29 · 回合 3 · 玩家 1
+          - generic [ref=e263]: "手牌快照: Mega Lucario ex, Mega Lucario ex, Lillie's Determination, Premium Power Pro, Hariyama, Solrock 执行动作: 进化为 卡牌"
+          - generic [ref=e265]: • EVOLVE
+        - generic [ref=e266]:
+          - generic [ref=e267]: 步骤 30 · 回合 3 · 玩家 1
+          - generic [ref=e268]: "手牌快照: Mega Lucario ex, Lillie's Determination, Premium Power Pro, Hariyama, Solrock 执行动作: 进化为 卡牌"
+          - generic [ref=e270]: • EVOLVE
+        - generic [ref=e271]:
+          - generic [ref=e272]: 步骤 31 · 回合 3 · 玩家 1
+          - generic [ref=e273]: "手牌快照: Mega Lucario ex, Lillie's Determination, Premium Power Pro, Solrock 执行动作: YES"
+          - generic [ref=e275]: • 无可读事件
+        - generic [ref=e276]:
+          - generic [ref=e277]: 步骤 32 · 回合 3 · 玩家 1
+          - generic [ref=e278]: "手牌快照: Mega Lucario ex, Lillie's Determination, Premium Power Pro, Solrock 执行动作: 选择 Latias ex"
+          - generic [ref=e280]: • SWITCH
+        - generic [ref=e281]:
+          - generic [ref=e282]: 步骤 33 · 回合 3 · 玩家 1
+          - generic [ref=e283]: "手牌快照: Mega Lucario ex, Lillie's Determination, Premium Power Pro, Solrock 执行动作: 打出 手牌"
+          - generic [ref=e284]:
+            - generic [ref=e285]: • 玩家 1 打出了 Lillie's Determination
+            - generic [ref=e286]: • 玩家 1 将 Mega Lucario ex 从 HAND 移动到 DECK
+            - generic [ref=e287]: • 玩家 1 将 Premium Power Pro 从 HAND 移动到 DECK
+            - generic [ref=e288]: • 玩家 1 将 Solrock 从 HAND 移动到 DECK
+            - generic [ref=e289]: • SHUFFLE
+            - generic [ref=e290]: • 玩家 1 抽到了 Carmine
+        - generic [ref=e291]:
+          - generic [ref=e292]: 步骤 34 · 回合 3 · 玩家 1
+          - generic [ref=e293]: "手牌快照: Carmine, Dusk Ball, Basic {F} Energy, Solrock, Lillie's Determination, Mega Lucario ex, Premium Power Pro, Basic {F} Energy 执行动作: ABILITY"
+          - generic [ref=e295]: • 无可读事件
+        - generic [ref=e296]:
+          - generic [ref=e297]: 步骤 35 · 回合 3 · 玩家 1
+          - generic [ref=e298]: "手牌快照: Carmine, Dusk Ball, Basic {F} Energy, Solrock, Lillie's Determination, Mega Lucario ex, Premium Power Pro, Basic {F} Energy 执行动作: 选择 Basic {F} Energy"
+          - generic [ref=e299]:
+            - generic [ref=e300]: "• 玩家 1 将 Basic {F} Energy 从 HAND 移动到 DISCARD"
+            - generic [ref=e301]: • 玩家 1 抽到了 Riolu
+            - generic [ref=e302]: • 玩家 1 抽到了 Fighting Gong
+            - generic [ref=e303]: • 玩家 1 抽到了 Fighting Gong
+        - generic [ref=e304]:
+          - generic [ref=e305]: 步骤 36 · 回合 3 · 玩家 1
+          - generic [ref=e306]: "手牌快照: Carmine, Dusk Ball, Solrock, Lillie's Determination, Mega Lucario ex, Premium Power Pro, Basic {F} Energy, Riolu, Fighting Gong, Fighting Gong 执行动作: 打出 手牌"
+          - generic [ref=e308]: • 玩家 1 打出了 Riolu
+        - generic [ref=e309]:
+          - generic [ref=e310]: 步骤 37 · 回合 3 · 玩家 1
+          - generic [ref=e311]: "手牌快照: Carmine, Dusk Ball, Solrock, Lillie's Determination, Mega Lucario ex, Premium Power Pro, Basic {F} Energy, Fighting Gong, Fighting Gong 执行动作: 附加 卡牌"
+          - generic [ref=e313]: "• 玩家 1 将 Basic {F} Energy 附加到 Solrock"
+        - generic [ref=e314]:
+          - generic [ref=e315]: 步骤 38 · 回合 3 · 玩家 1
+          - generic [ref=e316]: "手牌快照: Carmine, Dusk Ball, Solrock, Lillie's Determination, Mega Lucario ex, Premium Power Pro, Fighting Gong, Fighting Gong 执行动作: RETREAT"
+          - generic [ref=e318]: • 无可读事件
+        - generic [ref=e319]:
+          - generic [ref=e320]: 步骤 39 · 回合 3 · 玩家 1
+          - generic [ref=e321]: "手牌快照: Carmine, Dusk Ball, Solrock, Lillie's Determination, Mega Lucario ex, Premium Power Pro, Fighting Gong, Fighting Gong 执行动作: ENERGY"
+          - generic [ref=e323]: "• 玩家 1 将 Basic {F} Energy 从 ENERGY 移动到 DISCARD"
+        - generic [ref=e324]:
+          - generic [ref=e325]: 步骤 40 · 回合 3 · 玩家 1
+          - generic [ref=e326]: "手牌快照: Carmine, Dusk Ball, Solrock, Lillie's Determination, Mega Lucario ex, Premium Power Pro, Fighting Gong, Fighting Gong 执行动作: 选择 Mega Lucario ex"
+          - generic [ref=e328]: • SWITCH
+        - generic [ref=e329]:
+          - generic [ref=e330]: 步骤 41 · 回合 3 · 玩家 1
+          - generic [ref=e331]: "手牌快照: Carmine, Dusk Ball, Solrock, Lillie's Determination, Mega Lucario ex, Premium Power Pro, Fighting Gong, Fighting Gong 执行动作: 使用招式 Aura Jab"
+          - generic [ref=e332]:
+            - generic [ref=e333]: • 玩家 1 使用了招式 Aura Jab
+            - generic [ref=e334]: • Latias ex 的 HP 变化了 -100
+        - generic [ref=e335]:
+          - generic [ref=e336]: 步骤 42 · 回合 3 · 玩家 1
+          - generic [ref=e337]: "手牌快照: Carmine, Dusk Ball, Solrock, Lillie's Determination, Mega Lucario ex, Premium Power Pro, Fighting Gong, Fighting Gong 执行动作: 选择 Basic {F} Energy；选择 Basic {F} Energy；选择 Basic {F} Energy"
+          - generic [ref=e339]: • 无可读事件
+        - generic [ref=e340]:
+          - generic [ref=e341]: 步骤 43 · 回合 3 · 玩家 1
+          - generic [ref=e342]: "手牌快照: Carmine, Dusk Ball, Solrock, Lillie's Determination, Mega Lucario ex, Premium Power Pro, Fighting Gong, Fighting Gong 执行动作: 选择 Hariyama"
+          - generic [ref=e344]: "• 玩家 1 将 Basic {F} Energy 附加到 Hariyama"
+        - generic [ref=e345]:
+          - generic [ref=e346]: 步骤 44 · 回合 3 · 玩家 1
+          - generic [ref=e347]: "手牌快照: Carmine, Dusk Ball, Solrock, Lillie's Determination, Mega Lucario ex, Premium Power Pro, Fighting Gong, Fighting Gong 执行动作: 选择 Hariyama"
+          - generic [ref=e349]: "• 玩家 1 将 Basic {F} Energy 附加到 Hariyama"
+        - generic [ref=e350]:
+          - generic [ref=e351]: 步骤 45 · 回合 3 · 玩家 1
+          - generic [ref=e352]: "手牌快照: Carmine, Dusk Ball, Solrock, Lillie's Determination, Mega Lucario ex, Premium Power Pro, Fighting Gong, Fighting Gong 执行动作: 选择 Hariyama"
+          - generic [ref=e353]:
+            - generic [ref=e354]: • 玩家 0 使用了招式 Itchy Pollen
+            - generic [ref=e355]: • Solrock 的 HP 变化了 -20
+            - generic [ref=e356]: • TURN_END
+            - generic [ref=e357]: • TURN_START
+            - generic [ref=e358]: • DRAW_REVERSE
+            - generic [ref=e359]: • EVOLVE
+        - generic [ref=e360]:
+          - generic [ref=e361]: 步骤 46 · 回合 4 · 玩家 0
+          - generic [ref=e362]: "手牌快照: Boss’s Orders, Night Stretcher, Crispin, Team Rocket's Watchtower, Crispin, Boss’s Orders, Fezandipiti ex, Ultra Ball 执行动作: 打出 手牌"
+          - generic [ref=e364]: • 玩家 0 打出了 Ultra Ball
+        - generic [ref=e365]:
+          - generic [ref=e366]: 步骤 47 · 回合 4 · 玩家 0
+          - generic [ref=e367]: "手牌快照: Boss’s Orders, Night Stretcher, Crispin, Team Rocket's Watchtower, Crispin, Boss’s Orders, Fezandipiti ex 执行动作: 选择 Boss’s Orders；选择 Crispin"
+          - generic [ref=e368]:
+            - generic [ref=e369]: • 玩家 0 将 Boss’s Orders 从 HAND 移动到 DISCARD
+            - generic [ref=e370]: • 玩家 0 将 Crispin 从 HAND 移动到 DISCARD
+        - generic [ref=e371]:
+          - generic [ref=e372]: 步骤 48 · 回合 4 · 玩家 0
+          - generic [ref=e373]: "手牌快照: Night Stretcher, Team Rocket's Watchtower, Crispin, Boss’s Orders, Fezandipiti ex 执行动作: 选择 Meowth ex"
+          - generic [ref=e374]:
+            - generic [ref=e375]: • 玩家 0 将 Meowth ex 从 DECK 移动到 HAND
+            - generic [ref=e376]: • SHUFFLE
+        - generic [ref=e377]:
+          - generic [ref=e378]: 步骤 49 · 回合 4 · 玩家 0
+          - generic [ref=e379]: "手牌快照: Night Stretcher, Team Rocket's Watchtower, Crispin, Boss’s Orders, Fezandipiti ex, Meowth ex 执行动作: 打出 手牌"
+          - generic [ref=e381]: • 玩家 0 打出了 Crispin
+        - generic [ref=e382]:
+          - generic [ref=e383]: 步骤 50 · 回合 4 · 玩家 0
+          - generic [ref=e384]: "手牌快照: Night Stretcher, Team Rocket's Watchtower, Boss’s Orders, Fezandipiti ex, Meowth ex 执行动作: 选择 Basic {P} Energy"
+          - generic [ref=e386]: "• 玩家 0 将 Basic {P} Energy 从 DECK 移动到 HAND"
+        - generic [ref=e387]:
+          - generic [ref=e388]: 步骤 51 · 回合 4 · 玩家 0
+          - generic [ref=e389]: "手牌快照: Night Stretcher, Team Rocket's Watchtower, Boss’s Orders, Fezandipiti ex, Meowth ex, Basic {P} Energy 执行动作: 选择 Basic {R} Energy"
+          - generic [ref=e391]: • 无可读事件
+        - generic [ref=e392]:
+          - generic [ref=e393]: 步骤 52 · 回合 4 · 玩家 0
+          - generic [ref=e394]: "手牌快照: Night Stretcher, Team Rocket's Watchtower, Boss’s Orders, Fezandipiti ex, Meowth ex, Basic {P} Energy 执行动作: 选择 Dreepy"
+          - generic [ref=e395]:
+            - generic [ref=e396]: "• 玩家 0 将 Basic {R} Energy 附加到 Dreepy"
+            - generic [ref=e397]: • SHUFFLE
+        - generic [ref=e398]:
+          - generic [ref=e399]: 步骤 53 · 回合 4 · 玩家 0
+          - generic [ref=e400]: "手牌快照: Night Stretcher, Team Rocket's Watchtower, Boss’s Orders, Fezandipiti ex, Meowth ex, Basic {P} Energy 执行动作: 附加 卡牌"
+          - generic [ref=e402]: "• 玩家 0 将 Basic {P} Energy 附加到 Dreepy"
+        - generic [ref=e403]:
+          - generic [ref=e404]: 步骤 54 · 回合 4 · 玩家 0
+          - generic [ref=e405]: "手牌快照: Night Stretcher, Team Rocket's Watchtower, Boss’s Orders, Fezandipiti ex, Meowth ex 执行动作: RETREAT"
+          - generic [ref=e407]: • 无可读事件
+        - generic [ref=e408]:
+          - generic [ref=e409]: 步骤 55 · 回合 4 · 玩家 0
+          - generic [ref=e410]: "手牌快照: Night Stretcher, Team Rocket's Watchtower, Boss’s Orders, Fezandipiti ex, Meowth ex 执行动作: 选择 Budew"
+          - generic [ref=e412]: • SWITCH
+        - generic [ref=e413]:
+          - generic [ref=e414]: 步骤 56 · 回合 4 · 玩家 0
+          - generic [ref=e415]: "手牌快照: Night Stretcher, Team Rocket's Watchtower, Boss’s Orders, Fezandipiti ex, Meowth ex 执行动作: 使用招式 Itchy Pollen"
+          - generic [ref=e416]:
+            - generic [ref=e417]: "• 玩家 1 将 Basic {F} Energy 附加到 Hariyama"
+            - generic [ref=e418]: • TURN_END
+            - generic [ref=e419]: • TURN_START
+            - generic [ref=e420]: • DRAW_REVERSE
+            - generic [ref=e421]: • 玩家 0 打出了 Ultra Ball
+            - generic [ref=e422]: • 玩家 0 将 Boss’s Orders 从 HAND 移动到 DISCARD
+        - generic [ref=e423]:
+          - generic [ref=e424]: 步骤 57 · 回合 5 · 玩家 1
+          - generic [ref=e425]: "手牌快照: Carmine, Dusk Ball, Solrock, Lillie's Determination, Mega Lucario ex, Premium Power Pro, Fighting Gong, Fighting Gong, Premium Power Pro 执行动作: 进化为 卡牌"
+          - generic [ref=e427]: • EVOLVE
+        - generic [ref=e428]:
+          - generic [ref=e429]: 步骤 58 · 回合 5 · 玩家 1
+          - generic [ref=e430]: "手牌快照: Carmine, Dusk Ball, Solrock, Lillie's Determination, Premium Power Pro, Fighting Gong, Fighting Gong, Premium Power Pro 执行动作: 打出 手牌"
+          - generic [ref=e431]:
+            - generic [ref=e432]: • 玩家 1 打出了 Lillie's Determination
+            - generic [ref=e433]: • 玩家 1 将 Carmine 从 HAND 移动到 DECK
+            - generic [ref=e434]: • 玩家 1 将 Dusk Ball 从 HAND 移动到 DECK
+            - generic [ref=e435]: • 玩家 1 将 Solrock 从 HAND 移动到 DECK
+            - generic [ref=e436]: • 玩家 1 将 Premium Power Pro 从 HAND 移动到 DECK
+            - generic [ref=e437]: • 玩家 1 将 Fighting Gong 从 HAND 移动到 DECK
+        - generic [ref=e438]:
+          - generic [ref=e439]: 步骤 59 · 回合 5 · 玩家 1
+          - generic [ref=e440]: "手牌快照: Fighting Gong, Hero’s Cape, Gravity Mountain, Solrock, Carmine, Lillie's Determination, Basic {F} Energy, Basic {F} Energy 执行动作: ABILITY"
+          - generic [ref=e442]: • 无可读事件
+        - generic [ref=e443]:
+          - generic [ref=e444]: 步骤 60 · 回合 5 · 玩家 1
+          - generic [ref=e445]: "手牌快照: Fighting Gong, Hero’s Cape, Gravity Mountain, Solrock, Carmine, Lillie's Determination, Basic {F} Energy, Basic {F} Energy 执行动作: 选择 Basic {F} Energy"
+          - generic [ref=e446]:
+            - generic [ref=e447]: "• 玩家 1 将 Basic {F} Energy 从 HAND 移动到 DISCARD"
+            - generic [ref=e448]: • 玩家 1 抽到了 Lillie's Determination
+            - generic [ref=e449]: • 玩家 1 抽到了 Premium Power Pro
+            - generic [ref=e450]: "• 玩家 1 抽到了 Basic {F} Energy"
+        - generic [ref=e451]:
+          - generic [ref=e452]: 步骤 61 · 回合 5 · 玩家 1
+          - generic [ref=e453]: "手牌快照: Fighting Gong, Hero’s Cape, Gravity Mountain, Solrock, Carmine, Lillie's Determination, Basic {F} Energy, Lillie's Determination, Premium Power Pro, Basic {F} Energy 执行动作: 附加 卡牌"
+          - generic [ref=e455]: "• 玩家 1 将 Basic {F} Energy 附加到 Mega Lucario ex"
+        - generic [ref=e456]:
+          - generic [ref=e457]: 步骤 62 · 回合 5 · 玩家 1
+          - generic [ref=e458]: "手牌快照: Fighting Gong, Hero’s Cape, Gravity Mountain, Solrock, Carmine, Lillie's Determination, Lillie's Determination, Premium Power Pro, Basic {F} Energy 执行动作: 附加 卡牌"
+          - generic [ref=e460]: • 玩家 1 将 Hero’s Cape 附加到 Mega Lucario ex
+        - generic [ref=e461]:
+          - generic [ref=e462]: 步骤 63 · 回合 5 · 玩家 1
+          - generic [ref=e463]: "手牌快照: Fighting Gong, Gravity Mountain, Solrock, Carmine, Lillie's Determination, Lillie's Determination, Premium Power Pro, Basic {F} Energy 执行动作: 使用招式 Aura Jab"
+          - generic [ref=e464]:
+            - generic [ref=e465]: • 玩家 1 使用了招式 Aura Jab
+            - generic [ref=e466]: • Budew 的 HP 变化了 -130
+        - generic [ref=e467]:
+          - generic [ref=e468]: 步骤 64 · 回合 5 · 玩家 1
+          - generic [ref=e469]: "手牌快照: Fighting Gong, Gravity Mountain, Solrock, Carmine, Lillie's Determination, Lillie's Determination, Premium Power Pro, Basic {F} Energy 执行动作: 选择 Basic {F} Energy"
+          - generic [ref=e471]: • 无可读事件
+        - generic [ref=e472]:
+          - generic [ref=e473]: 步骤 65 · 回合 5 · 玩家 1
+          - generic [ref=e474]: "手牌快照: Fighting Gong, Gravity Mountain, Solrock, Carmine, Lillie's Determination, Lillie's Determination, Premium Power Pro, Basic {F} Energy 执行动作: 选择 Mega Lucario ex"
+          - generic [ref=e475]:
+            - generic [ref=e476]: "• 玩家 1 将 Basic {F} Energy 附加到 Mega Lucario ex"
+            - generic [ref=e477]: • 玩家 0 将 Budew 从 ACTIVE 移动到 DISCARD
+        - generic [ref=e478]:
+          - generic [ref=e479]: 步骤 66 · 回合 5 · 玩家 1
+          - generic [ref=e480]: "手牌快照: Fighting Gong, Gravity Mountain, Solrock, Carmine, Lillie's Determination, Lillie's Determination, Premium Power Pro, Basic {F} Energy 执行动作: 选择 卡牌"
+          - generic [ref=e481]:
+            - generic [ref=e482]: • 玩家 0 使用了招式 Itchy Pollen
+            - generic [ref=e483]: • Mega Lucario ex 的 HP 变化了 -10
+            - generic [ref=e484]: • TURN_END
+            - generic [ref=e485]: • TURN_START
+            - generic [ref=e486]: • DRAW_REVERSE
+            - generic [ref=e487]: • EVOLVE
+        - generic [ref=e488]:
+          - generic [ref=e489]: 步骤 67 · 回合 5 · 玩家 0
+          - generic [ref=e490]: "手牌快照: Night Stretcher, Team Rocket's Watchtower, Boss’s Orders, Fezandipiti ex, Meowth ex 执行动作: 选择 Dreepy"
+          - generic [ref=e491]:
+            - generic [ref=e492]: • 玩家 0 将 Dreepy 从 BENCH 移动到 ACTIVE
+            - generic [ref=e493]: • TURN_END
+            - generic [ref=e494]: • TURN_START
+            - generic [ref=e495]: • 玩家 0 抽到了 Rare Candy
+        - generic [ref=e496]:
+          - generic [ref=e497]: 步骤 68 · 回合 6 · 玩家 0
+          - generic [ref=e498]: "手牌快照: Night Stretcher, Team Rocket's Watchtower, Boss’s Orders, Fezandipiti ex, Meowth ex, Rare Candy 执行动作: 打出 手牌"
+          - generic [ref=e500]: • 玩家 0 打出了 Fezandipiti ex
+        - generic [ref=e501]:
+          - generic [ref=e502]: 步骤 69 · 回合 6 · 玩家 0
+          - generic [ref=e503]: "手牌快照: Night Stretcher, Team Rocket's Watchtower, Boss’s Orders, Meowth ex, Rare Candy 执行动作: 打出 手牌"
+          - generic [ref=e505]: • 玩家 0 打出了 Meowth ex
+        - generic [ref=e506]:
+          - generic [ref=e507]: 步骤 70 · 回合 6 · 玩家 0
+          - generic [ref=e508]: "手牌快照: Night Stretcher, Team Rocket's Watchtower, Boss’s Orders, Rare Candy 执行动作: YES"
+          - generic [ref=e510]: • 无可读事件
+        - generic [ref=e511]:
+          - generic [ref=e512]: 步骤 71 · 回合 6 · 玩家 0
+          - generic [ref=e513]: "手牌快照: Night Stretcher, Team Rocket's Watchtower, Boss’s Orders, Rare Candy 执行动作: 选择 Lillie's Determination"
+          - generic [ref=e514]:
+            - generic [ref=e515]: • 玩家 0 将 Lillie's Determination 从 DECK 移动到 HAND
+            - generic [ref=e516]: • SHUFFLE
+        - generic [ref=e517]:
+          - generic [ref=e518]: 步骤 72 · 回合 6 · 玩家 0
+          - generic [ref=e519]: "手牌快照: Night Stretcher, Team Rocket's Watchtower, Boss’s Orders, Rare Candy, Lillie's Determination 执行动作: 打出 手牌"
+          - generic [ref=e521]: • 玩家 0 打出了 Night Stretcher
+        - generic [ref=e522]:
+          - generic [ref=e523]: 步骤 73 · 回合 6 · 玩家 0
+          - generic [ref=e524]: "手牌快照: Team Rocket's Watchtower, Boss’s Orders, Rare Candy, Lillie's Determination 执行动作: 选择 Budew"
+          - generic [ref=e526]: • 玩家 0 将 Budew 从 DISCARD 移动到 HAND
+        - generic [ref=e527]:
+          - generic [ref=e528]: 步骤 74 · 回合 6 · 玩家 0
+          - generic [ref=e529]: "手牌快照: Team Rocket's Watchtower, Boss’s Orders, Rare Candy, Lillie's Determination, Budew 执行动作: 打出 手牌"
+          - generic [ref=e531]: • 玩家 0 打出了 Budew
+        - generic [ref=e532]:
+          - generic [ref=e533]: 步骤 75 · 回合 6 · 玩家 0
+          - generic [ref=e534]: "手牌快照: Team Rocket's Watchtower, Boss’s Orders, Rare Candy, Lillie's Determination 执行动作: ABILITY"
+          - generic [ref=e535]:
+            - generic [ref=e536]: • 玩家 0 抽到了 Poké Pad
+            - generic [ref=e537]: • 玩家 0 抽到了 Boss’s Orders
+            - generic [ref=e538]: • 玩家 0 抽到了 Dreepy
+        - generic [ref=e539]:
+          - generic [ref=e540]: 步骤 76 · 回合 6 · 玩家 0
+          - generic [ref=e541]: "手牌快照: Team Rocket's Watchtower, Boss’s Orders, Rare Candy, Lillie's Determination, Poké Pad, Boss’s Orders, Dreepy 执行动作: 打出 手牌"
+          - generic [ref=e543]: • 玩家 0 打出了 Poké Pad
+        - generic [ref=e544]:
+          - generic [ref=e545]: 步骤 77 · 回合 6 · 玩家 0
+          - generic [ref=e546]: "手牌快照: Team Rocket's Watchtower, Boss’s Orders, Rare Candy, Lillie's Determination, Boss’s Orders, Dreepy 执行动作: 选择 Drakloak"
+          - generic [ref=e547]:
+            - generic [ref=e548]: • 玩家 0 将 Drakloak 从 DECK 移动到 HAND
+            - generic [ref=e549]: • SHUFFLE
+        - generic [ref=e550]:
+          - generic [ref=e551]: 步骤 78 · 回合 6 · 玩家 0
+          - generic [ref=e552]: "手牌快照: Team Rocket's Watchtower, Boss’s Orders, Rare Candy, Lillie's Determination, Boss’s Orders, Dreepy, Drakloak 执行动作: 进化为 卡牌"
+          - generic [ref=e554]: • EVOLVE
+        - generic [ref=e555]:
+          - generic [ref=e556]: 步骤 79 · 回合 6 · 玩家 0
+          - generic [ref=e557]: "手牌快照: Team Rocket's Watchtower, Boss’s Orders, Rare Candy, Lillie's Determination, Boss’s Orders, Dreepy 执行动作: ABILITY"
+          - generic [ref=e558]:
+            - generic [ref=e559]: • 玩家 0 将 Dragapult ex 从 DECK 移动到 LOOKING
+            - generic [ref=e560]: "• 玩家 0 将 Basic {P} Energy 从 DECK 移动到 LOOKING"
+        - generic [ref=e561]:
+          - generic [ref=e562]: 步骤 80 · 回合 6 · 玩家 0
+          - generic [ref=e563]: "手牌快照: Team Rocket's Watchtower, Boss’s Orders, Rare Candy, Lillie's Determination, Boss’s Orders, Dreepy 执行动作: 选择 Dragapult ex"
+          - generic [ref=e564]:
+            - generic [ref=e565]: • 玩家 0 将 Dragapult ex 从 LOOKING 移动到 HAND
+            - generic [ref=e566]: "• 玩家 0 将 Basic {P} Energy 从 LOOKING 移动到 14"
+        - generic [ref=e567]:
+          - generic [ref=e568]: 步骤 81 · 回合 6 · 玩家 0
+          - generic [ref=e569]: "手牌快照: Team Rocket's Watchtower, Boss’s Orders, Rare Candy, Lillie's Determination, Boss’s Orders, Dreepy, Dragapult ex 执行动作: 打出 手牌"
+          - generic [ref=e571]: • 玩家 0 打出了 Rare Candy
+        - generic [ref=e572]:
+          - generic [ref=e573]: 步骤 82 · 回合 6 · 玩家 0
+          - generic [ref=e574]: "手牌快照: Team Rocket's Watchtower, Boss’s Orders, Lillie's Determination, Boss’s Orders, Dreepy, Dragapult ex 执行动作: 进化为 卡牌"
+          - generic [ref=e576]: • EVOLVE
+        - generic [ref=e577]:
+          - generic [ref=e578]: 步骤 83 · 回合 6 · 玩家 0
+          - generic [ref=e579]: "手牌快照: Team Rocket's Watchtower, Boss’s Orders, Lillie's Determination, Boss’s Orders, Dreepy 执行动作: 打出 手牌"
+          - generic [ref=e580]:
+            - generic [ref=e581]: • 玩家 0 打出了 Lillie's Determination
+            - generic [ref=e582]: • 玩家 0 将 Team Rocket's Watchtower 从 HAND 移动到 DECK
+            - generic [ref=e583]: • 玩家 0 将 Boss’s Orders 从 HAND 移动到 DECK
+            - generic [ref=e584]: • 玩家 0 将 Boss’s Orders 从 HAND 移动到 DECK
+            - generic [ref=e585]: • 玩家 0 将 Dreepy 从 HAND 移动到 DECK
+            - generic [ref=e586]: • SHUFFLE
+        - generic [ref=e587]:
+          - generic [ref=e588]: 步骤 84 · 回合 6 · 玩家 0
+          - generic [ref=e589]: "手牌快照: Unfair Stamp, Poké Pad, Crispin, Buddy-Buddy Poffin, Ultra Ball, Ultra Ball, Ultra Ball, Basic {P} Energy 执行动作: 打出 手牌"
+          - generic [ref=e591]: • 玩家 0 打出了 Poké Pad
+        - generic [ref=e592]:
+          - generic [ref=e593]: 步骤 85 · 回合 6 · 玩家 0
+          - generic [ref=e594]: "手牌快照: Unfair Stamp, Crispin, Buddy-Buddy Poffin, Ultra Ball, Ultra Ball, Ultra Ball, Basic {P} Energy 执行动作: 选择 Dreepy"
+          - generic [ref=e595]:
+            - generic [ref=e596]: • 玩家 0 将 Dreepy 从 DECK 移动到 HAND
+            - generic [ref=e597]: • SHUFFLE
+        - generic [ref=e598]:
+          - generic [ref=e599]: 步骤 86 · 回合 6 · 玩家 0
+          - generic [ref=e600]: "手牌快照: Unfair Stamp, Crispin, Buddy-Buddy Poffin, Ultra Ball, Ultra Ball, Ultra Ball, Basic {P} Energy, Dreepy 执行动作: 打出 手牌"
+          - generic [ref=e602]: • 玩家 0 打出了 Ultra Ball
+        - generic [ref=e603]:
+          - generic [ref=e604]: 步骤 87 · 回合 6 · 玩家 0
+          - generic [ref=e605]: "手牌快照: Unfair Stamp, Crispin, Buddy-Buddy Poffin, Ultra Ball, Ultra Ball, Basic {P} Energy, Dreepy 执行动作: 选择 Ultra Ball；选择 Buddy-Buddy Poffin"
+          - generic [ref=e606]:
+            - generic [ref=e607]: • 玩家 0 将 Ultra Ball 从 HAND 移动到 DISCARD
+            - generic [ref=e608]: • 玩家 0 将 Buddy-Buddy Poffin 从 HAND 移动到 DISCARD
+        - generic [ref=e609]:
+          - generic [ref=e610]: 步骤 88 · 回合 6 · 玩家 0
+          - generic [ref=e611]: "手牌快照: Unfair Stamp, Crispin, Ultra Ball, Basic {P} Energy, Dreepy 执行动作: 选择 Dreepy"
+          - generic [ref=e612]:
+            - generic [ref=e613]: • 玩家 0 将 Dreepy 从 DECK 移动到 HAND
+            - generic [ref=e614]: • SHUFFLE
+        - generic [ref=e615]:
+          - generic [ref=e616]: 步骤 89 · 回合 6 · 玩家 0
+          - generic [ref=e617]: "手牌快照: Unfair Stamp, Crispin, Ultra Ball, Basic {P} Energy, Dreepy, Dreepy 执行动作: 附加 卡牌"
+          - generic [ref=e619]: "• 玩家 0 将 Basic {P} Energy 附加到 Dragapult ex"
+        - generic [ref=e620]:
+          - generic [ref=e621]: 步骤 90 · 回合 6 · 玩家 0
+          - generic [ref=e622]: "手牌快照: Unfair Stamp, Crispin, Ultra Ball, Dreepy, Dreepy 执行动作: 打出 手牌"
+          - generic [ref=e623]:
+            - generic [ref=e624]: • 玩家 0 打出了 Unfair Stamp
+            - generic [ref=e625]: • 玩家 0 将 Crispin 从 HAND 移动到 DECK
+            - generic [ref=e626]: • 玩家 0 将 Ultra Ball 从 HAND 移动到 DECK
+            - generic [ref=e627]: • 玩家 0 将 Dreepy 从 HAND 移动到 DECK
+            - generic [ref=e628]: • 玩家 0 将 Dreepy 从 HAND 移动到 DECK
+            - generic [ref=e629]: • SHUFFLE
+        - generic [ref=e630]:
+          - generic [ref=e631]: 步骤 91 · 回合 6 · 玩家 0
+          - generic [ref=e632]: "手牌快照: Lillie's Determination, Basic {P} Energy, Dragapult ex, Brock’s Scouting, Team Rocket's Watchtower 执行动作: RETREAT"
+          - generic [ref=e634]: • 无可读事件
+        - generic [ref=e635]:
+          - generic [ref=e636]: 步骤 92 · 回合 6 · 玩家 0
+          - generic [ref=e637]: "手牌快照: Lillie's Determination, Basic {P} Energy, Dragapult ex, Brock’s Scouting, Team Rocket's Watchtower 执行动作: ENERGY"
+          - generic [ref=e639]: "• 玩家 0 将 Basic {R} Energy 从 ENERGY 移动到 DISCARD"
+        - generic [ref=e640]:
+          - generic [ref=e641]: 步骤 93 · 回合 6 · 玩家 0
+          - generic [ref=e642]: "手牌快照: Lillie's Determination, Basic {P} Energy, Dragapult ex, Brock’s Scouting, Team Rocket's Watchtower 执行动作: 选择 Dragapult ex"
+          - generic [ref=e644]: • SWITCH
+        - generic [ref=e645]:
+          - generic [ref=e646]: 步骤 94 · 回合 6 · 玩家 0
+          - generic [ref=e647]: "手牌快照: Lillie's Determination, Basic {P} Energy, Dragapult ex, Brock’s Scouting, Team Rocket's Watchtower 执行动作: 使用招式 Phantom Dive"
+          - generic [ref=e648]:
+            - generic [ref=e649]: • 玩家 0 使用了招式 Phantom Dive
+            - generic [ref=e650]: • Mega Lucario ex 的 HP 变化了 -200
+        - generic [ref=e651]:
+          - generic [ref=e652]: 步骤 95 · 回合 6 · 玩家 0
+          - generic [ref=e653]: "手牌快照: Lillie's Determination, Basic {P} Energy, Dragapult ex, Brock’s Scouting, Team Rocket's Watchtower 执行动作: 选择 Solrock"
+          - generic [ref=e655]: • Solrock 的 HP 变化了 -10
+        - generic [ref=e656]:
+          - generic [ref=e657]: 步骤 96 · 回合 6 · 玩家 0
+          - generic [ref=e658]: "手牌快照: Lillie's Determination, Basic {P} Energy, Dragapult ex, Brock’s Scouting, Team Rocket's Watchtower 执行动作: 选择 Solrock"
+          - generic [ref=e660]: • Solrock 的 HP 变化了 -10
+        - generic [ref=e661]:
+          - generic [ref=e662]: 步骤 97 · 回合 6 · 玩家 0
+          - generic [ref=e663]: "手牌快照: Lillie's Determination, Basic {P} Energy, Dragapult ex, Brock’s Scouting, Team Rocket's Watchtower 执行动作: 选择 Solrock"
+          - generic [ref=e665]: • Solrock 的 HP 变化了 -10
+        - generic [ref=e666]:
+          - generic [ref=e667]: 步骤 98 · 回合 6 · 玩家 0
+          - generic [ref=e668]: "手牌快照: Lillie's Determination, Basic {P} Energy, Dragapult ex, Brock’s Scouting, Team Rocket's Watchtower 执行动作: 选择 Solrock"
+          - generic [ref=e670]: • Solrock 的 HP 变化了 -10
+        - generic [ref=e671]:
+          - generic [ref=e672]: 步骤 99 · 回合 6 · 玩家 0
+          - generic [ref=e673]: "手牌快照: Lillie's Determination, Basic {P} Energy, Dragapult ex, Brock’s Scouting, Team Rocket's Watchtower 执行动作: 选择 Solrock"
+          - generic [ref=e675]: • Solrock 的 HP 变化了 -10
+        - generic [ref=e676]:
+          - generic [ref=e677]: 步骤 100 · 回合 6 · 玩家 0
+          - generic [ref=e678]: "手牌快照: Lillie's Determination, Basic {P} Energy, Dragapult ex, Brock’s Scouting, Team Rocket's Watchtower 执行动作: 选择 Solrock"
+          - generic [ref=e679]:
+            - generic [ref=e680]: • 玩家 1 将 Fighting Gong 从 PRIZE 移动到 HAND
+            - generic [ref=e681]: • 玩家 0 将 Dreepy 从 BENCH 移动到 ACTIVE
+            - generic [ref=e682]: • TURN_END
+            - generic [ref=e683]: • TURN_START
+            - generic [ref=e684]: • DRAW_REVERSE
+            - generic [ref=e685]: • 玩家 0 打出了 Fezandipiti ex
+        - generic [ref=e686]:
+          - generic [ref=e687]: 步骤 101 · 回合 7 · 玩家 1
+          - generic [ref=e688]: "手牌快照: Basic {F} Energy, Premium Power Pro, Carmine 执行动作: ABILITY"
+          - generic [ref=e690]: • 无可读事件
+        - generic [ref=e691]:
+          - generic [ref=e692]: 步骤 102 · 回合 7 · 玩家 1
+          - generic [ref=e693]: "手牌快照: Basic {F} Energy, Premium Power Pro, Carmine 执行动作: 选择 Basic {F} Energy"
+          - generic [ref=e694]:
+            - generic [ref=e695]: "• 玩家 1 将 Basic {F} Energy 从 HAND 移动到 DISCARD"
+            - generic [ref=e696]: • 玩家 1 抽到了 Poké Pad
+            - generic [ref=e697]: • 玩家 1 抽到了 Solrock
+            - generic [ref=e698]: • 玩家 1 抽到了 Hariyama
+        - generic [ref=e699]:
+          - generic [ref=e700]: 步骤 103 · 回合 7 · 玩家 1
+          - generic [ref=e701]: "手牌快照: Premium Power Pro, Carmine, Poké Pad, Solrock, Hariyama 执行动作: 打出 手牌"
+          - generic [ref=e703]: • 玩家 1 打出了 Poké Pad
+        - generic [ref=e704]:
+          - generic [ref=e705]: 步骤 104 · 回合 7 · 玩家 1
+          - generic [ref=e706]: "手牌快照: Premium Power Pro, Carmine, Solrock, Hariyama 执行动作: 选择 Makuhita"
+          - generic [ref=e707]:
+            - generic [ref=e708]: • 玩家 1 将 Makuhita 从 DECK 移动到 HAND
+            - generic [ref=e709]: • SHUFFLE
+        - generic [ref=e710]:
+          - generic [ref=e711]: 步骤 105 · 回合 7 · 玩家 1
+          - generic [ref=e712]: "手牌快照: Premium Power Pro, Carmine, Solrock, Hariyama, Makuhita 执行动作: 打出 手牌"
+          - generic [ref=e714]: • 玩家 1 打出了 Makuhita
+        - generic [ref=e715]:
+          - generic [ref=e716]: 步骤 106 · 回合 7 · 玩家 1
+          - generic [ref=e717]: "手牌快照: Premium Power Pro, Carmine, Solrock, Hariyama 执行动作: 打出 手牌"
+          - generic [ref=e719]: • 玩家 1 打出了 Premium Power Pro
+        - generic [ref=e720]:
+          - generic [ref=e721]: 步骤 107 · 回合 7 · 玩家 1
+          - generic [ref=e722]: "手牌快照: Carmine, Solrock, Hariyama 执行动作: 打出 手牌"
+          - generic [ref=e723]:
+            - generic [ref=e724]: • 玩家 1 打出了 Carmine
+            - generic [ref=e725]: • 玩家 1 将 Solrock 从 HAND 移动到 DISCARD
+            - generic [ref=e726]: • 玩家 1 将 Hariyama 从 HAND 移动到 DISCARD
+            - generic [ref=e727]: • 玩家 1 抽到了 Lillie's Determination
+            - generic [ref=e728]: • 玩家 1 抽到了 Dusk Ball
+            - generic [ref=e729]: "• 玩家 1 抽到了 Basic {F} Energy"
+        - generic [ref=e730]:
+          - generic [ref=e731]: 步骤 108 · 回合 7 · 玩家 1
+          - generic [ref=e732]: "手牌快照: Lillie's Determination, Dusk Ball, Basic {F} Energy, Boss’s Orders, Switch 执行动作: 打出 手牌"
+          - generic [ref=e733]:
+            - generic [ref=e734]: • 玩家 1 打出了 Dusk Ball
+            - generic [ref=e735]: • 玩家 1 将 Lillie's Determination 从 DECK 移动到 LOOKING
+            - generic [ref=e736]: "• 玩家 1 将 Basic {F} Energy 从 DECK 移动到 LOOKING"
+            - generic [ref=e737]: • 玩家 1 将 Riolu 从 DECK 移动到 LOOKING
+            - generic [ref=e738]: • 玩家 1 将 Switch 从 DECK 移动到 LOOKING
+            - generic [ref=e739]: • 玩家 1 将 Dusk Ball 从 DECK 移动到 LOOKING
+        - generic [ref=e740]:
+          - generic [ref=e741]: 步骤 109 · 回合 7 · 玩家 1
+          - generic [ref=e742]: "手牌快照: Lillie's Determination, Basic {F} Energy, Boss’s Orders, Switch 执行动作: 选择 Riolu"
+          - generic [ref=e743]:
+            - generic [ref=e744]: • 玩家 1 将 Riolu 从 LOOKING 移动到 HAND
+            - generic [ref=e745]: • 玩家 1 将 Lillie's Determination 从 LOOKING 移动到 DECK
+            - generic [ref=e746]: "• 玩家 1 将 Basic {F} Energy 从 LOOKING 移动到 DECK"
+            - generic [ref=e747]: • 玩家 1 将 Switch 从 LOOKING 移动到 DECK
+            - generic [ref=e748]: • 玩家 1 将 Dusk Ball 从 LOOKING 移动到 DECK
+            - generic [ref=e749]: • 玩家 1 将 Solrock 从 LOOKING 移动到 DECK
+        - generic [ref=e750]:
+          - generic [ref=e751]: 步骤 110 · 回合 7 · 玩家 1
+          - generic [ref=e752]: "手牌快照: Lillie's Determination, Basic {F} Energy, Boss’s Orders, Switch, Riolu 执行动作: 附加 卡牌"
+          - generic [ref=e754]: "• 玩家 1 将 Basic {F} Energy 附加到 Mega Lucario ex"
+        - generic [ref=e755]:
+          - generic [ref=e756]: 步骤 111 · 回合 7 · 玩家 1
+          - generic [ref=e757]: "手牌快照: Lillie's Determination, Boss’s Orders, Switch, Riolu 执行动作: 使用招式 Mega Brave"
+          - generic [ref=e758]:
+            - generic [ref=e759]: • Solrock 的 HP 变化了 -10
+            - generic [ref=e760]: • TURN_END
+            - generic [ref=e761]: • TURN_START
+            - generic [ref=e762]: • DRAW_REVERSE
+            - generic [ref=e763]: "• 玩家 1 将 Basic {F} Energy 从 HAND 移动到 DISCARD"
+            - generic [ref=e764]: • DRAW_REVERSE
+        - generic [ref=e765]:
+          - generic [ref=e766]: 步骤 112 · 回合 8 · 玩家 0
+          - generic [ref=e767]: "手牌快照: Lillie's Determination, Basic {P} Energy, Dragapult ex, Brock’s Scouting, Team Rocket's Watchtower, Basic {R} Energy 执行动作: 进化为 卡牌"
+          - generic [ref=e769]: • EVOLVE
+        - generic [ref=e770]:
+          - generic [ref=e771]: 步骤 113 · 回合 8 · 玩家 0
+          - generic [ref=e772]: "手牌快照: Lillie's Determination, Basic {P} Energy, Brock’s Scouting, Team Rocket's Watchtower, Basic {R} Energy 执行动作: 附加 卡牌"
+          - generic [ref=e774]: "• 玩家 0 将 Basic {R} Energy 附加到 Dragapult ex"
+        - generic [ref=e775]:
+          - generic [ref=e776]: 步骤 114 · 回合 8 · 玩家 0
+          - generic [ref=e777]: "手牌快照: Lillie's Determination, Basic {P} Energy, Brock’s Scouting, Team Rocket's Watchtower 执行动作: 打出 手牌"
+          - generic [ref=e778]:
+            - generic [ref=e779]: • 玩家 0 打出了 Lillie's Determination
+            - generic [ref=e780]: "• 玩家 0 将 Basic {P} Energy 从 HAND 移动到 DECK"
+            - generic [ref=e781]: • 玩家 0 将 Brock’s Scouting 从 HAND 移动到 DECK
+            - generic [ref=e782]: • 玩家 0 将 Team Rocket's Watchtower 从 HAND 移动到 DECK
+            - generic [ref=e783]: • SHUFFLE
+            - generic [ref=e784]: • 玩家 0 抽到了 Night Stretcher
+        - generic [ref=e785]:
+          - generic [ref=e786]: 步骤 115 · 回合 8 · 玩家 0
+          - generic [ref=e787]: "手牌快照: Night Stretcher, Budew, Brock’s Scouting, Basic {P} Energy, Boss’s Orders, Crushing Hammer, Crispin, Crispin 执行动作: 打出 手牌"
+          - generic [ref=e788]:
+            - generic [ref=e789]: • 玩家 0 打出了 Crushing Hammer
+            - generic [ref=e790]: • COIN
+        - generic [ref=e791]:
+          - generic [ref=e792]: 步骤 116 · 回合 8 · 玩家 0
+          - generic [ref=e793]: "手牌快照: Night Stretcher, Budew, Brock’s Scouting, Basic {P} Energy, Boss’s Orders, Crispin, Crispin 执行动作: 使用招式 Phantom Dive"
+          - generic [ref=e794]:
+            - generic [ref=e795]: • 玩家 0 使用了招式 Phantom Dive
+            - generic [ref=e796]: • Mega Lucario ex 的 HP 变化了 -200
+        - generic [ref=e797]:
+          - generic [ref=e798]: 步骤 117 · 回合 8 · 玩家 0
+          - generic [ref=e799]: "手牌快照: Night Stretcher, Budew, Brock’s Scouting, Basic {P} Energy, Boss’s Orders, Crispin, Crispin 执行动作: 选择 Solrock"
+          - generic [ref=e801]: • Solrock 的 HP 变化了 -10
+        - generic [ref=e802]:
+          - generic [ref=e803]: 步骤 118 · 回合 8 · 玩家 0
+          - generic [ref=e804]: "手牌快照: Night Stretcher, Budew, Brock’s Scouting, Basic {P} Energy, Boss’s Orders, Crispin, Crispin 执行动作: 选择 Solrock"
+          - generic [ref=e806]: • Solrock 的 HP 变化了 -10
+        - generic [ref=e807]:
+          - generic [ref=e808]: 步骤 119 · 回合 8 · 玩家 0
+          - generic [ref=e809]: "手牌快照: Night Stretcher, Budew, Brock’s Scouting, Basic {P} Energy, Boss’s Orders, Crispin, Crispin 执行动作: 选择 Makuhita"
+          - generic [ref=e811]: • Makuhita 的 HP 变化了 -10
+        - generic [ref=e812]:
+          - generic [ref=e813]: 步骤 120 · 回合 8 · 玩家 0
+          - generic [ref=e814]: "手牌快照: Night Stretcher, Budew, Brock’s Scouting, Basic {P} Energy, Boss’s Orders, Crispin, Crispin 执行动作: 选择 Makuhita"
+          - generic [ref=e816]: • Makuhita 的 HP 变化了 -10
+        - generic [ref=e817]:
+          - generic [ref=e818]: 步骤 121 · 回合 8 · 玩家 0
+          - generic [ref=e819]: "手牌快照: Night Stretcher, Budew, Brock’s Scouting, Basic {P} Energy, Boss’s Orders, Crispin, Crispin 执行动作: 选择 Makuhita"
+          - generic [ref=e821]: • Makuhita 的 HP 变化了 -10
+        - generic [ref=e822]:
+          - generic [ref=e823]: 步骤 122 · 回合 8 · 玩家 0
+          - generic [ref=e824]: "手牌快照: Night Stretcher, Budew, Brock’s Scouting, Basic {P} Energy, Boss’s Orders, Crispin, Crispin 执行动作: 选择 Makuhita"
+          - generic [ref=e825]:
+            - generic [ref=e826]: • 玩家 1 使用了招式 Mega Brave
+            - generic [ref=e827]: • Dragapult ex 的 HP 变化了 -300
+            - generic [ref=e828]: • TURN_END
+            - generic [ref=e829]: • TURN_START
+            - generic [ref=e830]: • DRAW_REVERSE
+            - generic [ref=e831]: • EVOLVE
+        - generic [ref=e832]:
+          - generic [ref=e833]: 步骤 123 · 回合 9 · 玩家 1
+          - generic [ref=e834]: "手牌快照: Lillie's Determination, Boss’s Orders, Switch, Riolu, Gravity Mountain 执行动作: 打出 手牌"
+          - generic [ref=e835]:
+            - generic [ref=e836]: • 玩家 1 打出了 Lillie's Determination
+            - generic [ref=e837]: • 玩家 1 将 Boss’s Orders 从 HAND 移动到 DECK
+            - generic [ref=e838]: • 玩家 1 将 Switch 从 HAND 移动到 DECK
+            - generic [ref=e839]: • 玩家 1 将 Riolu 从 HAND 移动到 DECK
+            - generic [ref=e840]: • 玩家 1 将 Gravity Mountain 从 HAND 移动到 DECK
+            - generic [ref=e841]: • SHUFFLE
+        - generic [ref=e842]:
+          - generic [ref=e843]: 步骤 124 · 回合 9 · 玩家 1
+          - generic [ref=e844]: "手牌快照: Lunatone, Basic {F} Energy, Fighting Gong, Basic {F} Energy, Boss’s Orders, Premium Power Pro 执行动作: ABILITY"
+          - generic [ref=e846]: • 无可读事件
+        - generic [ref=e847]:
+          - generic [ref=e848]: 步骤 125 · 回合 9 · 玩家 1
+          - generic [ref=e849]: "手牌快照: Lunatone, Basic {F} Energy, Fighting Gong, Basic {F} Energy, Boss’s Orders, Premium Power Pro 执行动作: 选择 Basic {F} Energy"
+          - generic [ref=e850]:
+            - generic [ref=e851]: "• 玩家 1 将 Basic {F} Energy 从 HAND 移动到 DISCARD"
+            - generic [ref=e852]: "• 玩家 1 抽到了 Basic {F} Energy"
+            - generic [ref=e853]: • 玩家 1 抽到了 Switch
+            - generic [ref=e854]: • 玩家 1 抽到了 Lillie's Determination
+        - generic [ref=e855]:
+          - generic [ref=e856]: 步骤 126 · 回合 9 · 玩家 1
+          - generic [ref=e857]: "手牌快照: Lunatone, Fighting Gong, Basic {F} Energy, Boss’s Orders, Premium Power Pro, Basic {F} Energy, Switch, Lillie's Determination 执行动作: 打出 手牌"
+          - generic [ref=e859]: • 玩家 1 打出了 Fighting Gong
+        - generic [ref=e860]:
+          - generic [ref=e861]: 步骤 127 · 回合 9 · 玩家 1
+          - generic [ref=e862]: "手牌快照: Lunatone, Basic {F} Energy, Boss’s Orders, Premium Power Pro, Basic {F} Energy, Switch, Lillie's Determination 执行动作: 选择 Riolu"
+          - generic [ref=e863]:
+            - generic [ref=e864]: • 玩家 1 将 Riolu 从 DECK 移动到 HAND
+            - generic [ref=e865]: • SHUFFLE
+        - generic [ref=e866]:
+          - generic [ref=e867]: 步骤 128 · 回合 9 · 玩家 1
+          - generic [ref=e868]: "手牌快照: Lunatone, Basic {F} Energy, Boss’s Orders, Premium Power Pro, Basic {F} Energy, Switch, Lillie's Determination, Riolu 执行动作: 附加 卡牌"
+          - generic [ref=e870]: "• 玩家 1 将 Basic {F} Energy 附加到 Makuhita"
+        - generic [ref=e871]:
+          - generic [ref=e872]: 步骤 129 · 回合 9 · 玩家 1
+          - generic [ref=e873]: "手牌快照: Lunatone, Boss’s Orders, Premium Power Pro, Basic {F} Energy, Switch, Lillie's Determination, Riolu 执行动作: 使用招式 Aura Jab"
+          - generic [ref=e874]:
+            - generic [ref=e875]: • 玩家 1 使用了招式 Aura Jab
+            - generic [ref=e876]: • Dragapult ex 的 HP 变化了 -130
+        - generic [ref=e877]:
+          - generic [ref=e878]: 步骤 130 · 回合 9 · 玩家 1
+          - generic [ref=e879]: "手牌快照: Lunatone, Boss’s Orders, Premium Power Pro, Basic {F} Energy, Switch, Lillie's Determination, Riolu 执行动作: 选择 Basic {F} Energy；选择 Basic {F} Energy"
+          - generic [ref=e881]: • 无可读事件
+        - generic [ref=e882]:
+          - generic [ref=e883]: 步骤 131 · 回合 9 · 玩家 1
+          - generic [ref=e884]: "手牌快照: Lunatone, Boss’s Orders, Premium Power Pro, Basic {F} Energy, Switch, Lillie's Determination, Riolu 执行动作: 选择 Makuhita"
+          - generic [ref=e886]: "• 玩家 1 将 Basic {F} Energy 附加到 Makuhita"
+        - generic [ref=e887]:
+          - generic [ref=e888]: 步骤 132 · 回合 9 · 玩家 1
+          - generic [ref=e889]: "手牌快照: Lunatone, Boss’s Orders, Premium Power Pro, Basic {F} Energy, Switch, Lillie's Determination, Riolu 执行动作: 选择 Makuhita"
+          - generic [ref=e890]:
+            - generic [ref=e891]: "• 玩家 1 将 Basic {F} Energy 附加到 Makuhita"
+            - generic [ref=e892]: • 玩家 0 将 Dragapult ex 从 ACTIVE 移动到 DISCARD
+            - generic [ref=e893]: • 玩家 0 将 Dreepy 从 PRE_EVOLUTION 移动到 DISCARD
+            - generic [ref=e894]: "• 玩家 0 将 Basic {P} Energy 从 ENERGY 移动到 DISCARD"
+            - generic [ref=e895]: "• 玩家 0 将 Basic {R} Energy 从 ENERGY 移动到 DISCARD"
+        - generic [ref=e896]:
+          - generic [ref=e897]: 步骤 133 · 回合 9 · 玩家 1
+          - generic [ref=e898]: "手牌快照: Lunatone, Boss’s Orders, Premium Power Pro, Basic {F} Energy, Switch, Lillie's Determination, Riolu 执行动作: 选择 卡牌；选择 卡牌"
+          - generic [ref=e899]:
+            - generic [ref=e900]: • Makuhita 的 HP 变化了 -10
+            - generic [ref=e901]: • TURN_END
+            - generic [ref=e902]: • TURN_START
+            - generic [ref=e903]: • DRAW_REVERSE
+            - generic [ref=e904]: • 玩家 1 打出了 Lillie's Determination
+            - generic [ref=e905]: • MOVE_CARD_REVERSE
+        - generic [ref=e906]:
+          - generic [ref=e907]: 步骤 134 · 回合 9 · 玩家 0
+          - generic [ref=e908]: "手牌快照: Night Stretcher, Budew, Brock’s Scouting, Basic {P} Energy, Boss’s Orders, Crispin, Crispin 执行动作: 选择 Budew"
+          - generic [ref=e909]:
+            - generic [ref=e910]: • 玩家 0 将 Budew 从 BENCH 移动到 ACTIVE
+            - generic [ref=e911]: • TURN_END
+            - generic [ref=e912]: • TURN_START
+            - generic [ref=e913]: • 玩家 0 抽到了 Dreepy
+        - generic [ref=e914]:
+          - generic [ref=e915]: 步骤 135 · 回合 10 · 玩家 0
+          - generic [ref=e916]: "手牌快照: Night Stretcher, Budew, Brock’s Scouting, Basic {P} Energy, Boss’s Orders, Crispin, Crispin, Dreepy 执行动作: 打出 手牌"
+          - generic [ref=e918]: • 玩家 0 打出了 Dreepy
+        - generic [ref=e919]:
+          - generic [ref=e920]: 步骤 136 · 回合 10 · 玩家 0
+          - generic [ref=e921]: "手牌快照: Night Stretcher, Budew, Brock’s Scouting, Basic {P} Energy, Boss’s Orders, Crispin, Crispin 执行动作: 打出 手牌"
+          - generic [ref=e923]: • 玩家 0 打出了 Night Stretcher
+        - generic [ref=e924]:
+          - generic [ref=e925]: 步骤 137 · 回合 10 · 玩家 0
+          - generic [ref=e926]: "手牌快照: Budew, Brock’s Scouting, Basic {P} Energy, Boss’s Orders, Crispin, Crispin 执行动作: 选择 Dreepy"
+          - generic [ref=e928]: • 玩家 0 将 Dreepy 从 DISCARD 移动到 HAND
+        - generic [ref=e929]:
+          - generic [ref=e930]: 步骤 138 · 回合 10 · 玩家 0
+          - generic [ref=e931]: "手牌快照: Budew, Brock’s Scouting, Basic {P} Energy, Boss’s Orders, Crispin, Crispin, Dreepy 执行动作: ABILITY"
+          - generic [ref=e932]:
+            - generic [ref=e933]: • 玩家 0 抽到了 Ultra Ball
+            - generic [ref=e934]: • 玩家 0 抽到了 Dragapult ex
+            - generic [ref=e935]: • 玩家 0 抽到了 Drakloak
+        - generic [ref=e936]:
+          - generic [ref=e937]: 步骤 139 · 回合 10 · 玩家 0
+          - generic [ref=e938]: "手牌快照: Budew, Brock’s Scouting, Basic {P} Energy, Boss’s Orders, Crispin, Crispin, Dreepy, Ultra Ball, Dragapult ex, Drakloak 执行动作: 打出 手牌"
+          - generic [ref=e940]: • 玩家 0 打出了 Ultra Ball
+        - generic [ref=e941]:
+          - generic [ref=e942]: 步骤 140 · 回合 10 · 玩家 0
+          - generic [ref=e943]: "手牌快照: Budew, Brock’s Scouting, Basic {P} Energy, Boss’s Orders, Crispin, Crispin, Dreepy, Dragapult ex, Drakloak 执行动作: 选择 Budew；选择 Crispin"
+          - generic [ref=e944]:
+            - generic [ref=e945]: • 玩家 0 将 Budew 从 HAND 移动到 DISCARD
+            - generic [ref=e946]: • 玩家 0 将 Crispin 从 HAND 移动到 DISCARD
+        - generic [ref=e947]:
+          - generic [ref=e948]: 步骤 141 · 回合 10 · 玩家 0
+          - generic [ref=e949]: "手牌快照: Brock’s Scouting, Basic {P} Energy, Boss’s Orders, Crispin, Dreepy, Dragapult ex, Drakloak 执行动作: 选择 Dreepy"
+          - generic [ref=e950]:
+            - generic [ref=e951]: • 玩家 0 将 Dreepy 从 DECK 移动到 HAND
+            - generic [ref=e952]: • SHUFFLE
+        - generic [ref=e953]:
+          - generic [ref=e954]: 步骤 142 · 回合 10 · 玩家 0
+          - generic [ref=e955]: "手牌快照: Brock’s Scouting, Basic {P} Energy, Boss’s Orders, Crispin, Dreepy, Dragapult ex, Drakloak, Dreepy 执行动作: 打出 手牌"
+          - generic [ref=e957]: • 玩家 0 打出了 Boss’s Orders
+        - generic [ref=e958]:
+          - generic [ref=e959]: 步骤 143 · 回合 10 · 玩家 0
+          - generic [ref=e960]: "手牌快照: Brock’s Scouting, Basic {P} Energy, Crispin, Dreepy, Dragapult ex, Drakloak, Dreepy 执行动作: 选择 Mega Lucario ex"
+          - generic [ref=e962]: • SWITCH
+        - generic [ref=e963]:
+          - generic [ref=e964]: 步骤 144 · 回合 10 · 玩家 0
+          - generic [ref=e965]: "手牌快照: Brock’s Scouting, Basic {P} Energy, Crispin, Dreepy, Dragapult ex, Drakloak, Dreepy 执行动作: 附加 卡牌"
+          - generic [ref=e967]: "• 玩家 0 将 Basic {P} Energy 附加到 Dreepy"
+        - generic [ref=e968]:
+          - generic [ref=e969]: 步骤 145 · 回合 10 · 玩家 0
+          - generic [ref=e970]: "手牌快照: Brock’s Scouting, Crispin, Dreepy, Dragapult ex, Drakloak, Dreepy 执行动作: RETREAT"
+          - generic [ref=e972]: • 无可读事件
+        - generic [ref=e973]:
+          - generic [ref=e974]: 步骤 146 · 回合 10 · 玩家 0
+          - generic [ref=e975]: "手牌快照: Brock’s Scouting, Crispin, Dreepy, Dragapult ex, Drakloak, Dreepy 执行动作: 选择 Dragapult ex"
+          - generic [ref=e977]: • SWITCH
+        - generic [ref=e978]:
+          - generic [ref=e979]: 步骤 147 · 回合 10 · 玩家 0
+          - generic [ref=e980]: "手牌快照: Brock’s Scouting, Crispin, Dreepy, Dragapult ex, Drakloak, Dreepy 执行动作: 使用招式 Phantom Dive"
+          - generic [ref=e981]:
+            - generic [ref=e982]: • 玩家 0 使用了招式 Phantom Dive
+            - generic [ref=e983]: • Mega Lucario ex 的 HP 变化了 -200
+        - generic [ref=e984]:
+          - generic [ref=e985]: 步骤 148 · 回合 10 · 玩家 0
+          - generic [ref=e986]: "手牌快照: Brock’s Scouting, Crispin, Dreepy, Dragapult ex, Drakloak, Dreepy 执行动作: 选择 Mega Lucario ex"
+          - generic [ref=e988]: • Mega Lucario ex 的 HP 变化了 -10
+        - generic [ref=e989]:
+          - generic [ref=e990]: 步骤 149 · 回合 10 · 玩家 0
+          - generic [ref=e991]: "手牌快照: Brock’s Scouting, Crispin, Dreepy, Dragapult ex, Drakloak, Dreepy 执行动作: 选择 Mega Lucario ex"
+          - generic [ref=e993]: • Mega Lucario ex 的 HP 变化了 -10
+        - generic [ref=e994]:
+          - generic [ref=e995]: 步骤 150 · 回合 10 · 玩家 0
+          - generic [ref=e996]: "手牌快照: Brock’s Scouting, Crispin, Dreepy, Dragapult ex, Drakloak, Dreepy 执行动作: 选择 Mega Lucario ex"
+          - generic [ref=e998]: • Mega Lucario ex 的 HP 变化了 -10
+        - generic [ref=e999]:
+          - generic [ref=e1000]: 步骤 151 · 回合 10 · 玩家 0
+          - generic [ref=e1001]: "手牌快照: Brock’s Scouting, Crispin, Dreepy, Dragapult ex, Drakloak, Dreepy 执行动作: 选择 Solrock"
+          - generic [ref=e1003]: • Solrock 的 HP 变化了 -10
+        - generic [ref=e1004]:
+          - generic [ref=e1005]: 步骤 152 · 回合 10 · 玩家 0
+          - generic [ref=e1006]: "手牌快照: Brock’s Scouting, Crispin, Dreepy, Dragapult ex, Drakloak, Dreepy 执行动作: 选择 Makuhita"
+          - generic [ref=e1008]: • Makuhita 的 HP 变化了 -10
+        - generic [ref=e1009]:
+          - generic [ref=e1010]: 步骤 153 · 回合 10 · 玩家 0
+          - generic [ref=e1011]: "手牌快照: Brock’s Scouting, Crispin, Dreepy, Dragapult ex, Drakloak, Dreepy 执行动作: 选择 Makuhita"
+          - generic [ref=e1012]:
+            - generic [ref=e1013]: • Makuhita 的 HP 变化了 -10
+            - generic [ref=e1014]: • 玩家 1 将 Solrock 从 BENCH 移动到 DISCARD
+            - generic [ref=e1015]: • 玩家 1 将 Mega Lucario ex 从 BENCH 移动到 DISCARD
+            - generic [ref=e1016]: • 玩家 1 将 Riolu 从 PRE_EVOLUTION 移动到 DISCARD
+            - generic [ref=e1017]: "• 玩家 1 将 Basic {F} Energy 从 ENERGY 移动到 DISCARD"
+            - generic [ref=e1018]: "• 玩家 1 将 Basic {F} Energy 从 ENERGY 移动到 DISCARD"
+        - generic [ref=e1019]:
+          - generic [ref=e1020]: 步骤 154 · 回合 10 · 玩家 0
+          - generic [ref=e1021]: "手牌快照: Brock’s Scouting, Crispin, Dreepy, Dragapult ex, Drakloak, Dreepy 执行动作: 选择 卡牌"
+          - generic [ref=e1023]: • 玩家 0 将 Buddy-Buddy Poffin 从 PRIZE 移动到 HAND
+        - generic [ref=e1024]:
+          - generic [ref=e1025]: 步骤 155 · 回合 10 · 玩家 0
+          - generic [ref=e1026]: "手牌快照: Brock’s Scouting, Crispin, Dreepy, Dragapult ex, Drakloak, Dreepy, Buddy-Buddy Poffin 执行动作: 选择 卡牌；选择 卡牌；选择 卡牌"
+          - generic [ref=e1027]:
+            - generic [ref=e1028]: "• 玩家 1 将 Basic {F} Energy 从 PRIZE 移动到 HAND"
+            - generic [ref=e1029]: "• 玩家 1 将 Basic {F} Energy 从 PRIZE 移动到 HAND"
+            - generic [ref=e1030]: • 玩家 0 将 Budew 从 BENCH 移动到 ACTIVE
+            - generic [ref=e1031]: • TURN_END
+            - generic [ref=e1032]: • TURN_START
+            - generic [ref=e1033]: • DRAW_REVERSE
+        - generic [ref=e1034]:
+          - generic [ref=e1035]: 步骤 156 · 回合 11 · 玩家 1
+          - generic [ref=e1036]: "手牌快照: Lunatone, Boss’s Orders, Premium Power Pro, Basic {F} Energy, Switch, Lillie's Determination, Riolu, Basic {F} Energy, Basic {F} Energy, Solrock 执行动作: 打出 手牌"
+          - generic [ref=e1038]: • 玩家 1 打出了 Riolu
+        - generic [ref=e1039]:
+          - generic [ref=e1040]: 步骤 157 · 回合 11 · 玩家 1
+          - generic [ref=e1041]: "手牌快照: Lunatone, Boss’s Orders, Premium Power Pro, Basic {F} Energy, Switch, Lillie's Determination, Basic {F} Energy, Basic {F} Energy, Solrock 执行动作: 打出 手牌"
+          - generic [ref=e1043]: • 玩家 1 打出了 Solrock
+        - generic [ref=e1044]:
+          - generic [ref=e1045]: 步骤 158 · 回合 11 · 玩家 1
+          - generic [ref=e1046]: "手牌快照: Lunatone, Boss’s Orders, Premium Power Pro, Basic {F} Energy, Switch, Lillie's Determination, Basic {F} Energy, Basic {F} Energy 执行动作: ABILITY"
+          - generic [ref=e1048]: • 无可读事件
+        - generic [ref=e1049]:
+          - generic [ref=e1050]: 步骤 159 · 回合 11 · 玩家 1
+          - generic [ref=e1051]: "手牌快照: Lunatone, Boss’s Orders, Premium Power Pro, Basic {F} Energy, Switch, Lillie's Determination, Basic {F} Energy, Basic {F} Energy 执行动作: 选择 Basic {F} Energy"
+          - generic [ref=e1052]:
+            - generic [ref=e1053]: "• 玩家 1 将 Basic {F} Energy 从 HAND 移动到 DISCARD"
+            - generic [ref=e1054]: • 玩家 1 抽到了 Gravity Mountain
+            - generic [ref=e1055]: • 玩家 1 抽到了 Gravity Mountain
+            - generic [ref=e1056]: • 玩家 1 抽到了 Poké Pad
+        - generic [ref=e1057]:
+          - generic [ref=e1058]: 步骤 160 · 回合 11 · 玩家 1
+          - generic [ref=e1059]: "手牌快照: Lunatone, Boss’s Orders, Premium Power Pro, Switch, Lillie's Determination, Basic {F} Energy, Basic {F} Energy, Gravity Mountain, Gravity Mountain, Poké Pad 执行动作: 打出 手牌"
+          - generic [ref=e1060]:
+            - generic [ref=e1061]: • 玩家 1 打出了 Poké Pad
+            - generic [ref=e1062]: • SHUFFLE
+        - generic [ref=e1063]:
+          - generic [ref=e1064]: 步骤 161 · 回合 11 · 玩家 1
+          - generic [ref=e1065]: "手牌快照: Lunatone, Boss’s Orders, Premium Power Pro, Switch, Lillie's Determination, Basic {F} Energy, Basic {F} Energy, Gravity Mountain, Gravity Mountain 执行动作: 附加 卡牌"
+          - generic [ref=e1067]: "• 玩家 1 将 Basic {F} Energy 附加到 Riolu"
+        - generic [ref=e1068]:
+          - generic [ref=e1069]: 步骤 162 · 回合 11 · 玩家 1
+          - generic [ref=e1070]: "手牌快照: Lunatone, Boss’s Orders, Premium Power Pro, Switch, Lillie's Determination, Basic {F} Energy, Gravity Mountain, Gravity Mountain 执行动作: 打出 手牌"
+          - generic [ref=e1072]: • 玩家 1 打出了 Premium Power Pro
+        - generic [ref=e1073]:
+          - generic [ref=e1074]: 步骤 163 · 回合 11 · 玩家 1
+          - generic [ref=e1075]: "手牌快照: Lunatone, Boss’s Orders, Switch, Lillie's Determination, Basic {F} Energy, Gravity Mountain, Gravity Mountain 执行动作: 打出 手牌"
+          - generic [ref=e1077]: • 玩家 1 打出了 Boss’s Orders
+        - generic [ref=e1078]:
+          - generic [ref=e1079]: 步骤 164 · 回合 11 · 玩家 1
+          - generic [ref=e1080]: "手牌快照: Lunatone, Switch, Lillie's Determination, Basic {F} Energy, Gravity Mountain, Gravity Mountain 执行动作: 选择 Fezandipiti ex"
+          - generic [ref=e1082]: • SWITCH
+        - generic [ref=e1083]:
+          - generic [ref=e1084]: 步骤 165 · 回合 11 · 玩家 1
+          - generic [ref=e1085]: "手牌快照: Lunatone, Switch, Lillie's Determination, Basic {F} Energy, Gravity Mountain, Gravity Mountain 执行动作: 使用招式 Aura Jab"
+          - generic [ref=e1086]:
+            - generic [ref=e1087]: • 玩家 1 使用了招式 Aura Jab
+            - generic [ref=e1088]: • Fezandipiti ex 的 HP 变化了 -320
+        - generic [ref=e1089]:
+          - generic [ref=e1090]: 步骤 166 · 回合 11 · 玩家 1
+          - generic [ref=e1091]: "手牌快照: Lunatone, Switch, Lillie's Determination, Basic {F} Energy, Gravity Mountain, Gravity Mountain 执行动作: 选择 Basic {F} Energy；选择 Basic {F} Energy；选择 Basic {F} Energy"
+          - generic [ref=e1093]: • 无可读事件
+        - generic [ref=e1094]:
+          - generic [ref=e1095]: 步骤 167 · 回合 11 · 玩家 1
+          - generic [ref=e1096]: "手牌快照: Lunatone, Switch, Lillie's Determination, Basic {F} Energy, Gravity Mountain, Gravity Mountain 执行动作: 选择 Riolu"
+          - generic [ref=e1098]: "• 玩家 1 将 Basic {F} Energy 附加到 Riolu"
+        - generic [ref=e1099]:
+          - generic [ref=e1100]: 步骤 168 · 回合 11 · 玩家 1
+          - generic [ref=e1101]: "手牌快照: Lunatone, Switch, Lillie's Determination, Basic {F} Energy, Gravity Mountain, Gravity Mountain 执行动作: 选择 Solrock"
+          - generic [ref=e1103]: "• 玩家 1 将 Basic {F} Energy 附加到 Solrock"
+        - generic [ref=e1104]:
+          - generic [ref=e1105]: 步骤 169 · 回合 11 · 玩家 1
+          - generic [ref=e1106]: "手牌快照: Lunatone, Switch, Lillie's Determination, Basic {F} Energy, Gravity Mountain, Gravity Mountain 执行动作: 选择 Hariyama"
+          - generic [ref=e1107]:
+            - generic [ref=e1108]: "• 玩家 1 将 Basic {F} Energy 附加到 Hariyama"
+            - generic [ref=e1109]: • 玩家 0 将 Fezandipiti ex 从 ACTIVE 移动到 DISCARD
+        - generic [ref=e1110]:
+          - generic [ref=e1111]: 步骤 170 · 回合 11 · 玩家 1
+          - generic [ref=e1112]: "手牌快照: Lunatone, Switch, Lillie's Determination, Basic {F} Energy, Gravity Mountain, Gravity Mountain 执行动作: 选择 卡牌；选择 卡牌"
+          - generic [ref=e1113]:
+            - generic [ref=e1114]: • 玩家 0 将 Buddy-Buddy Poffin 从 PRIZE 移动到 HAND
+            - generic [ref=e1115]: • 玩家 0 将 Drakloak 从 PRIZE 移动到 HAND
+            - generic [ref=e1116]: • 玩家 0 将 Lillie's Determination 从 PRIZE 移动到 HAND
+            - generic [ref=e1117]: • TURN_END
+            - generic [ref=e1118]: • TURN_START
+            - generic [ref=e1119]: • DRAW_REVERSE
+        - generic [ref=e1120]:
+          - generic [ref=e1121]: 步骤 171 · 回合 11 · 玩家 0
+          - generic [ref=e1122]: "手牌快照: Brock’s Scouting, Crispin, Dreepy, Dragapult ex, Drakloak, Dreepy, Buddy-Buddy Poffin, Buddy-Buddy Poffin, Drakloak, Lillie's Determination 执行动作: 选择 Budew"
+          - generic [ref=e1123]:
+            - generic [ref=e1124]: • 玩家 0 将 Budew 从 BENCH 移动到 ACTIVE
+            - generic [ref=e1125]: • TURN_END
+            - generic [ref=e1126]: • TURN_START
+            - generic [ref=e1127]: • 玩家 0 抽到了 Poké Pad
+        - generic [ref=e1128]:
+          - generic [ref=e1129]: 步骤 172 · 回合 12 · 玩家 0
+          - generic [ref=e1130]: "手牌快照: Brock’s Scouting, Crispin, Dreepy, Dragapult ex, Drakloak, Dreepy, Buddy-Buddy Poffin, Buddy-Buddy Poffin, Drakloak, Lillie's Determination, Poké Pad 执行动作: 打出 手牌"
+          - generic [ref=e1132]: • 玩家 0 打出了 Dreepy
+        - generic [ref=e1133]:
+          - generic [ref=e1134]: 步骤 173 · 回合 12 · 玩家 0
+          - generic [ref=e1135]: "手牌快照: Brock’s Scouting, Crispin, Dragapult ex, Drakloak, Dreepy, Buddy-Buddy Poffin, Buddy-Buddy Poffin, Drakloak, Lillie's Determination, Poké Pad 执行动作: 进化为 卡牌"
+          - generic [ref=e1137]: • EVOLVE
+        - generic [ref=e1138]:
+          - generic [ref=e1139]: 步骤 174 · 回合 12 · 玩家 0
+          - generic [ref=e1140]: "手牌快照: Brock’s Scouting, Crispin, Dragapult ex, Dreepy, Buddy-Buddy Poffin, Buddy-Buddy Poffin, Drakloak, Lillie's Determination, Poké Pad 执行动作: ABILITY"
+          - generic [ref=e1141]:
+            - generic [ref=e1142]: • 玩家 0 将 Boss’s Orders 从 DECK 移动到 LOOKING
+            - generic [ref=e1143]: • 玩家 0 将 Lucky Helmet 从 DECK 移动到 LOOKING
+        - generic [ref=e1144]:
+          - generic [ref=e1145]: 步骤 175 · 回合 12 · 玩家 0
+          - generic [ref=e1146]: "手牌快照: Brock’s Scouting, Crispin, Dragapult ex, Dreepy, Buddy-Buddy Poffin, Buddy-Buddy Poffin, Drakloak, Lillie's Determination, Poké Pad 执行动作: 选择 Lucky Helmet"
+          - generic [ref=e1147]:
+            - generic [ref=e1148]: • 玩家 0 将 Lucky Helmet 从 LOOKING 移动到 HAND
+            - generic [ref=e1149]: • 玩家 0 将 Boss’s Orders 从 LOOKING 移动到 14
+        - generic [ref=e1150]:
+          - generic [ref=e1151]: 步骤 176 · 回合 12 · 玩家 0
+          - generic [ref=e1152]: "手牌快照: Brock’s Scouting, Crispin, Dragapult ex, Dreepy, Buddy-Buddy Poffin, Buddy-Buddy Poffin, Drakloak, Lillie's Determination, Poké Pad, Lucky Helmet 执行动作: 附加 卡牌"
+          - generic [ref=e1154]: • 玩家 0 将 Lucky Helmet 附加到 Budew
+        - generic [ref=e1155]:
+          - generic [ref=e1156]: 步骤 177 · 回合 12 · 玩家 0
+          - generic [ref=e1157]: "手牌快照: Brock’s Scouting, Crispin, Dragapult ex, Dreepy, Buddy-Buddy Poffin, Buddy-Buddy Poffin, Drakloak, Lillie's Determination, Poké Pad 执行动作: 打出 手牌"
+          - generic [ref=e1158]:
+            - generic [ref=e1159]: • 玩家 0 打出了 Lillie's Determination
+            - generic [ref=e1160]: • 玩家 0 将 Brock’s Scouting 从 HAND 移动到 DECK
+            - generic [ref=e1161]: • 玩家 0 将 Crispin 从 HAND 移动到 DECK
+            - generic [ref=e1162]: • 玩家 0 将 Dragapult ex 从 HAND 移动到 DECK
+            - generic [ref=e1163]: • 玩家 0 将 Dreepy 从 HAND 移动到 DECK
+            - generic [ref=e1164]: • 玩家 0 将 Buddy-Buddy Poffin 从 HAND 移动到 DECK
+        - generic [ref=e1165]:
+          - generic [ref=e1166]: 步骤 178 · 回合 12 · 玩家 0
+          - generic [ref=e1167]: "手牌快照: Drakloak, Dreepy, Basic {R} Energy, Poké Pad, Buddy-Buddy Poffin, Brock’s Scouting 执行动作: 附加 卡牌"
+          - generic [ref=e1169]: "• 玩家 0 将 Basic {R} Energy 附加到 Dreepy"
+        - generic [ref=e1170]:
+          - generic [ref=e1171]: 步骤 179 · 回合 12 · 玩家 0
+          - generic [ref=e1172]: "手牌快照: Drakloak, Dreepy, Poké Pad, Buddy-Buddy Poffin, Brock’s Scouting 执行动作: RETREAT"
+          - generic [ref=e1174]: • 无可读事件
+        - generic [ref=e1175]:
+          - generic [ref=e1176]: 步骤 180 · 回合 12 · 玩家 0
+          - generic [ref=e1177]: "手牌快照: Drakloak, Dreepy, Poké Pad, Buddy-Buddy Poffin, Brock’s Scouting 执行动作: 选择 Dragapult ex"
+          - generic [ref=e1179]: • SWITCH
+        - generic [ref=e1180]:
+          - generic [ref=e1181]: 步骤 181 · 回合 12 · 玩家 0
+          - generic [ref=e1182]: "手牌快照: Drakloak, Dreepy, Poké Pad, Buddy-Buddy Poffin, Brock’s Scouting 执行动作: 使用招式 Phantom Dive"
+          - generic [ref=e1183]:
+            - generic [ref=e1184]: • 玩家 0 使用了招式 Phantom Dive
+            - generic [ref=e1185]: • Mega Lucario ex 的 HP 变化了 -200
+        - generic [ref=e1186]:
+          - generic [ref=e1187]: 步骤 182 · 回合 12 · 玩家 0
+          - generic [ref=e1188]: "手牌快照: Drakloak, Dreepy, Poké Pad, Buddy-Buddy Poffin, Brock’s Scouting 执行动作: 选择 Makuhita"
+          - generic [ref=e1190]: • Makuhita 的 HP 变化了 -10
+        - generic [ref=e1191]:
+          - generic [ref=e1192]: 步骤 183 · 回合 12 · 玩家 0
+          - generic [ref=e1193]: "手牌快照: Drakloak, Dreepy, Poké Pad, Buddy-Buddy Poffin, Brock’s Scouting 执行动作: 选择 Riolu"
+          - generic [ref=e1195]: • Riolu 的 HP 变化了 -10
+        - generic [ref=e1196]:
+          - generic [ref=e1197]: 步骤 184 · 回合 12 · 玩家 0
+          - generic [ref=e1198]: "手牌快照: Drakloak, Dreepy, Poké Pad, Buddy-Buddy Poffin, Brock’s Scouting 执行动作: 选择 Riolu"
+          - generic [ref=e1200]: • Riolu 的 HP 变化了 -10
+        - generic [ref=e1201]:
+          - generic [ref=e1202]: 步骤 185 · 回合 12 · 玩家 0
+          - generic [ref=e1203]: "手牌快照: Drakloak, Dreepy, Poké Pad, Buddy-Buddy Poffin, Brock’s Scouting 执行动作: 选择 Riolu"
+          - generic [ref=e1205]: • Riolu 的 HP 变化了 -10
+        - generic [ref=e1206]:
+          - generic [ref=e1207]: 步骤 186 · 回合 12 · 玩家 0
+          - generic [ref=e1208]: "手牌快照: Drakloak, Dreepy, Poké Pad, Buddy-Buddy Poffin, Brock’s Scouting 执行动作: 选择 Riolu"
+          - generic [ref=e1210]: • Riolu 的 HP 变化了 -10
+        - generic [ref=e1211]:
+          - generic [ref=e1212]: 步骤 187 · 回合 12 · 玩家 0
+          - generic [ref=e1213]: "手牌快照: Drakloak, Dreepy, Poké Pad, Buddy-Buddy Poffin, Brock’s Scouting 执行动作: 选择 Riolu"
+          - generic [ref=e1214]:
+            - generic [ref=e1215]: • Riolu 的 HP 变化了 -10
+            - generic [ref=e1216]: • 玩家 1 将 Mega Lucario ex 从 ACTIVE 移动到 DISCARD
+            - generic [ref=e1217]: • 玩家 1 将 Riolu 从 PRE_EVOLUTION 移动到 DISCARD
+            - generic [ref=e1218]: "• 玩家 1 将 Basic {F} Energy 从 ENERGY 移动到 DISCARD"
+            - generic [ref=e1219]: "• 玩家 1 将 Basic {F} Energy 从 ENERGY 移动到 DISCARD"
+        - generic [ref=e1220]:
+          - generic [ref=e1221]: 步骤 188 · 回合 12 · 玩家 0
+          - generic [ref=e1222]: "手牌快照: Drakloak, Dreepy, Poké Pad, Buddy-Buddy Poffin, Brock’s Scouting 执行动作: 选择 卡牌；选择 卡牌"
+          - generic [ref=e1223]:
+            - generic [ref=e1224]: • 玩家 0 将 Rare Candy 从 PRIZE 移动到 HAND
+            - generic [ref=e1225]: • 玩家 0 将 Crushing Hammer 从 PRIZE 移动到 HAND
+            - generic [ref=e1226]: • 对局结束，结果=0，原因=1

@@ -1,0 +1,197 @@
+- generic [ref=e2]:
+  - generic [ref=e3]:
+    - generic [ref=e4]:
+      - generic [ref=e5]: dragapult_rule_based vs mega_lucario_beginner
+      - generic [ref=e6]: "记录时间: 2026-06-18T15:42:47.531408+00:00"
+    - generic [ref=e7]:
+      - generic [ref=e8]: "胜者: dragapult_rule_based · 最终回合: 11 · 步数: 158"
+      - generic [ref=e9]: 当前回合段 1 / 21
+  - generic [ref=e10]:
+    - button "上一手" [ref=e11]
+    - button "下一手" [ref=e12]
+    - generic [ref=e13]: 跳转回合
+    - combobox "跳转回合" [ref=e14]:
+      - option "准备阶段" [selected]
+      - option "第 1 回合"
+      - option "第 2 回合"
+      - option "第 3 回合"
+      - option "第 4 回合"
+      - option "第 5 回合"
+      - option "第 6 回合"
+      - option "第 7 回合"
+      - option "第 8 回合"
+      - option "第 9 回合"
+      - option "第 10 回合"
+      - option "第 11 回合"
+    - generic [ref=e15]: 跳转步骤
+    - combobox "跳转步骤" [ref=e16]:
+      - option "准备阶段 · 玩家0 / 1 个动作" [selected]
+      - option "准备阶段 · 玩家1 / 1 个动作"
+      - option "准备阶段 · 玩家0 / 1 个动作"
+      - option "准备阶段 · 玩家1 / 2 个动作"
+      - option "准备阶段 · 玩家0 / 1 个动作"
+      - option "第 1 回合 · 玩家1 / 14 个动作"
+      - option "第 2 回合 · 玩家0 / 4 个动作"
+      - option "第 3 回合 · 玩家1 / 15 个动作"
+      - option "第 4 回合 · 玩家0 / 7 个动作"
+      - option "第 5 回合 · 玩家1 / 12 个动作"
+      - option "第 5 回合 · 玩家0 / 1 个动作"
+      - option "第 6 回合 · 玩家0 / 26 个动作"
+      - option "第 6 回合 · 玩家1 / 1 个动作"
+      - option "第 7 回合 · 玩家1 / 19 个动作"
+      - option "第 8 回合 · 玩家0 / 13 个动作"
+      - option "第 9 回合 · 玩家1 / 8 个动作"
+      - option "第 9 回合 · 玩家0 / 1 个动作"
+      - option "第 10 回合 · 玩家0 / 23 个动作"
+      - option "第 10 回合 · 玩家1 / 1 个动作"
+      - option "第 11 回合 · 玩家1 / 5 个动作"
+      - option "第 11 回合 · 玩家0 / 1 个动作"
+  - generic [ref=e17]:
+    - generic [ref=e18]:
+      - generic [ref=e19]:
+        - generic [ref=e20]:
+          - generic [ref=e21]: 玩家1 · mega_lucario_beginner
+          - generic [ref=e22]:
+            - generic [ref=e23]: 牌库 53
+            - generic [ref=e24]: 弃牌 0
+            - generic [ref=e25]: 奖赏 0
+        - generic [ref=e26]: 玩家1 手牌 (7)
+        - generic [ref=e27]:
+          - generic [ref=e29]: 宝可平板
+          - generic [ref=e31]: 幕下力士
+          - generic [ref=e33]: 老大的指令
+          - generic [ref=e35]: 黑暗球
+          - generic [ref=e37]: 幕下力士
+          - generic [ref=e39]: 月石
+          - generic [ref=e41]: 力量蛋白
+        - generic [ref=e42]: 玩家1 备战区
+        - generic [ref=e43]:
+          - generic [ref=e44]: 空
+          - generic [ref=e45]: 空
+          - generic [ref=e46]: 空
+          - generic [ref=e47]: 空
+          - generic [ref=e48]: 空
+        - generic [ref=e49]: 玩家1 战斗位
+        - generic [ref=e51]: 空
+      - generic [ref=e53]:
+        - generic [ref=e54]: 准备阶段
+        - generic [ref=e55]: 场地
+        - generic [ref=e57]: 空
+      - generic [ref=e58]:
+        - generic [ref=e59]: 玩家0 战斗位
+        - generic [ref=e61]: 空
+        - generic [ref=e62]: 玩家0 备战区
+        - generic [ref=e63]:
+          - generic [ref=e64]: 空
+          - generic [ref=e65]: 空
+          - generic [ref=e66]: 空
+          - generic [ref=e67]: 空
+          - generic [ref=e68]: 空
+        - generic [ref=e69]: 玩家0 手牌 (7)
+        - generic [ref=e70]:
+          - generic [ref=e72]: 基本【火】能量
+          - generic [ref=e74]: 老大的指令
+          - generic [ref=e76]: 高级球
+          - generic [ref=e78]: 基本【超】能量
+          - generic [ref=e80]: 莉莉艾的决心
+          - generic [ref=e82]: 赤松
+          - generic [ref=e84]: 宝可平板
+        - generic [ref=e85]:
+          - generic [ref=e86]: 玩家0 · dragapult_rule_based ← 当前行动
+          - generic [ref=e87]:
+            - generic [ref=e88]: 牌库 53
+            - generic [ref=e89]: 弃牌 0
+            - generic [ref=e90]: 奖赏 0
+    - complementary [ref=e91]:
+      - generic [ref=e92]:
+        - heading "当前回合段" [level=3] [ref=e93]
+        - generic [ref=e94]: "准备阶段 · 玩家0 动作数: 1 步骤范围: 1 - 1"
+      - generic [ref=e95]:
+        - heading "操作与结果" [level=4] [ref=e96]
+        - generic [ref=e98]:
+          - generic [ref=e99]: "动作 1: 选择后手"
+          - generic [ref=e100]: "结果: 玩家0 抽到了 基本【火】能量"
+          - generic [ref=e101]: "结果: 玩家0 抽到了 老大的指令"
+          - generic [ref=e102]: "结果: 玩家0 抽到了 高级球"
+          - generic [ref=e103]: "结果: 玩家0 抽到了 基本【超】能量"
+          - generic [ref=e104]: "结果: 玩家0 抽到了 莉莉艾的决心"
+          - generic [ref=e105]: "结果: 玩家0 抽到了 赤松"
+          - generic [ref=e106]: "结果: 玩家0 抽到了 宝可平板"
+          - generic [ref=e107]: "结果: 玩家0 确认起始手牌含有基础宝可梦"
+      - generic [ref=e108]:
+        - heading "回合摘要" [level=4] [ref=e109]
+        - generic [ref=e110]:
+          - generic [ref=e111]: 玩家0 抽到了 基本【火】能量
+          - generic [ref=e112]: 玩家0 抽到了 老大的指令
+          - generic [ref=e113]: 玩家0 抽到了 高级球
+          - generic [ref=e114]: 玩家0 抽到了 基本【超】能量
+          - generic [ref=e115]: 玩家0 抽到了 莉莉艾的决心
+          - generic [ref=e116]: 玩家0 抽到了 赤松
+          - generic [ref=e117]: 玩家0 抽到了 宝可平板
+          - generic [ref=e118]: 玩家0 确认起始手牌含有基础宝可梦
+      - generic [ref=e119]:
+        - heading "回合时间线" [level=4] [ref=e120]
+        - generic [ref=e121]:
+          - generic [ref=e122]:
+            - generic [ref=e123]: 准备阶段 · 玩家0
+            - generic [ref=e124]: 1 个动作 · 步骤 1-1
+          - generic [ref=e125]:
+            - generic [ref=e126]: 准备阶段 · 玩家1
+            - generic [ref=e127]: 1 个动作 · 步骤 2-2
+          - generic [ref=e128]:
+            - generic [ref=e129]: 准备阶段 · 玩家0
+            - generic [ref=e130]: 1 个动作 · 步骤 3-3
+          - generic [ref=e131]:
+            - generic [ref=e132]: 准备阶段 · 玩家1
+            - generic [ref=e133]: 2 个动作 · 步骤 4-5
+          - generic [ref=e134]:
+            - generic [ref=e135]: 准备阶段 · 玩家0
+            - generic [ref=e136]: 1 个动作 · 步骤 6-6
+          - generic [ref=e137]:
+            - generic [ref=e138]: 第 1 回合 · 玩家1
+            - generic [ref=e139]: 14 个动作 · 步骤 7-20
+          - generic [ref=e140]:
+            - generic [ref=e141]: 第 2 回合 · 玩家0
+            - generic [ref=e142]: 4 个动作 · 步骤 21-24
+          - generic [ref=e143]:
+            - generic [ref=e144]: 第 3 回合 · 玩家1
+            - generic [ref=e145]: 15 个动作 · 步骤 25-39
+          - generic [ref=e146]:
+            - generic [ref=e147]: 第 4 回合 · 玩家0
+            - generic [ref=e148]: 7 个动作 · 步骤 40-46
+          - generic [ref=e149]:
+            - generic [ref=e150]: 第 5 回合 · 玩家1
+            - generic [ref=e151]: 12 个动作 · 步骤 47-58
+          - generic [ref=e152]:
+            - generic [ref=e153]: 第 5 回合 · 玩家0
+            - generic [ref=e154]: 1 个动作 · 步骤 59-59
+          - generic [ref=e155]:
+            - generic [ref=e156]: 第 6 回合 · 玩家0
+            - generic [ref=e157]: 26 个动作 · 步骤 60-85
+          - generic [ref=e158]:
+            - generic [ref=e159]: 第 6 回合 · 玩家1
+            - generic [ref=e160]: 1 个动作 · 步骤 86-86
+          - generic [ref=e161]:
+            - generic [ref=e162]: 第 7 回合 · 玩家1
+            - generic [ref=e163]: 19 个动作 · 步骤 87-105
+          - generic [ref=e164]:
+            - generic [ref=e165]: 第 8 回合 · 玩家0
+            - generic [ref=e166]: 13 个动作 · 步骤 106-118
+          - generic [ref=e167]:
+            - generic [ref=e168]: 第 9 回合 · 玩家1
+            - generic [ref=e169]: 8 个动作 · 步骤 119-126
+          - generic [ref=e170]:
+            - generic [ref=e171]: 第 9 回合 · 玩家0
+            - generic [ref=e172]: 1 个动作 · 步骤 127-127
+          - generic [ref=e173]:
+            - generic [ref=e174]: 第 10 回合 · 玩家0
+            - generic [ref=e175]: 23 个动作 · 步骤 128-150
+          - generic [ref=e176]:
+            - generic [ref=e177]: 第 10 回合 · 玩家1
+            - generic [ref=e178]: 1 个动作 · 步骤 151-151
+          - generic [ref=e179]:
+            - generic [ref=e180]: 第 11 回合 · 玩家1
+            - generic [ref=e181]: 5 个动作 · 步骤 152-156
+          - generic [ref=e182]:
+            - generic [ref=e183]: 第 11 回合 · 玩家0
+            - generic [ref=e184]: 1 个动作 · 步骤 157-157

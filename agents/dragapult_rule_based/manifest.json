@@ -1,0 +1,6 @@
+{
+  "name": "dragapult_rule_based",
+  "entry": "agent.py",
+  "deck": "deck.csv",
+  "description": "Extracted from the official Dragapult ex sample notebook."
+}

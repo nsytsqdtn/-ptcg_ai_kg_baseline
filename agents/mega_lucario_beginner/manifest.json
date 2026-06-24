@@ -1,0 +1,6 @@
+{
+  "name": "mega_lucario_beginner",
+  "entry": "agent.py",
+  "deck": "deck.csv",
+  "description": "Extracted from the official beginner Mega Lucario ex sample notebook."
+}

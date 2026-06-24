@@ -1,0 +1,115 @@
+{
+  "recorded_at": "2026-06-20T16:54:38.217032+00:00",
+  "device": "cuda",
+  "torch_version": "2.9.0+cu130",
+  "config": {
+    "deck_path": "D:\\workspace\\ptcg\\agents\\rl_mcts_sample\\deck.csv",
+    "output_dir": "D:\\workspace\\ptcg\\agents\\rl_mcts_sample\\out",
+    "model_path": "D:\\workspace\\ptcg\\agents\\rl_mcts_sample\\model_latest.pth",
+    "metadata_path": "D:\\workspace\\ptcg\\agents\\rl_mcts_sample\\training_metadata.json",
+    "iterations": 5,
+    "evaluation_games": 50,
+    "self_play_games": 100,
+    "batch_size": 128,
+    "learning_rate": 0.0003,
+    "lambda_value": 0.9,
+    "search_count": 10,
+    "seed": 0,
+    "opponents": [
+      "dragapult_rule_based",
+      "mega_lucario_beginner"
+    ]
+  },
+  "history": [
+    {
+      "iteration": 0,
+      "checkpoint": "D:\\workspace\\ptcg\\agents\\rl_mcts_sample\\out\\model0.pth",
+      "evaluations": {
+        "dragapult_rule_based": {
+          "win": 2,
+          "lose": 48,
+          "draw": 0
+        },
+        "mega_lucario_beginner": {
+          "win": 4,
+          "lose": 46,
+          "draw": 0
+        }
+      },
+      "win_rate": 0.06,
+      "sample_count": 3957
+    },
+    {
+      "iteration": 1,
+      "checkpoint": "D:\\workspace\\ptcg\\agents\\rl_mcts_sample\\out\\model1.pth",
+      "evaluations": {
+        "dragapult_rule_based": {
+          "win": 0,
+          "lose": 50,
+          "draw": 0
+        },
+        "mega_lucario_beginner": {
+          "win": 5,
+          "lose": 45,
+          "draw": 0
+        }
+      },
+      "win_rate": 0.05,
+      "sample_count": 3175
+    },
+    {
+      "iteration": 2,
+      "checkpoint": "D:\\workspace\\ptcg\\agents\\rl_mcts_sample\\out\\model2.pth",
+      "evaluations": {
+        "dragapult_rule_based": {
+          "win": 0,
+          "lose": 50,
+          "draw": 0
+        },
+        "mega_lucario_beginner": {
+          "win": 5,
+          "lose": 45,
+          "draw": 0
+        }
+      },
+      "win_rate": 0.05,
+      "sample_count": 1286
+    },
+    {
+      "iteration": 3,
+      "checkpoint": "D:\\workspace\\ptcg\\agents\\rl_mcts_sample\\out\\model3.pth",
+      "evaluations": {
+        "dragapult_rule_based": {
+          "win": 1,
+          "lose": 49,
+          "draw": 0
+        },
+        "mega_lucario_beginner": {
+          "win": 1,
+          "lose": 49,
+          "draw": 0
+        }
+      },
+      "win_rate": 0.02,
+      "sample_count": 612
+    },
+    {
+      "iteration": 4,
+      "checkpoint": "D:\\workspace\\ptcg\\agents\\rl_mcts_sample\\out\\model4.pth",
+      "evaluations": {
+        "dragapult_rule_based": {
+          "win": 0,
+          "lose": 50,
+          "draw": 0
+        },
+        "mega_lucario_beginner": {
+          "win": 0,
+          "lose": 50,
+          "draw": 0
+        }
+      },
+      "win_rate": 0.0,
+      "sample_count": 518
+    }
+  ]
+}

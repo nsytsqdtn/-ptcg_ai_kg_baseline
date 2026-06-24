@@ -1,0 +1,1932 @@
+{
+  "run_at": "2026-06-23T07:57:34.472255+00:00",
+  "label": "v2_md_alignment_pass3",
+  "matchups": {
+    "mega_lucario_beginner": {
+      "wins": 18,
+      "games": 50,
+      "win_rate": 0.36,
+      "average_steps": 101.02,
+      "average_turns": 12.08,
+      "termination_reasons": {
+        "prize_out": 18,
+        "deck_out": 15,
+        "no_active": 17
+      }
+    },
+    "dragapult_rule_based": {
+      "wins": 16,
+      "games": 50,
+      "win_rate": 0.32,
+      "average_steps": 152.52,
+      "average_turns": 18.12,
+      "termination_reasons": {
+        "prize_out": 43,
+        "no_active": 5,
+        "deck_out": 2
+      }
+    }
+  },
+  "games": [
+    {
+      "label": "v2_md_alignment_pass3",
+      "played_at": "2026-06-23T07:57:34.544440+00:00",
+      "opponent": "mega_lucario_beginner",
+      "game_index": 1,
+      "agent_a": "crustle_mega_kangaskhan_rule_rl_p1_v2",
+      "agent_b": "mega_lucario_beginner",
+      "winner": 1,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 70,
+      "turn": 6,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 1
+      }
+    },
+    {
+      "label": "v2_md_alignment_pass3",
+      "played_at": "2026-06-23T07:57:34.613668+00:00",
+      "opponent": "mega_lucario_beginner",
+      "game_index": 2,
+      "agent_a": "mega_lucario_beginner",
+      "agent_b": "crustle_mega_kangaskhan_rule_rl_p1_v2",
+      "winner": 1,
+      "outcome": "win",
+      "score": 1.0,
+      "steps": 81,
+      "turn": 11,
+      "status": "success",
+      "termination": {
+        "reason_code": 2,
+        "reason_key": "deck_out",
+        "winner": 1
+      }
+    },
+    {
+      "label": "v2_md_alignment_pass3",
+      "played_at": "2026-06-23T07:57:34.653703+00:00",
+      "opponent": "mega_lucario_beginner",
+      "game_index": 3,
+      "agent_a": "crustle_mega_kangaskhan_rule_rl_p1_v2",
+      "agent_b": "mega_lucario_beginner",
+      "winner": 1,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 41,
+      "turn": 4,
+      "status": "success",
+      "termination": {
+        "reason_code": 3,
+        "reason_key": "no_active",
+        "winner": 1
+      }
+    },
+    {
+      "label": "v2_md_alignment_pass3",
+      "played_at": "2026-06-23T07:57:34.738187+00:00",
+      "opponent": "mega_lucario_beginner",
+      "game_index": 4,
+      "agent_a": "mega_lucario_beginner",
+      "agent_b": "crustle_mega_kangaskhan_rule_rl_p1_v2",
+      "winner": 0,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 94,
+      "turn": 7,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 0
+      }
+    },
+    {
+      "label": "v2_md_alignment_pass3",
+      "played_at": "2026-06-23T07:57:34.828346+00:00",
+      "opponent": "mega_lucario_beginner",
+      "game_index": 5,
+      "agent_a": "crustle_mega_kangaskhan_rule_rl_p1_v2",
+      "agent_b": "mega_lucario_beginner",
+      "winner": 0,
+      "outcome": "win",
+      "score": 1.0,
+      "steps": 89,
+      "turn": 19,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 0
+      }
+    },
+    {
+      "label": "v2_md_alignment_pass3",
+      "played_at": "2026-06-23T07:57:34.905451+00:00",
+      "opponent": "mega_lucario_beginner",
+      "game_index": 6,
+      "agent_a": "mega_lucario_beginner",
+      "agent_b": "crustle_mega_kangaskhan_rule_rl_p1_v2",
+      "winner": 0,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 103,
+      "turn": 9,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 0
+      }
+    },
+    {
+      "label": "v2_md_alignment_pass3",
+      "played_at": "2026-06-23T07:57:34.953019+00:00",
+      "opponent": "mega_lucario_beginner",
+      "game_index": 7,
+      "agent_a": "crustle_mega_kangaskhan_rule_rl_p1_v2",
+      "agent_b": "mega_lucario_beginner",
+      "winner": 1,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 57,
+      "turn": 4,
+      "status": "success",
+      "termination": {
+        "reason_code": 3,
+        "reason_key": "no_active",
+        "winner": 1
+      }
+    },
+    {
+      "label": "v2_md_alignment_pass3",
+      "played_at": "2026-06-23T07:57:34.998563+00:00",
+      "opponent": "mega_lucario_beginner",
+      "game_index": 8,
+      "agent_a": "mega_lucario_beginner",
+      "agent_b": "crustle_mega_kangaskhan_rule_rl_p1_v2",
+      "winner": 0,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 45,
+      "turn": 3,
+      "status": "success",
+      "termination": {
+        "reason_code": 3,
+        "reason_key": "no_active",
+        "winner": 0
+      }
+    },
+    {
+      "label": "v2_md_alignment_pass3",
+      "played_at": "2026-06-23T07:57:35.080135+00:00",
+      "opponent": "mega_lucario_beginner",
+      "game_index": 9,
+      "agent_a": "crustle_mega_kangaskhan_rule_rl_p1_v2",
+      "agent_b": "mega_lucario_beginner",
+      "winner": 1,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 99,
+      "turn": 12,
+      "status": "success",
+      "termination": {
+        "reason_code": 3,
+        "reason_key": "no_active",
+        "winner": 1
+      }
+    },
+    {
+      "label": "v2_md_alignment_pass3",
+      "played_at": "2026-06-23T07:57:35.157198+00:00",
+      "opponent": "mega_lucario_beginner",
+      "game_index": 10,
+      "agent_a": "mega_lucario_beginner",
+      "agent_b": "crustle_mega_kangaskhan_rule_rl_p1_v2",
+      "winner": 0,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 103,
+      "turn": 9,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 0
+      }
+    },
+    {
+      "label": "v2_md_alignment_pass3",
+      "played_at": "2026-06-23T07:57:35.245490+00:00",
+      "opponent": "mega_lucario_beginner",
+      "game_index": 11,
+      "agent_a": "crustle_mega_kangaskhan_rule_rl_p1_v2",
+      "agent_b": "mega_lucario_beginner",
+      "winner": 1,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 106,
+      "turn": 8,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 1
+      }
+    },
+    {
+      "label": "v2_md_alignment_pass3",
+      "played_at": "2026-06-23T07:57:35.341592+00:00",
+      "opponent": "mega_lucario_beginner",
+      "game_index": 12,
+      "agent_a": "mega_lucario_beginner",
+      "agent_b": "crustle_mega_kangaskhan_rule_rl_p1_v2",
+      "winner": 0,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 110,
+      "turn": 9,
+      "status": "success",
+      "termination": {
+        "reason_code": 3,
+        "reason_key": "no_active",
+        "winner": 0
+      }
+    },
+    {
+      "label": "v2_md_alignment_pass3",
+      "played_at": "2026-06-23T07:57:35.410174+00:00",
+      "opponent": "mega_lucario_beginner",
+      "game_index": 13,
+      "agent_a": "crustle_mega_kangaskhan_rule_rl_p1_v2",
+      "agent_b": "mega_lucario_beginner",
+      "winner": 1,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 72,
+      "turn": 8,
+      "status": "success",
+      "termination": {
+        "reason_code": 3,
+        "reason_key": "no_active",
+        "winner": 1
+      }
+    },
+    {
+      "label": "v2_md_alignment_pass3",
+      "played_at": "2026-06-23T07:57:35.473361+00:00",
+      "opponent": "mega_lucario_beginner",
+      "game_index": 14,
+      "agent_a": "mega_lucario_beginner",
+      "agent_b": "crustle_mega_kangaskhan_rule_rl_p1_v2",
+      "winner": 0,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 59,
+      "turn": 5,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 0
+      }
+    },
+    {
+      "label": "v2_md_alignment_pass3",
+      "played_at": "2026-06-23T07:57:35.592796+00:00",
+      "opponent": "mega_lucario_beginner",
+      "game_index": 15,
+      "agent_a": "crustle_mega_kangaskhan_rule_rl_p1_v2",
+      "agent_b": "mega_lucario_beginner",
+      "winner": 0,
+      "outcome": "win",
+      "score": 1.0,
+      "steps": 117,
+      "turn": 14,
+      "status": "success",
+      "termination": {
+        "reason_code": 2,
+        "reason_key": "deck_out",
+        "winner": 0
+      }
+    },
+    {
+      "label": "v2_md_alignment_pass3",
+      "played_at": "2026-06-23T07:57:35.681388+00:00",
+      "opponent": "mega_lucario_beginner",
+      "game_index": 16,
+      "agent_a": "mega_lucario_beginner",
+      "agent_b": "crustle_mega_kangaskhan_rule_rl_p1_v2",
+      "winner": 0,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 88,
+      "turn": 7,
+      "status": "success",
+      "termination": {
+        "reason_code": 3,
+        "reason_key": "no_active",
+        "winner": 0
+      }
+    },
+    {
+      "label": "v2_md_alignment_pass3",
+      "played_at": "2026-06-23T07:57:35.759203+00:00",
+      "opponent": "mega_lucario_beginner",
+      "game_index": 17,
+      "agent_a": "crustle_mega_kangaskhan_rule_rl_p1_v2",
+      "agent_b": "mega_lucario_beginner",
+      "winner": 1,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 82,
+      "turn": 6,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 1
+      }
+    },
+    {
+      "label": "v2_md_alignment_pass3",
+      "played_at": "2026-06-23T07:57:35.831976+00:00",
+      "opponent": "mega_lucario_beginner",
+      "game_index": 18,
+      "agent_a": "mega_lucario_beginner",
+      "agent_b": "crustle_mega_kangaskhan_rule_rl_p1_v2",
+      "winner": 0,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 88,
+      "turn": 9,
+      "status": "success",
+      "termination": {
+        "reason_code": 3,
+        "reason_key": "no_active",
+        "winner": 0
+      }
+    },
+    {
+      "label": "v2_md_alignment_pass3",
+      "played_at": "2026-06-23T07:57:35.932910+00:00",
+      "opponent": "mega_lucario_beginner",
+      "game_index": 19,
+      "agent_a": "crustle_mega_kangaskhan_rule_rl_p1_v2",
+      "agent_b": "mega_lucario_beginner",
+      "winner": 0,
+      "outcome": "win",
+      "score": 1.0,
+      "steps": 129,
+      "turn": 14,
+      "status": "success",
+      "termination": {
+        "reason_code": 2,
+        "reason_key": "deck_out",
+        "winner": 0
+      }
+    },
+    {
+      "label": "v2_md_alignment_pass3",
+      "played_at": "2026-06-23T07:57:35.972935+00:00",
+      "opponent": "mega_lucario_beginner",
+      "game_index": 20,
+      "agent_a": "mega_lucario_beginner",
+      "agent_b": "crustle_mega_kangaskhan_rule_rl_p1_v2",
+      "winner": 0,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 35,
+      "turn": 3,
+      "status": "success",
+      "termination": {
+        "reason_code": 3,
+        "reason_key": "no_active",
+        "winner": 0
+      }
+    },
+    {
+      "label": "v2_md_alignment_pass3",
+      "played_at": "2026-06-23T07:57:36.094079+00:00",
+      "opponent": "mega_lucario_beginner",
+      "game_index": 21,
+      "agent_a": "crustle_mega_kangaskhan_rule_rl_p1_v2",
+      "agent_b": "mega_lucario_beginner",
+      "winner": 1,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 130,
+      "turn": 16,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 1
+      }
+    },
+    {
+      "label": "v2_md_alignment_pass3",
+      "played_at": "2026-06-23T07:57:36.206171+00:00",
+      "opponent": "mega_lucario_beginner",
+      "game_index": 22,
+      "agent_a": "mega_lucario_beginner",
+      "agent_b": "crustle_mega_kangaskhan_rule_rl_p1_v2",
+      "winner": 1,
+      "outcome": "win",
+      "score": 1.0,
+      "steps": 120,
+      "turn": 13,
+      "status": "success",
+      "termination": {
+        "reason_code": 2,
+        "reason_key": "deck_out",
+        "winner": 1
+      }
+    },
+    {
+      "label": "v2_md_alignment_pass3",
+      "played_at": "2026-06-23T07:57:36.253715+00:00",
+      "opponent": "mega_lucario_beginner",
+      "game_index": 23,
+      "agent_a": "crustle_mega_kangaskhan_rule_rl_p1_v2",
+      "agent_b": "mega_lucario_beginner",
+      "winner": 1,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 42,
+      "turn": 4,
+      "status": "success",
+      "termination": {
+        "reason_code": 3,
+        "reason_key": "no_active",
+        "winner": 1
+      }
+    },
+    {
+      "label": "v2_md_alignment_pass3",
+      "played_at": "2026-06-23T07:57:36.358477+00:00",
+      "opponent": "mega_lucario_beginner",
+      "game_index": 24,
+      "agent_a": "mega_lucario_beginner",
+      "agent_b": "crustle_mega_kangaskhan_rule_rl_p1_v2",
+      "winner": 0,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 118,
+      "turn": 11,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 0
+      }
+    },
+    {
+      "label": "v2_md_alignment_pass3",
+      "played_at": "2026-06-23T07:57:36.465856+00:00",
+      "opponent": "mega_lucario_beginner",
+      "game_index": 25,
+      "agent_a": "crustle_mega_kangaskhan_rule_rl_p1_v2",
+      "agent_b": "mega_lucario_beginner",
+      "winner": 0,
+      "outcome": "win",
+      "score": 1.0,
+      "steps": 121,
+      "turn": 16,
+      "status": "success",
+      "termination": {
+        "reason_code": 2,
+        "reason_key": "deck_out",
+        "winner": 0
+      }
+    },
+    {
+      "label": "v2_md_alignment_pass3",
+      "played_at": "2026-06-23T07:57:36.541420+00:00",
+      "opponent": "mega_lucario_beginner",
+      "game_index": 26,
+      "agent_a": "mega_lucario_beginner",
+      "agent_b": "crustle_mega_kangaskhan_rule_rl_p1_v2",
+      "winner": 0,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 84,
+      "turn": 7,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 0
+      }
+    },
+    {
+      "label": "v2_md_alignment_pass3",
+      "played_at": "2026-06-23T07:57:36.665347+00:00",
+      "opponent": "mega_lucario_beginner",
+      "game_index": 27,
+      "agent_a": "crustle_mega_kangaskhan_rule_rl_p1_v2",
+      "agent_b": "mega_lucario_beginner",
+      "winner": 1,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 146,
+      "turn": 18,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 1
+      }
+    },
+    {
+      "label": "v2_md_alignment_pass3",
+      "played_at": "2026-06-23T07:57:36.797484+00:00",
+      "opponent": "mega_lucario_beginner",
+      "game_index": 28,
+      "agent_a": "mega_lucario_beginner",
+      "agent_b": "crustle_mega_kangaskhan_rule_rl_p1_v2",
+      "winner": 1,
+      "outcome": "win",
+      "score": 1.0,
+      "steps": 133,
+      "turn": 20,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 1
+      }
+    },
+    {
+      "label": "v2_md_alignment_pass3",
+      "played_at": "2026-06-23T07:57:36.998043+00:00",
+      "opponent": "mega_lucario_beginner",
+      "game_index": 29,
+      "agent_a": "crustle_mega_kangaskhan_rule_rl_p1_v2",
+      "agent_b": "mega_lucario_beginner",
+      "winner": 0,
+      "outcome": "win",
+      "score": 1.0,
+      "steps": 193,
+      "turn": 34,
+      "status": "success",
+      "termination": {
+        "reason_code": 2,
+        "reason_key": "deck_out",
+        "winner": 0
+      }
+    },
+    {
+      "label": "v2_md_alignment_pass3",
+      "played_at": "2026-06-23T07:57:37.079654+00:00",
+      "opponent": "mega_lucario_beginner",
+      "game_index": 30,
+      "agent_a": "mega_lucario_beginner",
+      "agent_b": "crustle_mega_kangaskhan_rule_rl_p1_v2",
+      "winner": 1,
+      "outcome": "win",
+      "score": 1.0,
+      "steps": 113,
+      "turn": 17,
+      "status": "success",
+      "termination": {
+        "reason_code": 2,
+        "reason_key": "deck_out",
+        "winner": 1
+      }
+    },
+    {
+      "label": "v2_md_alignment_pass3",
+      "played_at": "2026-06-23T07:57:37.137032+00:00",
+      "opponent": "mega_lucario_beginner",
+      "game_index": 31,
+      "agent_a": "crustle_mega_kangaskhan_rule_rl_p1_v2",
+      "agent_b": "mega_lucario_beginner",
+      "winner": 1,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 88,
+      "turn": 10,
+      "status": "success",
+      "termination": {
+        "reason_code": 3,
+        "reason_key": "no_active",
+        "winner": 1
+      }
+    },
+    {
+      "label": "v2_md_alignment_pass3",
+      "played_at": "2026-06-23T07:57:37.328321+00:00",
+      "opponent": "mega_lucario_beginner",
+      "game_index": 32,
+      "agent_a": "mega_lucario_beginner",
+      "agent_b": "crustle_mega_kangaskhan_rule_rl_p1_v2",
+      "winner": 1,
+      "outcome": "win",
+      "score": 1.0,
+      "steps": 157,
+      "turn": 29,
+      "status": "success",
+      "termination": {
+        "reason_code": 2,
+        "reason_key": "deck_out",
+        "winner": 1
+      }
+    },
+    {
+      "label": "v2_md_alignment_pass3",
+      "played_at": "2026-06-23T07:57:37.428265+00:00",
+      "opponent": "mega_lucario_beginner",
+      "game_index": 33,
+      "agent_a": "crustle_mega_kangaskhan_rule_rl_p1_v2",
+      "agent_b": "mega_lucario_beginner",
+      "winner": 0,
+      "outcome": "win",
+      "score": 1.0,
+      "steps": 132,
+      "turn": 16,
+      "status": "success",
+      "termination": {
+        "reason_code": 2,
+        "reason_key": "deck_out",
+        "winner": 0
+      }
+    },
+    {
+      "label": "v2_md_alignment_pass3",
+      "played_at": "2026-06-23T07:57:37.530768+00:00",
+      "opponent": "mega_lucario_beginner",
+      "game_index": 34,
+      "agent_a": "mega_lucario_beginner",
+      "agent_b": "crustle_mega_kangaskhan_rule_rl_p1_v2",
+      "winner": 1,
+      "outcome": "win",
+      "score": 1.0,
+      "steps": 133,
+      "turn": 19,
+      "status": "success",
+      "termination": {
+        "reason_code": 2,
+        "reason_key": "deck_out",
+        "winner": 1
+      }
+    },
+    {
+      "label": "v2_md_alignment_pass3",
+      "played_at": "2026-06-23T07:57:37.622313+00:00",
+      "opponent": "mega_lucario_beginner",
+      "game_index": 35,
+      "agent_a": "crustle_mega_kangaskhan_rule_rl_p1_v2",
+      "agent_b": "mega_lucario_beginner",
+      "winner": 1,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 110,
+      "turn": 10,
+      "status": "success",
+      "termination": {
+        "reason_code": 3,
+        "reason_key": "no_active",
+        "winner": 1
+      }
+    },
+    {
+      "label": "v2_md_alignment_pass3",
+      "played_at": "2026-06-23T07:57:37.694439+00:00",
+      "opponent": "mega_lucario_beginner",
+      "game_index": 36,
+      "agent_a": "mega_lucario_beginner",
+      "agent_b": "crustle_mega_kangaskhan_rule_rl_p1_v2",
+      "winner": 0,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 93,
+      "turn": 11,
+      "status": "success",
+      "termination": {
+        "reason_code": 3,
+        "reason_key": "no_active",
+        "winner": 0
+      }
+    },
+    {
+      "label": "v2_md_alignment_pass3",
+      "played_at": "2026-06-23T07:57:37.800557+00:00",
+      "opponent": "mega_lucario_beginner",
+      "game_index": 37,
+      "agent_a": "crustle_mega_kangaskhan_rule_rl_p1_v2",
+      "agent_b": "mega_lucario_beginner",
+      "winner": 1,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 107,
+      "turn": 14,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 1
+      }
+    },
+    {
+      "label": "v2_md_alignment_pass3",
+      "played_at": "2026-06-23T07:57:37.854677+00:00",
+      "opponent": "mega_lucario_beginner",
+      "game_index": 38,
+      "agent_a": "mega_lucario_beginner",
+      "agent_b": "crustle_mega_kangaskhan_rule_rl_p1_v2",
+      "winner": 0,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 65,
+      "turn": 5,
+      "status": "success",
+      "termination": {
+        "reason_code": 3,
+        "reason_key": "no_active",
+        "winner": 0
+      }
+    },
+    {
+      "label": "v2_md_alignment_pass3",
+      "played_at": "2026-06-23T07:57:37.920737+00:00",
+      "opponent": "mega_lucario_beginner",
+      "game_index": 39,
+      "agent_a": "crustle_mega_kangaskhan_rule_rl_p1_v2",
+      "agent_b": "mega_lucario_beginner",
+      "winner": 0,
+      "outcome": "win",
+      "score": 1.0,
+      "steps": 82,
+      "turn": 12,
+      "status": "success",
+      "termination": {
+        "reason_code": 2,
+        "reason_key": "deck_out",
+        "winner": 0
+      }
+    },
+    {
+      "label": "v2_md_alignment_pass3",
+      "played_at": "2026-06-23T07:57:38.028934+00:00",
+      "opponent": "mega_lucario_beginner",
+      "game_index": 40,
+      "agent_a": "mega_lucario_beginner",
+      "agent_b": "crustle_mega_kangaskhan_rule_rl_p1_v2",
+      "winner": 1,
+      "outcome": "win",
+      "score": 1.0,
+      "steps": 120,
+      "turn": 19,
+      "status": "success",
+      "termination": {
+        "reason_code": 2,
+        "reason_key": "deck_out",
+        "winner": 1
+      }
+    },
+    {
+      "label": "v2_md_alignment_pass3",
+      "played_at": "2026-06-23T07:57:38.134007+00:00",
+      "opponent": "mega_lucario_beginner",
+      "game_index": 41,
+      "agent_a": "crustle_mega_kangaskhan_rule_rl_p1_v2",
+      "agent_b": "mega_lucario_beginner",
+      "winner": 1,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 123,
+      "turn": 12,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 1
+      }
+    },
+    {
+      "label": "v2_md_alignment_pass3",
+      "played_at": "2026-06-23T07:57:38.203062+00:00",
+      "opponent": "mega_lucario_beginner",
+      "game_index": 42,
+      "agent_a": "mega_lucario_beginner",
+      "agent_b": "crustle_mega_kangaskhan_rule_rl_p1_v2",
+      "winner": 1,
+      "outcome": "win",
+      "score": 1.0,
+      "steps": 110,
+      "turn": 13,
+      "status": "success",
+      "termination": {
+        "reason_code": 2,
+        "reason_key": "deck_out",
+        "winner": 1
+      }
+    },
+    {
+      "label": "v2_md_alignment_pass3",
+      "played_at": "2026-06-23T07:57:38.274121+00:00",
+      "opponent": "mega_lucario_beginner",
+      "game_index": 43,
+      "agent_a": "crustle_mega_kangaskhan_rule_rl_p1_v2",
+      "agent_b": "mega_lucario_beginner",
+      "winner": 1,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 92,
+      "turn": 8,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 1
+      }
+    },
+    {
+      "label": "v2_md_alignment_pass3",
+      "played_at": "2026-06-23T07:57:38.339173+00:00",
+      "opponent": "mega_lucario_beginner",
+      "game_index": 44,
+      "agent_a": "mega_lucario_beginner",
+      "agent_b": "crustle_mega_kangaskhan_rule_rl_p1_v2",
+      "winner": 0,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 95,
+      "turn": 9,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 0
+      }
+    },
+    {
+      "label": "v2_md_alignment_pass3",
+      "played_at": "2026-06-23T07:57:38.373196+00:00",
+      "opponent": "mega_lucario_beginner",
+      "game_index": 45,
+      "agent_a": "crustle_mega_kangaskhan_rule_rl_p1_v2",
+      "agent_b": "mega_lucario_beginner",
+      "winner": 0,
+      "outcome": "win",
+      "score": 1.0,
+      "steps": 49,
+      "turn": 15,
+      "status": "success",
+      "termination": {
+        "reason_code": 3,
+        "reason_key": "no_active",
+        "winner": 0
+      }
+    },
+    {
+      "label": "v2_md_alignment_pass3",
+      "played_at": "2026-06-23T07:57:38.477409+00:00",
+      "opponent": "mega_lucario_beginner",
+      "game_index": 46,
+      "agent_a": "mega_lucario_beginner",
+      "agent_b": "crustle_mega_kangaskhan_rule_rl_p1_v2",
+      "winner": 1,
+      "outcome": "win",
+      "score": 1.0,
+      "steps": 118,
+      "turn": 15,
+      "status": "success",
+      "termination": {
+        "reason_code": 2,
+        "reason_key": "deck_out",
+        "winner": 1
+      }
+    },
+    {
+      "label": "v2_md_alignment_pass3",
+      "played_at": "2026-06-23T07:57:38.596891+00:00",
+      "opponent": "mega_lucario_beginner",
+      "game_index": 47,
+      "agent_a": "crustle_mega_kangaskhan_rule_rl_p1_v2",
+      "agent_b": "mega_lucario_beginner",
+      "winner": 1,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 166,
+      "turn": 26,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 1
+      }
+    },
+    {
+      "label": "v2_md_alignment_pass3",
+      "played_at": "2026-06-23T07:57:38.682021+00:00",
+      "opponent": "mega_lucario_beginner",
+      "game_index": 48,
+      "agent_a": "mega_lucario_beginner",
+      "agent_b": "crustle_mega_kangaskhan_rule_rl_p1_v2",
+      "winner": 0,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 97,
+      "turn": 9,
+      "status": "success",
+      "termination": {
+        "reason_code": 3,
+        "reason_key": "no_active",
+        "winner": 0
+      }
+    },
+    {
+      "label": "v2_md_alignment_pass3",
+      "played_at": "2026-06-23T07:57:38.827501+00:00",
+      "opponent": "mega_lucario_beginner",
+      "game_index": 49,
+      "agent_a": "crustle_mega_kangaskhan_rule_rl_p1_v2",
+      "agent_b": "mega_lucario_beginner",
+      "winner": 0,
+      "outcome": "win",
+      "score": 1.0,
+      "steps": 131,
+      "turn": 20,
+      "status": "success",
+      "termination": {
+        "reason_code": 2,
+        "reason_key": "deck_out",
+        "winner": 0
+      }
+    },
+    {
+      "label": "v2_md_alignment_pass3",
+      "played_at": "2026-06-23T07:57:38.915409+00:00",
+      "opponent": "mega_lucario_beginner",
+      "game_index": 50,
+      "agent_a": "mega_lucario_beginner",
+      "agent_b": "crustle_mega_kangaskhan_rule_rl_p1_v2",
+      "winner": 0,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 115,
+      "turn": 9,
+      "status": "success",
+      "termination": {
+        "reason_code": 3,
+        "reason_key": "no_active",
+        "winner": 0
+      }
+    },
+    {
+      "label": "v2_md_alignment_pass3",
+      "played_at": "2026-06-23T07:57:39.029636+00:00",
+      "opponent": "dragapult_rule_based",
+      "game_index": 1,
+      "agent_a": "crustle_mega_kangaskhan_rule_rl_p1_v2",
+      "agent_b": "dragapult_rule_based",
+      "winner": 1,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 134,
+      "turn": 18,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 1
+      }
+    },
+    {
+      "label": "v2_md_alignment_pass3",
+      "played_at": "2026-06-23T07:57:39.117216+00:00",
+      "opponent": "dragapult_rule_based",
+      "game_index": 2,
+      "agent_a": "dragapult_rule_based",
+      "agent_b": "crustle_mega_kangaskhan_rule_rl_p1_v2",
+      "winner": 0,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 111,
+      "turn": 12,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 0
+      }
+    },
+    {
+      "label": "v2_md_alignment_pass3",
+      "played_at": "2026-06-23T07:57:39.169782+00:00",
+      "opponent": "dragapult_rule_based",
+      "game_index": 3,
+      "agent_a": "crustle_mega_kangaskhan_rule_rl_p1_v2",
+      "agent_b": "dragapult_rule_based",
+      "winner": 0,
+      "outcome": "win",
+      "score": 1.0,
+      "steps": 40,
+      "turn": 6,
+      "status": "success",
+      "termination": {
+        "reason_code": 3,
+        "reason_key": "no_active",
+        "winner": 0
+      }
+    },
+    {
+      "label": "v2_md_alignment_pass3",
+      "played_at": "2026-06-23T07:57:39.222605+00:00",
+      "opponent": "dragapult_rule_based",
+      "game_index": 4,
+      "agent_a": "dragapult_rule_based",
+      "agent_b": "crustle_mega_kangaskhan_rule_rl_p1_v2",
+      "winner": 1,
+      "outcome": "win",
+      "score": 1.0,
+      "steps": 34,
+      "turn": 6,
+      "status": "success",
+      "termination": {
+        "reason_code": 3,
+        "reason_key": "no_active",
+        "winner": 1
+      }
+    },
+    {
+      "label": "v2_md_alignment_pass3",
+      "played_at": "2026-06-23T07:57:39.327569+00:00",
+      "opponent": "dragapult_rule_based",
+      "game_index": 5,
+      "agent_a": "crustle_mega_kangaskhan_rule_rl_p1_v2",
+      "agent_b": "dragapult_rule_based",
+      "winner": 1,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 120,
+      "turn": 10,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 1
+      }
+    },
+    {
+      "label": "v2_md_alignment_pass3",
+      "played_at": "2026-06-23T07:57:39.494741+00:00",
+      "opponent": "dragapult_rule_based",
+      "game_index": 6,
+      "agent_a": "dragapult_rule_based",
+      "agent_b": "crustle_mega_kangaskhan_rule_rl_p1_v2",
+      "winner": 0,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 194,
+      "turn": 24,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 0
+      }
+    },
+    {
+      "label": "v2_md_alignment_pass3",
+      "played_at": "2026-06-23T07:57:39.613645+00:00",
+      "opponent": "dragapult_rule_based",
+      "game_index": 7,
+      "agent_a": "crustle_mega_kangaskhan_rule_rl_p1_v2",
+      "agent_b": "dragapult_rule_based",
+      "winner": 1,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 136,
+      "turn": 12,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 1
+      }
+    },
+    {
+      "label": "v2_md_alignment_pass3",
+      "played_at": "2026-06-23T07:57:39.779714+00:00",
+      "opponent": "dragapult_rule_based",
+      "game_index": 8,
+      "agent_a": "dragapult_rule_based",
+      "agent_b": "crustle_mega_kangaskhan_rule_rl_p1_v2",
+      "winner": 0,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 195,
+      "turn": 26,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 0
+      }
+    },
+    {
+      "label": "v2_md_alignment_pass3",
+      "played_at": "2026-06-23T07:57:39.903369+00:00",
+      "opponent": "dragapult_rule_based",
+      "game_index": 9,
+      "agent_a": "crustle_mega_kangaskhan_rule_rl_p1_v2",
+      "agent_b": "dragapult_rule_based",
+      "winner": 1,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 173,
+      "turn": 16,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 1
+      }
+    },
+    {
+      "label": "v2_md_alignment_pass3",
+      "played_at": "2026-06-23T07:57:40.020418+00:00",
+      "opponent": "dragapult_rule_based",
+      "game_index": 10,
+      "agent_a": "dragapult_rule_based",
+      "agent_b": "crustle_mega_kangaskhan_rule_rl_p1_v2",
+      "winner": 0,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 136,
+      "turn": 12,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 0
+      }
+    },
+    {
+      "label": "v2_md_alignment_pass3",
+      "played_at": "2026-06-23T07:57:40.249382+00:00",
+      "opponent": "dragapult_rule_based",
+      "game_index": 11,
+      "agent_a": "crustle_mega_kangaskhan_rule_rl_p1_v2",
+      "agent_b": "dragapult_rule_based",
+      "winner": 1,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 220,
+      "turn": 26,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 1
+      }
+    },
+    {
+      "label": "v2_md_alignment_pass3",
+      "played_at": "2026-06-23T07:57:40.379073+00:00",
+      "opponent": "dragapult_rule_based",
+      "game_index": 12,
+      "agent_a": "dragapult_rule_based",
+      "agent_b": "crustle_mega_kangaskhan_rule_rl_p1_v2",
+      "winner": 0,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 168,
+      "turn": 16,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 0
+      }
+    },
+    {
+      "label": "v2_md_alignment_pass3",
+      "played_at": "2026-06-23T07:57:40.468453+00:00",
+      "opponent": "dragapult_rule_based",
+      "game_index": 13,
+      "agent_a": "crustle_mega_kangaskhan_rule_rl_p1_v2",
+      "agent_b": "dragapult_rule_based",
+      "winner": 1,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 113,
+      "turn": 16,
+      "status": "success",
+      "termination": {
+        "reason_code": 3,
+        "reason_key": "no_active",
+        "winner": 1
+      }
+    },
+    {
+      "label": "v2_md_alignment_pass3",
+      "played_at": "2026-06-23T07:57:40.584682+00:00",
+      "opponent": "dragapult_rule_based",
+      "game_index": 14,
+      "agent_a": "dragapult_rule_based",
+      "agent_b": "crustle_mega_kangaskhan_rule_rl_p1_v2",
+      "winner": 0,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 137,
+      "turn": 12,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 0
+      }
+    },
+    {
+      "label": "v2_md_alignment_pass3",
+      "played_at": "2026-06-23T07:57:40.693096+00:00",
+      "opponent": "dragapult_rule_based",
+      "game_index": 15,
+      "agent_a": "crustle_mega_kangaskhan_rule_rl_p1_v2",
+      "agent_b": "dragapult_rule_based",
+      "winner": 1,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 134,
+      "turn": 12,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 1
+      }
+    },
+    {
+      "label": "v2_md_alignment_pass3",
+      "played_at": "2026-06-23T07:57:40.864357+00:00",
+      "opponent": "dragapult_rule_based",
+      "game_index": 16,
+      "agent_a": "dragapult_rule_based",
+      "agent_b": "crustle_mega_kangaskhan_rule_rl_p1_v2",
+      "winner": 0,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 198,
+      "turn": 20,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 0
+      }
+    },
+    {
+      "label": "v2_md_alignment_pass3",
+      "played_at": "2026-06-23T07:57:41.044980+00:00",
+      "opponent": "dragapult_rule_based",
+      "game_index": 17,
+      "agent_a": "crustle_mega_kangaskhan_rule_rl_p1_v2",
+      "agent_b": "dragapult_rule_based",
+      "winner": 0,
+      "outcome": "win",
+      "score": 1.0,
+      "steps": 170,
+      "turn": 19,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 0
+      }
+    },
+    {
+      "label": "v2_md_alignment_pass3",
+      "played_at": "2026-06-23T07:57:41.196268+00:00",
+      "opponent": "dragapult_rule_based",
+      "game_index": 18,
+      "agent_a": "dragapult_rule_based",
+      "agent_b": "crustle_mega_kangaskhan_rule_rl_p1_v2",
+      "winner": 0,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 187,
+      "turn": 16,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 0
+      }
+    },
+    {
+      "label": "v2_md_alignment_pass3",
+      "played_at": "2026-06-23T07:57:41.283033+00:00",
+      "opponent": "dragapult_rule_based",
+      "game_index": 19,
+      "agent_a": "crustle_mega_kangaskhan_rule_rl_p1_v2",
+      "agent_b": "dragapult_rule_based",
+      "winner": 1,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 116,
+      "turn": 10,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 1
+      }
+    },
+    {
+      "label": "v2_md_alignment_pass3",
+      "played_at": "2026-06-23T07:57:41.412878+00:00",
+      "opponent": "dragapult_rule_based",
+      "game_index": 20,
+      "agent_a": "dragapult_rule_based",
+      "agent_b": "crustle_mega_kangaskhan_rule_rl_p1_v2",
+      "winner": 0,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 169,
+      "turn": 18,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 0
+      }
+    },
+    {
+      "label": "v2_md_alignment_pass3",
+      "played_at": "2026-06-23T07:57:41.639792+00:00",
+      "opponent": "dragapult_rule_based",
+      "game_index": 21,
+      "agent_a": "crustle_mega_kangaskhan_rule_rl_p1_v2",
+      "agent_b": "dragapult_rule_based",
+      "winner": 0,
+      "outcome": "win",
+      "score": 1.0,
+      "steps": 187,
+      "turn": 29,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 0
+      }
+    },
+    {
+      "label": "v2_md_alignment_pass3",
+      "played_at": "2026-06-23T07:57:41.683342+00:00",
+      "opponent": "dragapult_rule_based",
+      "game_index": 22,
+      "agent_a": "dragapult_rule_based",
+      "agent_b": "crustle_mega_kangaskhan_rule_rl_p1_v2",
+      "winner": 1,
+      "outcome": "win",
+      "score": 1.0,
+      "steps": 45,
+      "turn": 5,
+      "status": "success",
+      "termination": {
+        "reason_code": 3,
+        "reason_key": "no_active",
+        "winner": 1
+      }
+    },
+    {
+      "label": "v2_md_alignment_pass3",
+      "played_at": "2026-06-23T07:57:41.812085+00:00",
+      "opponent": "dragapult_rule_based",
+      "game_index": 23,
+      "agent_a": "crustle_mega_kangaskhan_rule_rl_p1_v2",
+      "agent_b": "dragapult_rule_based",
+      "winner": 1,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 136,
+      "turn": 12,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 1
+      }
+    },
+    {
+      "label": "v2_md_alignment_pass3",
+      "played_at": "2026-06-23T07:57:42.011278+00:00",
+      "opponent": "dragapult_rule_based",
+      "game_index": 24,
+      "agent_a": "dragapult_rule_based",
+      "agent_b": "crustle_mega_kangaskhan_rule_rl_p1_v2",
+      "winner": 1,
+      "outcome": "win",
+      "score": 1.0,
+      "steps": 214,
+      "turn": 35,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 1
+      }
+    },
+    {
+      "label": "v2_md_alignment_pass3",
+      "played_at": "2026-06-23T07:57:42.204140+00:00",
+      "opponent": "dragapult_rule_based",
+      "game_index": 25,
+      "agent_a": "crustle_mega_kangaskhan_rule_rl_p1_v2",
+      "agent_b": "dragapult_rule_based",
+      "winner": 0,
+      "outcome": "win",
+      "score": 1.0,
+      "steps": 178,
+      "turn": 27,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 0
+      }
+    },
+    {
+      "label": "v2_md_alignment_pass3",
+      "played_at": "2026-06-23T07:57:42.346653+00:00",
+      "opponent": "dragapult_rule_based",
+      "game_index": 26,
+      "agent_a": "dragapult_rule_based",
+      "agent_b": "crustle_mega_kangaskhan_rule_rl_p1_v2",
+      "winner": 0,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 140,
+      "turn": 14,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 0
+      }
+    },
+    {
+      "label": "v2_md_alignment_pass3",
+      "played_at": "2026-06-23T07:57:42.602406+00:00",
+      "opponent": "dragapult_rule_based",
+      "game_index": 27,
+      "agent_a": "crustle_mega_kangaskhan_rule_rl_p1_v2",
+      "agent_b": "dragapult_rule_based",
+      "winner": 0,
+      "outcome": "win",
+      "score": 1.0,
+      "steps": 234,
+      "turn": 37,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 0
+      }
+    },
+    {
+      "label": "v2_md_alignment_pass3",
+      "played_at": "2026-06-23T07:57:42.754077+00:00",
+      "opponent": "dragapult_rule_based",
+      "game_index": 28,
+      "agent_a": "dragapult_rule_based",
+      "agent_b": "crustle_mega_kangaskhan_rule_rl_p1_v2",
+      "winner": 0,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 182,
+      "turn": 14,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 0
+      }
+    },
+    {
+      "label": "v2_md_alignment_pass3",
+      "played_at": "2026-06-23T07:57:42.936503+00:00",
+      "opponent": "dragapult_rule_based",
+      "game_index": 29,
+      "agent_a": "crustle_mega_kangaskhan_rule_rl_p1_v2",
+      "agent_b": "dragapult_rule_based",
+      "winner": 1,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 190,
+      "turn": 16,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 1
+      }
+    },
+    {
+      "label": "v2_md_alignment_pass3",
+      "played_at": "2026-06-23T07:57:43.075500+00:00",
+      "opponent": "dragapult_rule_based",
+      "game_index": 30,
+      "agent_a": "dragapult_rule_based",
+      "agent_b": "crustle_mega_kangaskhan_rule_rl_p1_v2",
+      "winner": 0,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 191,
+      "turn": 24,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 0
+      }
+    },
+    {
+      "label": "v2_md_alignment_pass3",
+      "played_at": "2026-06-23T07:57:43.199553+00:00",
+      "opponent": "dragapult_rule_based",
+      "game_index": 31,
+      "agent_a": "crustle_mega_kangaskhan_rule_rl_p1_v2",
+      "agent_b": "dragapult_rule_based",
+      "winner": 1,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 139,
+      "turn": 16,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 1
+      }
+    },
+    {
+      "label": "v2_md_alignment_pass3",
+      "played_at": "2026-06-23T07:57:43.324828+00:00",
+      "opponent": "dragapult_rule_based",
+      "game_index": 32,
+      "agent_a": "dragapult_rule_based",
+      "agent_b": "crustle_mega_kangaskhan_rule_rl_p1_v2",
+      "winner": 1,
+      "outcome": "win",
+      "score": 1.0,
+      "steps": 149,
+      "turn": 26,
+      "status": "success",
+      "termination": {
+        "reason_code": 2,
+        "reason_key": "deck_out",
+        "winner": 1
+      }
+    },
+    {
+      "label": "v2_md_alignment_pass3",
+      "played_at": "2026-06-23T07:57:43.425938+00:00",
+      "opponent": "dragapult_rule_based",
+      "game_index": 33,
+      "agent_a": "crustle_mega_kangaskhan_rule_rl_p1_v2",
+      "agent_b": "dragapult_rule_based",
+      "winner": 1,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 137,
+      "turn": 14,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 1
+      }
+    },
+    {
+      "label": "v2_md_alignment_pass3",
+      "played_at": "2026-06-23T07:57:43.615671+00:00",
+      "opponent": "dragapult_rule_based",
+      "game_index": 34,
+      "agent_a": "dragapult_rule_based",
+      "agent_b": "crustle_mega_kangaskhan_rule_rl_p1_v2",
+      "winner": 1,
+      "outcome": "win",
+      "score": 1.0,
+      "steps": 243,
+      "turn": 33,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 1
+      }
+    },
+    {
+      "label": "v2_md_alignment_pass3",
+      "played_at": "2026-06-23T07:57:43.705247+00:00",
+      "opponent": "dragapult_rule_based",
+      "game_index": 35,
+      "agent_a": "crustle_mega_kangaskhan_rule_rl_p1_v2",
+      "agent_b": "dragapult_rule_based",
+      "winner": 1,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 114,
+      "turn": 12,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 1
+      }
+    },
+    {
+      "label": "v2_md_alignment_pass3",
+      "played_at": "2026-06-23T07:57:43.825455+00:00",
+      "opponent": "dragapult_rule_based",
+      "game_index": 36,
+      "agent_a": "dragapult_rule_based",
+      "agent_b": "crustle_mega_kangaskhan_rule_rl_p1_v2",
+      "winner": 0,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 121,
+      "turn": 12,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 0
+      }
+    },
+    {
+      "label": "v2_md_alignment_pass3",
+      "played_at": "2026-06-23T07:57:43.940231+00:00",
+      "opponent": "dragapult_rule_based",
+      "game_index": 37,
+      "agent_a": "crustle_mega_kangaskhan_rule_rl_p1_v2",
+      "agent_b": "dragapult_rule_based",
+      "winner": 1,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 126,
+      "turn": 12,
+      "status": "success",
+      "termination": {
+        "reason_code": 3,
+        "reason_key": "no_active",
+        "winner": 1
+      }
+    },
+    {
+      "label": "v2_md_alignment_pass3",
+      "played_at": "2026-06-23T07:57:44.103135+00:00",
+      "opponent": "dragapult_rule_based",
+      "game_index": 38,
+      "agent_a": "dragapult_rule_based",
+      "agent_b": "crustle_mega_kangaskhan_rule_rl_p1_v2",
+      "winner": 1,
+      "outcome": "win",
+      "score": 1.0,
+      "steps": 189,
+      "turn": 25,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 1
+      }
+    },
+    {
+      "label": "v2_md_alignment_pass3",
+      "played_at": "2026-06-23T07:57:44.257802+00:00",
+      "opponent": "dragapult_rule_based",
+      "game_index": 39,
+      "agent_a": "crustle_mega_kangaskhan_rule_rl_p1_v2",
+      "agent_b": "dragapult_rule_based",
+      "winner": 1,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 159,
+      "turn": 18,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 1
+      }
+    },
+    {
+      "label": "v2_md_alignment_pass3",
+      "played_at": "2026-06-23T07:57:44.374606+00:00",
+      "opponent": "dragapult_rule_based",
+      "game_index": 40,
+      "agent_a": "dragapult_rule_based",
+      "agent_b": "crustle_mega_kangaskhan_rule_rl_p1_v2",
+      "winner": 0,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 136,
+      "turn": 14,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 0
+      }
+    },
+    {
+      "label": "v2_md_alignment_pass3",
+      "played_at": "2026-06-23T07:57:44.489714+00:00",
+      "opponent": "dragapult_rule_based",
+      "game_index": 41,
+      "agent_a": "crustle_mega_kangaskhan_rule_rl_p1_v2",
+      "agent_b": "dragapult_rule_based",
+      "winner": 1,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 130,
+      "turn": 12,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 1
+      }
+    },
+    {
+      "label": "v2_md_alignment_pass3",
+      "played_at": "2026-06-23T07:57:44.650450+00:00",
+      "opponent": "dragapult_rule_based",
+      "game_index": 42,
+      "agent_a": "dragapult_rule_based",
+      "agent_b": "crustle_mega_kangaskhan_rule_rl_p1_v2",
+      "winner": 1,
+      "outcome": "win",
+      "score": 1.0,
+      "steps": 188,
+      "turn": 35,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 1
+      }
+    },
+    {
+      "label": "v2_md_alignment_pass3",
+      "played_at": "2026-06-23T07:57:44.788071+00:00",
+      "opponent": "dragapult_rule_based",
+      "game_index": 43,
+      "agent_a": "crustle_mega_kangaskhan_rule_rl_p1_v2",
+      "agent_b": "dragapult_rule_based",
+      "winner": 0,
+      "outcome": "win",
+      "score": 1.0,
+      "steps": 150,
+      "turn": 19,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 0
+      }
+    },
+    {
+      "label": "v2_md_alignment_pass3",
+      "played_at": "2026-06-23T07:57:44.920998+00:00",
+      "opponent": "dragapult_rule_based",
+      "game_index": 44,
+      "agent_a": "dragapult_rule_based",
+      "agent_b": "crustle_mega_kangaskhan_rule_rl_p1_v2",
+      "winner": 0,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 169,
+      "turn": 20,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 0
+      }
+    },
+    {
+      "label": "v2_md_alignment_pass3",
+      "played_at": "2026-06-23T07:57:45.115667+00:00",
+      "opponent": "dragapult_rule_based",
+      "game_index": 45,
+      "agent_a": "crustle_mega_kangaskhan_rule_rl_p1_v2",
+      "agent_b": "dragapult_rule_based",
+      "winner": 0,
+      "outcome": "win",
+      "score": 1.0,
+      "steps": 208,
+      "turn": 40,
+      "status": "success",
+      "termination": {
+        "reason_code": 2,
+        "reason_key": "deck_out",
+        "winner": 0
+      }
+    },
+    {
+      "label": "v2_md_alignment_pass3",
+      "played_at": "2026-06-23T07:57:45.280743+00:00",
+      "opponent": "dragapult_rule_based",
+      "game_index": 46,
+      "agent_a": "dragapult_rule_based",
+      "agent_b": "crustle_mega_kangaskhan_rule_rl_p1_v2",
+      "winner": 0,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 149,
+      "turn": 12,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 0
+      }
+    },
+    {
+      "label": "v2_md_alignment_pass3",
+      "played_at": "2026-06-23T07:57:45.377553+00:00",
+      "opponent": "dragapult_rule_based",
+      "game_index": 47,
+      "agent_a": "crustle_mega_kangaskhan_rule_rl_p1_v2",
+      "agent_b": "dragapult_rule_based",
+      "winner": 1,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 111,
+      "turn": 10,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 1
+      }
+    },
+    {
+      "label": "v2_md_alignment_pass3",
+      "played_at": "2026-06-23T07:57:45.485545+00:00",
+      "opponent": "dragapult_rule_based",
+      "game_index": 48,
+      "agent_a": "dragapult_rule_based",
+      "agent_b": "crustle_mega_kangaskhan_rule_rl_p1_v2",
+      "winner": 0,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 118,
+      "turn": 10,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 0
+      }
+    },
+    {
+      "label": "v2_md_alignment_pass3",
+      "played_at": "2026-06-23T07:57:45.616377+00:00",
+      "opponent": "dragapult_rule_based",
+      "game_index": 49,
+      "agent_a": "crustle_mega_kangaskhan_rule_rl_p1_v2",
+      "agent_b": "dragapult_rule_based",
+      "winner": 0,
+      "outcome": "win",
+      "score": 1.0,
+      "steps": 161,
+      "turn": 23,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 0
+      }
+    },
+    {
+      "label": "v2_md_alignment_pass3",
+      "played_at": "2026-06-23T07:57:45.736955+00:00",
+      "opponent": "dragapult_rule_based",
+      "game_index": 50,
+      "agent_a": "dragapult_rule_based",
+      "agent_b": "crustle_mega_kangaskhan_rule_rl_p1_v2",
+      "winner": 1,
+      "outcome": "win",
+      "score": 1.0,
+      "steps": 147,
+      "turn": 23,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 1
+      }
+    }
+  ]
+}
