@@ -9,20 +9,9 @@ def _turn_plan(deck_state):
 
 def petrel_targets_for_state(deck_state) -> set[int]:
     plan = _turn_plan(deck_state)
-    if plan is not None and getattr(plan, "petrel_target_ids", None):
-        return set(plan.petrel_target_ids)
-    mode = getattr(deck_state, "primary_plan", None)
-    if mode == "survival_setup" or getattr(deck_state, "must_bench_basic", False):
-        return {CardIds.BUDDY_BUDDY_POFFIN, CardIds.ULTRA_BALL, CardIds.HILDA}
-    if mode == "tank_and_heal":
-        heal_card = getattr(plan, "heal_card", None) if plan is not None else None
-        targets = {CardIds.HERO_CAPE, CardIds.COMMUNITY_CENTER, CardIds.SWITCH}
-        if heal_card is not None:
-            targets.add(heal_card)
-        else:
-            targets.add(CardIds.JUMBO_ICE_CREAM)
-        return targets
-    return set()
+    if plan is None or not getattr(plan, "petrel_target_ids", None):
+        return set()
+    return set(plan.petrel_target_ids)
 
 
 def score_petrel_play(deck_state, state, hand_ids: set[int] | None = None, discard_ids: set[int] | None = None) -> tuple[float, str | None]:
@@ -38,24 +27,16 @@ def score_petrel_play(deck_state, state, hand_ids: set[int] | None = None, disca
 
 
 def score_petrel_target(card_id: int, deck_state) -> tuple[float, str | None]:
-    targets = list(getattr(_turn_plan(deck_state), "petrel_target_ids", []) or [])
-    if not targets:
-        targets = list(petrel_targets_for_state(deck_state))
+    plan = _turn_plan(deck_state)
+    targets = list(getattr(plan, "petrel_target_ids", []) or [])
     if card_id not in targets:
         return -20.0, None
-    if getattr(deck_state, "primary_plan", None) == "survival_setup" and getattr(deck_state, "must_bench_basic", False):
-        order = [CardIds.BUDDY_BUDDY_POFFIN, CardIds.ULTRA_BALL, CardIds.HILDA]
-        tags = {
-            CardIds.BUDDY_BUDDY_POFFIN: "petrel_survival_poffin",
-            CardIds.ULTRA_BALL: "petrel_survival_ultra",
-            CardIds.HILDA: "petrel_survival_hilda",
-        }
-        return 160.0 - 8.0 * order.index(card_id), tags[card_id]
-    if getattr(deck_state, "primary_plan", None) == "tank_and_heal" and card_id == getattr(getattr(deck_state, "turn_plan", None), "heal_card", None):
-        return 170.0, "petrel_tank_heal_goal"
-    if getattr(deck_state, "primary_plan", None) == "tank_and_heal" and card_id in {CardIds.HERO_CAPE, CardIds.COMMUNITY_CENTER, CardIds.SWITCH, CardIds.JUMBO_ICE_CREAM, CardIds.BIANCA_DEVOTION}:
-        return 145.0 - 8.0 * targets.index(card_id), "petrel_tank_support"
-    return 160.0 - 8.0 * targets.index(card_id), "petrel_plan_target"
+    base = 160.0 - 8.0 * targets.index(card_id)
+    if plan is not None and card_id == getattr(plan, "heal_card", None):
+        return base + 18.0, "petrel_heal_target"
+    if targets.index(card_id) == 0:
+        return base + 8.0, "petrel_top_plan_target"
+    return base, "petrel_plan_target"
 
 
 def score_hilda_target(
@@ -163,11 +144,6 @@ def score_gust_target(card, deck_state) -> tuple[float, str | None]:
 
 def score_switch_target(card_id: int, deck_state) -> tuple[float, str | None]:
     role = getattr(_turn_plan(deck_state), "switch_target_role", None)
-    if role is None and getattr(deck_state, "primary_plan", None) in {"setup_crustle", "setup_crustle_wall_now", "wall_and_tax"}:
-        if card_id == CardIds.CRUSTLE:
-            return 170.0, "switch_crustle_setup"
-        if card_id == CardIds.DWEBBLE:
-            return -50.0, "avoid_expose_dwebble"
     if role == "crustle" and card_id == CardIds.CRUSTLE:
         return 170.0, "switch_plan_target"
     if role == "kang" and card_id == CardIds.MEGA_KANGASKHAN_EX:

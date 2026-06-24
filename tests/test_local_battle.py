@@ -2056,17 +2056,14 @@ def test_crustle_kangaskhan_v2_selection_scorer_prefers_crustle_over_dwebble_for
     selection_scorer = _load_crustle_module("selection_scorer", agent_name="crustle_mega_kangaskhan_rule_rl_p1_v2")
 
     deck_state = SimpleNamespace(
-        primary_plan="setup_crustle",
-        can_make_crustle_wall_this_turn=True,
-        matchup=SimpleNamespace(prefers_crustle_wall=True),
-        active_under_ko_threat=False,
+        turn_plan=SimpleNamespace(switch_target_role="crustle"),
     )
 
     crustle_score, crustle_tag = selection_scorer.score_switch_target(runtime.CardIds.CRUSTLE, deck_state)
     dwebble_score, dwebble_tag = selection_scorer.score_switch_target(runtime.CardIds.DWEBBLE, deck_state)
 
     assert crustle_score > dwebble_score
-    assert crustle_tag == "switch_crustle_setup"
+    assert crustle_tag == "switch_plan_target"
     assert dwebble_tag == "avoid_expose_dwebble"
 
 
@@ -2104,16 +2101,24 @@ def test_crustle_kangaskhan_v2_selection_scorer_petrel_prefers_poffin_in_surviva
     runtime = _load_crustle_module("runtime", agent_name="crustle_mega_kangaskhan_rule_rl_p1_v2")
     selection_scorer = _load_crustle_module("selection_scorer", agent_name="crustle_mega_kangaskhan_rule_rl_p1_v2")
 
-    deck_state = SimpleNamespace(primary_plan="survival_setup", must_bench_basic=True)
+    deck_state = SimpleNamespace(
+        turn_plan=SimpleNamespace(
+            petrel_target_ids=[
+                runtime.CardIds.BUDDY_BUDDY_POFFIN,
+                runtime.CardIds.ULTRA_BALL,
+                runtime.CardIds.HILDA,
+            ]
+        )
+    )
 
     poffin_score, poffin_tag = selection_scorer.score_petrel_target(runtime.CardIds.BUDDY_BUDDY_POFFIN, deck_state)
     hilda_score, hilda_tag = selection_scorer.score_petrel_target(runtime.CardIds.HILDA, deck_state)
     ultra_score, ultra_tag = selection_scorer.score_petrel_target(runtime.CardIds.ULTRA_BALL, deck_state)
 
     assert poffin_score > ultra_score > hilda_score
-    assert poffin_tag == "petrel_survival_poffin"
-    assert ultra_tag == "petrel_survival_ultra"
-    assert hilda_tag == "petrel_survival_hilda"
+    assert poffin_tag == "petrel_top_plan_target"
+    assert ultra_tag == "petrel_plan_target"
+    assert hilda_tag == "petrel_plan_target"
 
 
 def test_crustle_kangaskhan_v2_selection_scorer_petrel_follows_turn_plan_heal_goal():
@@ -2121,17 +2126,34 @@ def test_crustle_kangaskhan_v2_selection_scorer_petrel_follows_turn_plan_heal_go
     selection_scorer = _load_crustle_module("selection_scorer", agent_name="crustle_mega_kangaskhan_rule_rl_p1_v2")
 
     deck_state = SimpleNamespace(
-        primary_plan="tank_and_heal",
-        must_bench_basic=False,
-        turn_plan=SimpleNamespace(mode="tank_and_heal", heal_card=runtime.CardIds.JUMBO_ICE_CREAM),
+        turn_plan=SimpleNamespace(
+            mode="tank_and_heal",
+            heal_card=runtime.CardIds.JUMBO_ICE_CREAM,
+            petrel_target_ids=[runtime.CardIds.JUMBO_ICE_CREAM, runtime.CardIds.HERO_CAPE],
+        ),
     )
 
     jumbo_score, jumbo_tag = selection_scorer.score_petrel_target(runtime.CardIds.JUMBO_ICE_CREAM, deck_state)
     cape_score, cape_tag = selection_scorer.score_petrel_target(runtime.CardIds.HERO_CAPE, deck_state)
 
     assert jumbo_score > cape_score
-    assert jumbo_tag == "petrel_tank_heal_goal"
-    assert cape_tag in {"petrel_tank_support", None}
+    assert jumbo_tag == "petrel_heal_target"
+    assert cape_tag == "petrel_plan_target"
+
+
+def test_crustle_kangaskhan_v2_selection_scorer_does_not_use_primary_plan_fallback_without_turn_plan():
+    runtime = _load_crustle_module("runtime", agent_name="crustle_mega_kangaskhan_rule_rl_p1_v2")
+    selection_scorer = _load_crustle_module("selection_scorer", agent_name="crustle_mega_kangaskhan_rule_rl_p1_v2")
+
+    deck_state = SimpleNamespace(primary_plan="tank_and_heal", must_bench_basic=False)
+
+    jumbo_score, jumbo_tag = selection_scorer.score_petrel_target(runtime.CardIds.JUMBO_ICE_CREAM, deck_state)
+    crustle_score, crustle_tag = selection_scorer.score_switch_target(runtime.CardIds.CRUSTLE, deck_state)
+
+    assert jumbo_score < 0.0
+    assert jumbo_tag is None
+    assert crustle_score < 20.0
+    assert crustle_tag is None
 
 
 def test_crustle_kangaskhan_v2_turn_plan_prefers_dragapult_bench_protection_when_bench_at_risk():
@@ -2284,13 +2306,13 @@ def test_crustle_kangaskhan_v2_rule_prior_applies_turn_plan_required_tags():
 
     _, plan = turn_plan.build_turn_plan(obs)
     assert plan.mode == "survival_setup"
-    assert "search_basic" in plan.required_tags
+    assert "open_setup_search" in plan.required_tags
 
     poffin_result = rule_prior.score_option(obs, obs.select.option[0])
     lillie_result = rule_prior.score_option(obs, obs.select.option[1])
 
     assert poffin_result["total_logit"] > lillie_result["total_logit"]
-    assert "required_search_basic" in poffin_result["reason_tags"]
+    assert "required_open_setup_search" in poffin_result["reason_tags"]
 
 
 def test_crustle_kangaskhan_v2_debug_logger_writes_plan_and_top_actions(tmp_path: Path):
@@ -2585,8 +2607,10 @@ def test_crustle_kangaskhan_v2_rule_prior_hilda_play_only_opens_search_not_route
     evolve_result = rule_prior.score_option(obs, obs.select.option[1])
 
     assert hilda_result["total_logit"] < evolve_result["total_logit"]
-    assert "play_hilda_search_open" in hilda_result["reason_tags"]
+    assert "open_hilda_search" in hilda_result["reason_tags"]
     assert "plan_search_goal_hilda" in hilda_result["reason_tags"]
+    assert "play_hilda" not in hilda_result["reason_tags"]
+    assert "search_basic" not in hilda_result["reason_tags"]
 
 
 def test_crustle_kangaskhan_v2_rule_prior_to_hand_uses_turn_plan_targets_not_generic_search():
@@ -2642,3 +2666,96 @@ def test_crustle_kangaskhan_v2_turn_plan_exposes_explicit_plan_contract_fields()
     assert runtime.CardIds.BUDDY_BUDDY_POFFIN in plan.petrel_target_ids
     assert plan.poffin_basic_ids
     assert plan.switch_target_role is not None
+
+
+def test_crustle_kangaskhan_v2_survival_setup_hilda_prefers_dwebble_before_crustle_when_board_is_empty():
+    runtime = _load_crustle_module("runtime", agent_name="crustle_mega_kangaskhan_rule_rl_p1_v2")
+    turn_plan = _load_crustle_module("turn_plan", agent_name="crustle_mega_kangaskhan_rule_rl_p1_v2")
+    from cg.api import OptionType
+
+    hilda = _fake_card(runtime.CardIds.HILDA, name="Hilda")
+    obs = _fake_obs(
+        hand=[hilda],
+        active=_fake_card(runtime.CardIds.MEGA_KANGASKHAN_EX, name="Mega Kangaskhan ex", hp=230, max_hp=230),
+        bench=[],
+        opponent_active=_fake_card(91031, name="Lucario ex", hp=280, max_hp=280, energies=[1, 1]),
+        options=[SimpleNamespace(type=OptionType.PLAY, index=0)],
+    )
+    obs.current.turn = 1
+
+    _, plan = turn_plan.build_turn_plan(obs)
+
+    assert plan.mode == "survival_setup"
+    assert plan.hilda_pair_preferences[0][0] == runtime.CardIds.DWEBBLE
+
+
+def test_crustle_kangaskhan_v2_rule_prior_trainer_search_uses_plan_trainer_targets():
+    runtime = _load_crustle_module("runtime", agent_name="crustle_mega_kangaskhan_rule_rl_p1_v2")
+    rule_prior = _load_crustle_module("rule_prior", agent_name="crustle_mega_kangaskhan_rule_rl_p1_v2")
+    from cg.api import AreaType, OptionType, SelectContext
+
+    pokegear = _fake_card(runtime.CardIds.POKEGEAR, name="Pokegear")
+    hilda = _fake_card(runtime.CardIds.HILDA, name="Hilda")
+    eri = _fake_card(runtime.CardIds.ERI, name="Eri")
+    obs = _fake_obs(
+        hand=[pokegear],
+        active=_fake_card(runtime.CardIds.MEGA_KANGASKHAN_EX, name="Mega Kangaskhan ex", hp=230, max_hp=230),
+        bench=[_fake_card(runtime.CardIds.DWEBBLE, name="Dwebble", hp=70, max_hp=70, energies=[])],
+        opponent_active=_fake_card(9104, name="Unknown ex", hp=290, max_hp=290, energies=[1]),
+        select_deck=[hilda, eri],
+        options=[
+            SimpleNamespace(type=OptionType.CARD, area=AreaType.DECK, index=0, playerIndex=0),
+            SimpleNamespace(type=OptionType.CARD, area=AreaType.DECK, index=1, playerIndex=0),
+        ],
+        context=SelectContext.TO_HAND,
+        effect=pokegear,
+    )
+
+    hilda_result = rule_prior.score_option(obs, obs.select.option[0])
+    eri_result = rule_prior.score_option(obs, obs.select.option[1])
+
+    assert hilda_result["total_logit"] > eri_result["total_logit"]
+    assert "plan_trainer_search_target" in hilda_result["reason_tags"]
+
+
+def test_crustle_kangaskhan_v2_dragapult_wall_keeps_residual_threat():
+    turn_plan = _load_crustle_module("turn_plan", agent_name="crustle_mega_kangaskhan_rule_rl_p1_v2")
+    runtime = _load_crustle_module("runtime", agent_name="crustle_mega_kangaskhan_rule_rl_p1_v2")
+    from cg.api import OptionType
+
+    crustle = _fake_card(runtime.CardIds.CRUSTLE, name="Crustle", hp=140, max_hp=140, energies=[1])
+    dragapult = _fake_card(121, name="Dragapult ex", hp=320, max_hp=320, energies=[1, 1])
+    obs = _fake_obs(
+        hand=[],
+        active=crustle,
+        bench=[_fake_card(runtime.CardIds.DWEBBLE, name="Dwebble", hp=70, max_hp=70, energies=[])],
+        opponent_active=dragapult,
+        options=[SimpleNamespace(type=OptionType.ATTACK)],
+    )
+
+    snapshot, _plan = turn_plan.build_turn_plan(obs)
+
+    assert snapshot.wall_online is True
+    assert snapshot.wall_valid is True
+    assert snapshot.opponent_estimated_damage >= 40
+
+
+def test_crustle_kangaskhan_v2_dragapult_bench_protection_overrides_wall_tax_when_bench_fragile():
+    turn_plan = _load_crustle_module("turn_plan", agent_name="crustle_mega_kangaskhan_rule_rl_p1_v2")
+    runtime = _load_crustle_module("runtime", agent_name="crustle_mega_kangaskhan_rule_rl_p1_v2")
+    from cg.api import OptionType
+
+    crustle = _fake_card(runtime.CardIds.CRUSTLE, name="Crustle", hp=140, max_hp=140, energies=[1])
+    weak_dwebble = _fake_card(runtime.CardIds.DWEBBLE, name="Dwebble", hp=60, max_hp=70, energies=[])
+    dragapult = _fake_card(121, name="Dragapult ex", hp=320, max_hp=320, energies=[1, 1])
+    obs = _fake_obs(
+        hand=[],
+        active=crustle,
+        bench=[weak_dwebble],
+        opponent_active=dragapult,
+        options=[SimpleNamespace(type=OptionType.ATTACK)],
+    )
+
+    _, plan = turn_plan.build_turn_plan(obs)
+
+    assert plan.mode == "protect_bench_vs_dragapult"

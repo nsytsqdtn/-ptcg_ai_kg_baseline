@@ -21,6 +21,13 @@ def _plan_targets(deck_state) -> set[int]:
     return set(getattr(plan, "search_target_ids", []) or [])
 
 
+def _plan_trainer_targets(deck_state) -> set[int]:
+    plan = getattr(deck_state, "turn_plan", None)
+    if plan is None:
+        return set()
+    return set(getattr(plan, "trainer_search_target_ids", []) or [])
+
+
 def _plan_petrel_targets(deck_state) -> set[int]:
     plan = getattr(deck_state, "turn_plan", None)
     if plan is None:
@@ -238,6 +245,7 @@ def _score_play_card(obs, card, deck_state, state, active, add, deck_knowledge=N
     safe_draws = getattr(deck_state, "safe_draws", _safe_draws(my_state))
     supporter_ok = _supporter_available(state)
     search_targets = _plan_targets(deck_state)
+    trainer_targets = _plan_trainer_targets(deck_state)
     petrel_targets = _plan_petrel_targets(deck_state)
     poffin_targets = set(_plan_poffin_targets(deck_state))
 
@@ -260,10 +268,9 @@ def _score_play_card(obs, card, deck_state, state, active, add, deck_knowledge=N
         if live is False:
             add("resource", -220.0, "poffin_no_live_basic")
         else:
-            if getattr(plan, "mode", None) == "survival_setup":
-                add("setup", 140.0 if poffin_targets else 20.0, "play_poffin_search_open")
-            else:
-                add("setup", 65.0 if poffin_targets else 10.0, "play_poffin_search_open")
+            add("setup", 36.0 if poffin_targets else 8.0, "open_poffin_search")
+            if set(getattr(plan, "required_basic_ids", set()) or set()) & poffin_targets:
+                add("plan_alignment", 18.0, "required_basic_search_open")
     elif card.id == CardIds.HILDA:
         if not supporter_ok:
             add("resource", -300.0, "supporter_already_used")
@@ -275,10 +282,7 @@ def _score_play_card(obs, card, deck_state, state, active, add, deck_knowledge=N
             if live is False:
                 add("setup", -180.0, "hilda_no_live_target")
             else:
-                if getattr(plan, "mode", None) == "survival_setup":
-                    add("setup", 12.0 if getattr(plan, "search_goal", None) else 2.0, "play_hilda_search_open")
-                else:
-                    add("setup", 28.0 if getattr(plan, "search_goal", None) else 4.0, "play_hilda_search_open")
+                add("setup", 18.0 if getattr(plan, "search_goal", None) else 4.0, "open_hilda_search")
                 if getattr(plan, "search_goal", None) is not None:
                     add("plan_alignment", 18.0, f"plan_search_goal_hilda")
     elif card.id == CardIds.ULTRA_BALL:
@@ -286,17 +290,14 @@ def _score_play_card(obs, card, deck_state, state, active, add, deck_knowledge=N
         if live is False:
             add("resource", -220.0, "ultra_no_live_core")
         else:
-            if getattr(plan, "mode", None) == "survival_setup":
-                add("setup", 85.0 if search_targets else 18.0, "play_ultra_ball_search_open")
-            else:
-                add("setup", 45.0 if search_targets else 12.0, "play_ultra_ball_search_open")
+            add("setup", 32.0 if search_targets else 10.0, "open_ultra_ball_search")
             add("risk", -45.0, "ultra_discard_cost")
     elif card.id == CardIds.POKEGEAR:
         if safe_draws < 1:
             add("resource", -120.0, "low_deck_no_pokegear")
         else:
             _low_deck_gate(deck_state, add, hard_tag="low_deck_no_pokegear", soft_tag="thin_deck_pokegear", soft_penalty=-50.0)
-            add("resource", 35.0 if supporter_ok else -25.0, "play_pokegear")
+            add("resource", 95.0 if trainer_targets and supporter_ok else 35.0 if supporter_ok else -25.0, "play_pokegear")
     elif card.id == CardIds.PETREL:
         if not supporter_ok:
             add("resource", -300.0, "supporter_already_used")
@@ -306,10 +307,7 @@ def _score_play_card(obs, card, deck_state, state, active, add, deck_knowledge=N
             if live is False:
                 add("resource", -160.0, "petrel_no_live_target")
             else:
-                if getattr(plan, "mode", None) == "survival_setup":
-                    add("resource", 35.0 if petrel_targets else 6.0, "play_petrel_search_open")
-                else:
-                    add("resource", 32.0 if petrel_targets else 6.0, "play_petrel_search_open")
+                add("resource", 28.0 if petrel_targets else 6.0, "open_petrel_search")
     elif card.id == CardIds.LILLIE:
         if not supporter_ok:
             add("resource", -300.0, "supporter_already_used")
@@ -410,6 +408,8 @@ def _score_card_choice(obs, card, option, context, my_index, deck_state, add, de
         else:
             if card.id in _plan_targets(deck_state):
                 add("setup", 145.0, "plan_search_target")
+            elif card.id in _plan_trainer_targets(deck_state):
+                add("resource", 135.0, "plan_trainer_search_target")
             else:
                 add("resource", -25.0, "off_plan_search_target")
     elif context in {SelectContext.SWITCH, SelectContext.TO_ACTIVE}:
@@ -478,7 +478,7 @@ def score_option_for_plan(obs, option, snapshot, plan, deck_knowledge=None) -> d
         if tag:
             tags.append(tag)
 
-    add("plan", float(getattr(deck_state, "plan_priority", 0.0)), deck_state.primary_plan)
+    add("plan", float(getattr(deck_state, "plan_priority", 0.0)), getattr(plan, "mode", None))
     context = obs.select.context
     action_tags: set[str] = set()
 
@@ -502,19 +502,20 @@ def score_option_for_plan(obs, option, snapshot, plan, deck_knowledge=None) -> d
         elif card.id == CardIds.MEGA_KANGASKHAN_EX:
             action_tags |= {"bench_kang", "bench_basic", "play_kang"}
         elif card.id == CardIds.BUDDY_BUDDY_POFFIN:
-            action_tags |= {"play_poffin", "search_basic"}
+            action_tags.add("open_setup_search")
         elif card.id == CardIds.HILDA:
-            action_tags.add("play_hilda")
             if getattr(plan, "search_goal", None):
-                action_tags.add("search_basic")
+                action_tags.add("open_setup_search")
         elif card.id == CardIds.ULTRA_BALL:
-            action_tags |= {"play_ultra_ball", "search_basic"}
+            action_tags.add("open_setup_search")
+        elif card.id == CardIds.POKEGEAR:
+            if _plan_trainer_targets(deck_state) and _supporter_available(state):
+                action_tags.add("open_trainer_search")
         elif card.id == CardIds.PETREL:
-            action_tags.add("play_petrel")
-            if getattr(plan, "search_goal", None):
-                action_tags.add("search_basic")
             if _plan_petrel_targets(deck_state):
-                action_tags.add("disruption_live")
+                action_tags.add("open_trainer_search")
+            if getattr(plan, "search_goal", None):
+                action_tags.add("open_setup_search")
         elif card.id == CardIds.SWITCH:
             action_tags.add("switch_safe")
         elif card.id == CardIds.JUMBO_ICE_CREAM and deck_state.jumbo_prevents_ko:
@@ -538,7 +539,8 @@ def score_option_for_plan(obs, option, snapshot, plan, deck_knowledge=None) -> d
         if card.id == CardIds.HERO_CAPE:
             add("survival", 155.0 if getattr(target, "id", None) == CardIds.MEGA_KANGASKHAN_EX else 45.0, "hero_cape_target")
         elif card.id == CardIds.HANDHELD_FAN:
-            add("disruption", 120.0 if option.inPlayArea == AreaType.ACTIVE and deck_state.primary_plan == "wall_and_tax" else 35.0, "fan_target")
+            on_wall_target = option.inPlayArea == AreaType.ACTIVE and getattr(plan, "wants_active_crustle", False)
+            add("disruption", 120.0 if on_wall_target else 35.0, "fan_target")
             action_tags.add("disruption_live")
     elif option.type == OptionType.EVOLVE:
         card = my_state.hand[option.index]

@@ -85,7 +85,10 @@ class BoardSnapshot:
         active_damage = damage_taken(active)
         opp_damage = estimate_opponent_damage(opponent_active, matchup)
         if wall_valid and matchup.prefers_crustle_wall:
-            opp_damage = 0
+            if matchup.name == "dragapult_ex":
+                opp_damage = max(40, int(opp_damage * 0.25))
+            else:
+                opp_damage = 0
         current_damage = estimate_current_attack_damage(active)
         can_attack_now = any(o.type == OptionType.ATTACK for o in getattr(obs.select, "option", []) or [])
         gust_targets = [c for c in [opponent_active] + opponent_bench if c is not None]
@@ -188,6 +191,7 @@ class TurnPlan:
     active_goal: str = "keep"
     search_goal: str | None = None
     search_target_ids: list[int] = field(default_factory=list)
+    trainer_search_target_ids: list[int] = field(default_factory=list)
     required_basic_ids: set[int] = field(default_factory=set)
     target_field_count: int = 0
     wants_active_crustle: bool = False
@@ -386,14 +390,16 @@ def build_turn_plan(obs, deck_knowledge=None) -> tuple[BoardSnapshot, TurnPlan]:
     prevent_no_active = must_prevent_no_active(s)
     wants_backup = want_more_backup(s)
     heal_escape_card = _heal_escape_card(s)
-    default_hilda_pairs = [
-        (CardIds.CRUSTLE, CardIds.GROW_GRASS_ENERGY),
-        (CardIds.DWEBBLE, CardIds.GROW_GRASS_ENERGY),
-        (CardIds.MEGA_KANGASKHAN_EX, CardIds.SPIKY_ENERGY),
-    ]
+    crustle_pairs = [(CardIds.CRUSTLE, CardIds.GROW_GRASS_ENERGY)]
+    dwebble_pairs = [(CardIds.DWEBBLE, CardIds.GROW_GRASS_ENERGY)]
     if s.matchup.values_mist_energy:
-        default_hilda_pairs.insert(1, (CardIds.DWEBBLE, CardIds.MIST_ENERGY))
-        default_hilda_pairs.insert(2, (CardIds.CRUSTLE, CardIds.MIST_ENERGY))
+        crustle_pairs.insert(0, (CardIds.CRUSTLE, CardIds.MIST_ENERGY))
+        dwebble_pairs.insert(0, (CardIds.DWEBBLE, CardIds.MIST_ENERGY))
+    if s.dwebble_in_play == 0:
+        default_hilda_pairs = dwebble_pairs + crustle_pairs
+    else:
+        default_hilda_pairs = crustle_pairs + dwebble_pairs
+    default_hilda_pairs.append((CardIds.MEGA_KANGASKHAN_EX, CardIds.SPIKY_ENERGY))
 
     if can_win:
         return s, TurnPlan(
@@ -405,6 +411,7 @@ def build_turn_plan(obs, deck_knowledge=None) -> tuple[BoardSnapshot, TurnPlan]:
             forbidden_tags={"waste_setup"},
             petrel_target_ids=[CardIds.BOSS_ORDERS, CardIds.LISIA],
             search_target_ids=[],
+            trainer_search_target_ids=[CardIds.BOSS_ORDERS, CardIds.LISIA],
             switch_target_role="best_attacker",
             direct_win_available=True,
             close_pressure=close_pressure,
@@ -422,6 +429,7 @@ def build_turn_plan(obs, deck_knowledge=None) -> tuple[BoardSnapshot, TurnPlan]:
             active_goal="keep",
             search_goal="basic_setup",
             search_target_ids=[CardIds.DWEBBLE, CardIds.MEGA_KANGASKHAN_EX, CardIds.CRUSTLE, CardIds.GROW_GRASS_ENERGY, CardIds.MIST_ENERGY, CardIds.BASIC_GRASS],
+            trainer_search_target_ids=[CardIds.BUDDY_BUDDY_POFFIN, CardIds.ULTRA_BALL, CardIds.PETREL, CardIds.HILDA],
             required_basic_ids=required_basic_ids,
             target_field_count=3,
             hilda_pair_preferences=default_hilda_pairs,
@@ -430,7 +438,7 @@ def build_turn_plan(obs, deck_knowledge=None) -> tuple[BoardSnapshot, TurnPlan]:
             attach_target_role="none",
             switch_target_role="safest_wall_or_tank",
             reasons=reasons,
-            required_tags={"bench_basic", "search_basic"},
+            required_tags={"bench_basic", "open_setup_search"},
             forbidden_tags={"attack_end_turn", "retreat", "waste_supporter", "waste_gust"},
             must_prevent_no_active=True,
             want_more_backup=wants_backup,
@@ -450,6 +458,7 @@ def build_turn_plan(obs, deck_knowledge=None) -> tuple[BoardSnapshot, TurnPlan]:
                 wants_kang_third_energy=s.active_energy < 3,
                 search_goal="heal_escape",
                 search_target_ids=[CardIds.MIST_ENERGY, CardIds.SPIKY_ENERGY, CardIds.GROW_GRASS_ENERGY, CardIds.BASIC_GRASS],
+                trainer_search_target_ids=[heal_escape_card, CardIds.SWITCH, CardIds.PETREL, CardIds.HILDA],
                 petrel_target_ids=[heal_escape_card, CardIds.SWITCH, CardIds.HERO_CAPE, CardIds.COMMUNITY_CENTER],
                 attach_target_role="active_kang",
                 attach_energy_preference=[CardIds.SPIKY_ENERGY, CardIds.MIST_ENERGY, CardIds.BASIC_GRASS, CardIds.GROW_GRASS_ENERGY],
@@ -467,6 +476,7 @@ def build_turn_plan(obs, deck_knowledge=None) -> tuple[BoardSnapshot, TurnPlan]:
             heal_card=CardIds.JUMBO_ICE_CREAM,
             search_goal="heal_or_switch_or_basic",
             search_target_ids=[CardIds.DWEBBLE, CardIds.MEGA_KANGASKHAN_EX, CardIds.MIST_ENERGY, CardIds.SPIKY_ENERGY],
+            trainer_search_target_ids=[CardIds.JUMBO_ICE_CREAM, CardIds.BIANCA_DEVOTION, CardIds.SWITCH, CardIds.BUDDY_BUDDY_POFFIN, CardIds.HILDA],
             petrel_target_ids=[CardIds.JUMBO_ICE_CREAM, CardIds.BIANCA_DEVOTION, CardIds.SWITCH, CardIds.BUDDY_BUDDY_POFFIN],
             attach_target_role="active_kang",
             attach_energy_preference=[CardIds.SPIKY_ENERGY, CardIds.MIST_ENERGY],
@@ -474,31 +484,6 @@ def build_turn_plan(obs, deck_knowledge=None) -> tuple[BoardSnapshot, TurnPlan]:
             heal_target_role="active_kang",
             reasons=["active_ko_threat"],
             required_tags={"heal_escape", "switch_safe"},
-            close_pressure=close_pressure,
-            values_mist_energy=s.matchup.values_mist_energy,
-        )
-
-    if s.wall_online and s.wall_valid:
-        search_goal = "mist" if s.matchup.values_mist_energy else "disruption_or_heal"
-        targets = [CardIds.ERI, CardIds.XEROSIC, CardIds.HAND_TRIMMER, CardIds.HANDHELD_FAN, CardIds.JUMBO_ICE_CREAM]
-        if s.matchup.values_mist_energy:
-            targets.insert(0, CardIds.MIST_ENERGY)
-        return s, TurnPlan(
-            mode="wall_and_tax",
-            priority=80,
-            active_goal="crustle",
-            wants_active_crustle=True,
-            wants_crustle_evolution=True,
-            search_goal=search_goal,
-            search_target_ids=[CardIds.MIST_ENERGY, CardIds.GROW_GRASS_ENERGY, CardIds.BASIC_GRASS],
-            hilda_pair_preferences=default_hilda_pairs,
-            petrel_target_ids=targets,
-            attach_target_role="active_crustle",
-            attach_energy_preference=[CardIds.MIST_ENERGY, CardIds.SPIKY_ENERGY, CardIds.GROW_GRASS_ENERGY, CardIds.BASIC_GRASS],
-            switch_target_role="crustle",
-            reasons=["wall_online"],
-            required_tags={"keep_wall", "disruption_live"},
-            forbidden_tags={"expose_dwebble"},
             close_pressure=close_pressure,
             values_mist_energy=s.matchup.values_mist_energy,
         )
@@ -514,6 +499,7 @@ def build_turn_plan(obs, deck_knowledge=None) -> tuple[BoardSnapshot, TurnPlan]:
             active_goal="stabilize_bench",
             search_goal="mist_or_evolve",
             search_target_ids=[CardIds.MIST_ENERGY, CardIds.CRUSTLE, CardIds.DWEBBLE, CardIds.GROW_GRASS_ENERGY, CardIds.BASIC_GRASS],
+            trainer_search_target_ids=[CardIds.HILDA, CardIds.BUDDY_BUDDY_POFFIN, CardIds.ULTRA_BALL, CardIds.PETREL],
             required_basic_ids={CardIds.DWEBBLE},
             wants_crustle_evolution=True,
             hilda_pair_preferences=default_hilda_pairs,
@@ -530,6 +516,32 @@ def build_turn_plan(obs, deck_knowledge=None) -> tuple[BoardSnapshot, TurnPlan]:
             values_mist_energy=True,
         )
 
+    if s.wall_online and s.wall_valid:
+        search_goal = "mist" if s.matchup.values_mist_energy else "disruption_or_heal"
+        targets = [CardIds.ERI, CardIds.XEROSIC, CardIds.HAND_TRIMMER, CardIds.HANDHELD_FAN, CardIds.JUMBO_ICE_CREAM]
+        if s.matchup.values_mist_energy:
+            targets.insert(0, CardIds.MIST_ENERGY)
+        return s, TurnPlan(
+            mode="wall_and_tax",
+            priority=80,
+            active_goal="crustle",
+            wants_active_crustle=True,
+            wants_crustle_evolution=True,
+            search_goal=search_goal,
+            search_target_ids=[CardIds.MIST_ENERGY, CardIds.GROW_GRASS_ENERGY, CardIds.BASIC_GRASS],
+            trainer_search_target_ids=targets,
+            hilda_pair_preferences=default_hilda_pairs,
+            petrel_target_ids=targets,
+            attach_target_role="active_crustle",
+            attach_energy_preference=[CardIds.MIST_ENERGY, CardIds.SPIKY_ENERGY, CardIds.GROW_GRASS_ENERGY, CardIds.BASIC_GRASS],
+            switch_target_role="crustle",
+            reasons=["wall_online"],
+            required_tags={"keep_wall", "open_trainer_search"},
+            forbidden_tags={"expose_dwebble"},
+            close_pressure=close_pressure,
+            values_mist_energy=s.matchup.values_mist_energy,
+        )
+
     if wall_this_turn and s.matchup.prefers_crustle_wall:
         return s, TurnPlan(
             mode="setup_crustle_wall_now",
@@ -537,6 +549,7 @@ def build_turn_plan(obs, deck_knowledge=None) -> tuple[BoardSnapshot, TurnPlan]:
             active_goal="crustle",
             search_goal="crustle_piece",
             search_target_ids=[CardIds.CRUSTLE, CardIds.DWEBBLE, CardIds.GROW_GRASS_ENERGY, CardIds.BASIC_GRASS, CardIds.MIST_ENERGY],
+            trainer_search_target_ids=[CardIds.HILDA, CardIds.BUDDY_BUDDY_POFFIN, CardIds.ULTRA_BALL, CardIds.PETREL],
             required_basic_ids={CardIds.DWEBBLE},
             wants_active_crustle=True,
             wants_crustle_evolution=True,
@@ -563,6 +576,7 @@ def build_turn_plan(obs, deck_knowledge=None) -> tuple[BoardSnapshot, TurnPlan]:
                 active_goal="crustle",
                 search_goal="crustle_piece",
                 search_target_ids=[CardIds.DWEBBLE, CardIds.CRUSTLE, CardIds.MIST_ENERGY, CardIds.GROW_GRASS_ENERGY, CardIds.BASIC_GRASS],
+                trainer_search_target_ids=[CardIds.HILDA, CardIds.BUDDY_BUDDY_POFFIN, CardIds.ULTRA_BALL, CardIds.PETREL],
                 required_basic_ids={CardIds.DWEBBLE},
                 wants_crustle_evolution=True,
                 hilda_pair_preferences=default_hilda_pairs,
@@ -584,6 +598,7 @@ def build_turn_plan(obs, deck_knowledge=None) -> tuple[BoardSnapshot, TurnPlan]:
             active_goal="crustle",
             search_goal="crustle_piece",
             search_target_ids=[CardIds.DWEBBLE, CardIds.CRUSTLE, CardIds.GROW_GRASS_ENERGY, CardIds.BASIC_GRASS, CardIds.MIST_ENERGY],
+            trainer_search_target_ids=[CardIds.HILDA, CardIds.BUDDY_BUDDY_POFFIN, CardIds.ULTRA_BALL, CardIds.PETREL],
             required_basic_ids={CardIds.DWEBBLE},
             wants_crustle_evolution=True,
             hilda_pair_preferences=default_hilda_pairs,
@@ -605,6 +620,7 @@ def build_turn_plan(obs, deck_knowledge=None) -> tuple[BoardSnapshot, TurnPlan]:
             active_goal="stabilize",
             search_goal="basic_setup",
             search_target_ids=[CardIds.DWEBBLE, CardIds.MEGA_KANGASKHAN_EX, CardIds.CRUSTLE, CardIds.MIST_ENERGY, CardIds.GROW_GRASS_ENERGY],
+            trainer_search_target_ids=[CardIds.BUDDY_BUDDY_POFFIN, CardIds.HILDA, CardIds.ULTRA_BALL, CardIds.PETREL],
             required_basic_ids={CardIds.DWEBBLE, CardIds.MEGA_KANGASKHAN_EX},
             target_field_count=3,
             hilda_pair_preferences=default_hilda_pairs,
@@ -630,6 +646,7 @@ def build_turn_plan(obs, deck_knowledge=None) -> tuple[BoardSnapshot, TurnPlan]:
                 wants_kang_third_energy=True,
                 search_goal="kang_attack_pieces",
                 search_target_ids=[CardIds.MEGA_KANGASKHAN_EX, CardIds.SPIKY_ENERGY, CardIds.MIST_ENERGY, CardIds.GROW_GRASS_ENERGY, CardIds.BASIC_GRASS],
+                trainer_search_target_ids=[CardIds.HILDA, CardIds.LILLIE, CardIds.ULTRA_BALL, CardIds.PETREL, CardIds.JUMBO_ICE_CREAM],
                 hilda_pair_preferences=default_hilda_pairs,
                 petrel_target_ids=[CardIds.HILDA, CardIds.LILLIE, CardIds.ULTRA_BALL, CardIds.JUMBO_ICE_CREAM],
                 attach_target_role="active_kang",
@@ -649,6 +666,7 @@ def build_turn_plan(obs, deck_knowledge=None) -> tuple[BoardSnapshot, TurnPlan]:
             wants_kang_third_energy=s.active_energy < 3,
             search_goal="kang_engine",
             search_target_ids=[CardIds.MEGA_KANGASKHAN_EX, CardIds.SPIKY_ENERGY, CardIds.MIST_ENERGY, CardIds.GROW_GRASS_ENERGY, CardIds.BASIC_GRASS],
+            trainer_search_target_ids=[CardIds.LILLIE, CardIds.HILDA, CardIds.PETREL, CardIds.JUMBO_ICE_CREAM, CardIds.HERO_CAPE],
             hilda_pair_preferences=default_hilda_pairs,
             petrel_target_ids=[CardIds.HILDA, CardIds.LILLIE, CardIds.ULTRA_BALL, CardIds.JUMBO_ICE_CREAM],
             attach_target_role="active_kang",
@@ -667,6 +685,7 @@ def build_turn_plan(obs, deck_knowledge=None) -> tuple[BoardSnapshot, TurnPlan]:
             active_goal="kang",
             search_goal="kang",
             search_target_ids=[CardIds.MEGA_KANGASKHAN_EX, CardIds.SPIKY_ENERGY, CardIds.MIST_ENERGY, CardIds.GROW_GRASS_ENERGY, CardIds.BASIC_GRASS],
+            trainer_search_target_ids=[CardIds.HILDA, CardIds.BUDDY_BUDDY_POFFIN, CardIds.ULTRA_BALL, CardIds.PETREL],
             required_basic_ids={CardIds.MEGA_KANGASKHAN_EX},
             hilda_pair_preferences=default_hilda_pairs,
             petrel_target_ids=[CardIds.HILDA, CardIds.LILLIE, CardIds.ULTRA_BALL, CardIds.JUMBO_ICE_CREAM],
@@ -688,6 +707,7 @@ def build_turn_plan(obs, deck_knowledge=None) -> tuple[BoardSnapshot, TurnPlan]:
             search_goal="gust",
             attack_now=True,
             search_target_ids=[],
+            trainer_search_target_ids=[CardIds.BOSS_ORDERS, CardIds.LISIA, CardIds.PETREL],
             petrel_target_ids=[CardIds.BOSS_ORDERS, CardIds.LISIA, CardIds.ERI, CardIds.XEROSIC],
             switch_target_role="best_attacker",
             reasons=["close_pressure"],
@@ -702,6 +722,7 @@ def build_turn_plan(obs, deck_knowledge=None) -> tuple[BoardSnapshot, TurnPlan]:
         active_goal="keep",
         search_goal="resource",
         search_target_ids=[CardIds.DWEBBLE, CardIds.MEGA_KANGASKHAN_EX, CardIds.CRUSTLE, CardIds.MIST_ENERGY, CardIds.GROW_GRASS_ENERGY],
+        trainer_search_target_ids=[CardIds.LILLIE, CardIds.HILDA, CardIds.BUDDY_BUDDY_POFFIN, CardIds.PETREL],
         hilda_pair_preferences=default_hilda_pairs,
         petrel_target_ids=[CardIds.HILDA, CardIds.LILLIE, CardIds.ULTRA_BALL],
         poffin_basic_ids=[CardIds.DWEBBLE, CardIds.MEGA_KANGASKHAN_EX],
