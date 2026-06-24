@@ -1,3 +1,6 @@
 card_images/
 Card_ID List_EN.pdf
 Card_ID List_JP.pdf
+.playwright-mcp/
+__pycache__/
+**/__pycache__/
