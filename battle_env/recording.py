@@ -7,7 +7,6 @@ from datetime import datetime
 from enum import Enum
 from pathlib import Path
 
-from replay_systems.notebook_visualizer import write_replay_html
 from cg.api import AreaType, LogType, OptionType, all_attack, all_card_data
 
 
@@ -478,12 +477,8 @@ def build_match_metrics(history: list[dict], winner, turn: int, steps: int, stat
 
 def save_match_record(result: dict, output_path: Path) -> None:
     output_path.parent.mkdir(parents=True, exist_ok=True)
-    record = dict(result)
-    steps_payload = record.pop("steps_data", None)
-    if steps_payload is not None:
-        record["step_count"] = record.get("steps")
-        record["steps"] = steps_payload
-    output_path.write_text(json.dumps(normalize_for_json(record), indent=2), encoding="utf-8")
+    steps_payload = normalize_for_json(result.get("steps_data") or [])
+    output_path.write_text(json.dumps(steps_payload, indent=2), encoding="utf-8")
 
 
 def save_human_log(result: dict, output_path: Path) -> None:
@@ -496,9 +491,8 @@ def save_summary_log(result: dict, output_path: Path) -> None:
     output_path.write_text(format_summary_result(result), encoding="utf-8")
 
 
-def save_replay_html(result: dict, output_path: Path) -> None:
-    output_path.parent.mkdir(parents=True, exist_ok=True)
-    write_replay_html(normalize_for_json(result), output_path)
+def save_visualizer_json(result: dict, output_path: Path) -> None:
+    save_match_record(result, output_path)
 
 
 def default_log_base_path(record_file: str, games: int) -> Path:
@@ -519,12 +513,12 @@ def build_log_paths(record_file: str, log_file: str, games: int) -> tuple[Path, 
     return base.with_suffix(".summary.log"), base.with_suffix(".detail.log")
 
 
-def build_replay_path(record_file: str, replay_file: str, log_file: str, games: int) -> Path:
-    if replay_file:
-        return Path(replay_file)
+def build_visualizer_path(record_file: str, vis_file: str, log_file: str, games: int) -> Path:
+    if vis_file:
+        return Path(vis_file)
     if log_file:
         base = Path(log_file)
         if base.suffix:
             base = base.with_suffix("")
-        return base.with_suffix(".replay.html")
-    return default_log_base_path(record_file, games).with_suffix(".replay.html")
+        return base.with_suffix(".vis.json")
+    return default_log_base_path(record_file, games).with_suffix(".vis.json")

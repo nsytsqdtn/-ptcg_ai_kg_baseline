@@ -1,0 +1,5 @@
+{
+  "name": "crustle_aware_fighting_agent",
+  "entry": "main.py",
+  "deck": "deck.csv"
+}

@@ -5,11 +5,11 @@ from pathlib import Path
 
 from battle_env.recording import (
     build_log_paths,
-    build_replay_path,
+    build_visualizer_path,
     save_human_log,
     save_match_record,
-    save_replay_html,
     save_summary_log,
+    save_visualizer_json,
 )
 from battle_env.runner import play_match, play_series
 
@@ -20,7 +20,7 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--agent-b", default="mega_lucario_beginner", help="Agent name or explicit agent.py path.")
     parser.add_argument("--record-file", default="", help="Optional path to save the full match record as JSON.")
     parser.add_argument("--log-file", default="", help="Optional base path to save human-readable logs.")
-    parser.add_argument("--replay-file", default="", help="Optional path to save the replay HTML page.")
+    parser.add_argument("--vis-file", default="", help="Optional path to save the notebook visualizer JSON payload.")
     parser.add_argument("--verbose", action="store_true", help="Print step-by-step action and log summaries.")
     parser.add_argument("--games", type=int, default=1, help="Number of games to run.")
     parser.add_argument("--swap-sides", action="store_true", help="Alternate seating between games.")
@@ -40,14 +40,14 @@ def main(argv: list[str] | None = None) -> int:
         save_match_record(result, Path(args.record_file))
     summary_log_path = None
     detail_log_path = None
-    replay_path = None
+    vis_path = None
     if args.verbose or args.log_file:
         summary_log_path, detail_log_path = build_log_paths(args.record_file, args.log_file, args.games)
         save_summary_log(result, summary_log_path)
         save_human_log(result, detail_log_path)
-    if args.games == 1 and (args.verbose or args.log_file or args.replay_file):
-        replay_path = build_replay_path(args.record_file, args.replay_file, args.log_file, args.games)
-        save_replay_html(result, replay_path)
+    if args.games == 1 and (args.verbose or args.log_file or args.vis_file):
+        vis_path = build_visualizer_path(args.record_file, args.vis_file, args.log_file, args.games)
+        save_visualizer_json(result, vis_path)
     if args.games == 1:
         print(
             f"{result['agent_a']} vs {result['agent_b']}: "
@@ -64,6 +64,7 @@ def main(argv: list[str] | None = None) -> int:
     if summary_log_path is not None:
         print(f"summary_log_file={summary_log_path.resolve()}")
         print(f"detail_log_file={detail_log_path.resolve()}")
-    if replay_path is not None:
-        print(f"replay_file={replay_path.resolve()}")
+    if vis_path is not None:
+        print(f"vis_file={vis_path.resolve()}")
+        print(f"visualizer_html={(Path(__file__).resolve().parents[1] / 'replay_systems' / 'replay' / 'visualizer.html').resolve()}")
     return 0

@@ -15,8 +15,8 @@ from battle_env.recording import (
     normalize_for_json,
     save_human_log,
     save_match_record,
-    save_replay_html,
     save_summary_log,
+    save_visualizer_json,
 )
 from cg.api import LogType, SelectContext, SelectType, to_observation_class
 from cg.game import battle_finish, battle_select, battle_start, visualize_data
@@ -107,6 +107,33 @@ def _termination_from_logs(logs) -> dict:
     }
 
 
+def _sanitize_observation_snapshot(obs_dict) -> dict:
+    snapshot = normalize_for_json(obs_dict)
+    if isinstance(snapshot, dict):
+        snapshot.pop("search_begin_input", None)
+    return snapshot
+
+
+def _build_visualizer_steps(raw_visualizer_steps: list[dict], obs_log: list, action_log: list) -> list[dict]:
+    steps = []
+    for index, frame in enumerate(raw_visualizer_steps):
+        item = dict(frame)
+        item["obs"] = obs_log[index] if index < len(obs_log) else ""
+        item["action"] = [action_log[index], action_log[index]] if index < len(action_log) else [None, None]
+        steps.append(item)
+    return steps
+
+
+def _module_fallback_count(module) -> int:
+    getter = getattr(module, "get_fallback_count", None)
+    if callable(getter):
+        try:
+            return int(getter())
+        except Exception:
+            return 0
+    return 0
+
+
 def play_match(
     agent_a_path: str | Path,
     agent_b_path: str | Path,
@@ -132,6 +159,8 @@ def play_match(
     agents = [agent_a, agent_b]
     history: list[dict] = []
     steps_data: list[dict] = []
+    obs_log: list = [""]
+    action_log: list = [None]
 
     obs, start_data = battle_start(decks[0], decks[1])
     if not start_data.battlePtr:
@@ -159,6 +188,8 @@ def play_match(
                 termination = _termination_from_logs(getattr(observation, "logs", []))
                 if state.result == 2 and termination["reason_key"] == "unknown":
                     termination["reason_key"] = "draw"
+                if capture_details:
+                    steps_data = _build_visualizer_steps(json.loads(visualize_data()), obs_log, action_log)
                 result = {
                     "status": "success",
                     "winner": state.result,
@@ -180,6 +211,10 @@ def play_match(
                         "last_logs": history[-1]["logs"] if history else [],
                     },
                     "termination": termination,
+                    "fallback_counts": {
+                        "agent_a": _module_fallback_count(agent_a),
+                        "agent_b": _module_fallback_count(agent_b),
+                    },
                 }
                 result["metrics"] = build_match_metrics(
                     history,
@@ -240,19 +275,17 @@ def play_match(
                     step_record=step_record,
                 )
             try:
+                if capture_details:
+                    obs_log.append(_sanitize_observation_snapshot(obs))
+                    action_log.append(list(selected))
                 next_obs = battle_select(selected)
                 next_observation = to_observation_class(next_obs)
                 if capture_details:
                     all_logs = describe_logs(next_observation.logs)
-                    step_record["visualizer_frame"] = json.loads(visualize_data())
-                    latest_visualize_step = (
-                        step_record["visualizer_frame"][-1] if step_record["visualizer_frame"] else None
-                    )
                     step_record["logs"] = all_logs
                     step_record["delta_logs"] = all_logs[previous_log_count:]
                     previous_log_count = len(all_logs)
                 else:
-                    latest_visualize_step = None
                     step_record["logs"] = []
                     step_record["delta_logs"] = []
                 step_record["result_after_step"] = next_observation.current.result if next_observation.current else None
@@ -263,26 +296,6 @@ def play_match(
                         step_record["reward"] = 1
                     elif winner in (0, 1):
                         step_record["reward"] = -1
-                if capture_details:
-                    replay_step = dict(latest_visualize_step or {})
-                    replay_step.update(
-                        {
-                            "step": steps,
-                            "player_index": player_index,
-                            "agent": step_record["agent"],
-                            "turn": state.turn,
-                            "turn_action_count": state.turnActionCount,
-                            "context_name": step_record["context_name"],
-                            "select_type_name": step_record["select_type_name"],
-                            "selected_options": step_record["selected_options"],
-                            "available_options": step_record["available_options"],
-                            "reward": step_record["reward"],
-                            "done": step_record["done"],
-                            "debug_out": None,
-                            "agent_scores": None,
-                        }
-                    )
-                    steps_data.append(replay_step)
             except Exception as exc:
                 history.append(step_record)
                 return build_error_result(
@@ -362,6 +375,6 @@ __all__ = [
     "play_series",
     "save_human_log",
     "save_match_record",
-    "save_replay_html",
+    "save_visualizer_json",
     "save_summary_log",
 ]

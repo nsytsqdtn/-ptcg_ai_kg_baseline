@@ -1,0 +1,3857 @@
+{
+  "run_at": "2026-06-25T14:58:41.843768+00:00",
+  "label": "alakazam_vs_requested_4",
+  "agent": "alakazam_rule_based",
+  "matchups": {
+    "crustle_aware_fighting_agent": {
+      "wins": 2,
+      "games": 50,
+      "win_rate": 0.04,
+      "average_steps": 123.58,
+      "average_turns": 12.76,
+      "termination_reasons": {
+        "no_active": 7,
+        "deck_out": 13,
+        "prize_out": 30
+      }
+    },
+    "dragapult_rule_based": {
+      "wins": 3,
+      "games": 50,
+      "win_rate": 0.06,
+      "average_steps": 152.7,
+      "average_turns": 13.46,
+      "termination_reasons": {
+        "prize_out": 40,
+        "no_active": 4,
+        "deck_out": 6
+      }
+    },
+    "mega_lucario_beginner": {
+      "wins": 13,
+      "games": 50,
+      "win_rate": 0.26,
+      "average_steps": 133.32,
+      "average_turns": 12.62,
+      "termination_reasons": {
+        "deck_out": 19,
+        "prize_out": 28,
+        "no_active": 3
+      }
+    },
+    "multiply_agent_best_940": {
+      "wins": 0,
+      "games": 50,
+      "win_rate": 0.0,
+      "average_steps": 125.46,
+      "average_turns": 11.94,
+      "termination_reasons": {
+        "deck_out": 8,
+        "prize_out": 36,
+        "no_active": 6
+      }
+    }
+  },
+  "games": [
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:41.902420+00:00",
+      "opponent": "crustle_aware_fighting_agent",
+      "game_index": 1,
+      "agent_a": "alakazam_rule_based",
+      "agent_b": "crustle_aware_fighting_agent",
+      "winner": 1,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 62,
+      "turn": 8,
+      "status": "success",
+      "termination": {
+        "reason_code": 3,
+        "reason_key": "no_active",
+        "winner": 1
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:41.968421+00:00",
+      "opponent": "crustle_aware_fighting_agent",
+      "game_index": 2,
+      "agent_a": "crustle_aware_fighting_agent",
+      "agent_b": "alakazam_rule_based",
+      "winner": 0,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 87,
+      "turn": 9,
+      "status": "success",
+      "termination": {
+        "reason_code": 3,
+        "reason_key": "no_active",
+        "winner": 0
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:42.018939+00:00",
+      "opponent": "crustle_aware_fighting_agent",
+      "game_index": 3,
+      "agent_a": "alakazam_rule_based",
+      "agent_b": "crustle_aware_fighting_agent",
+      "winner": 0,
+      "outcome": "win",
+      "score": 1.0,
+      "steps": 66,
+      "turn": 7,
+      "status": "success",
+      "termination": {
+        "reason_code": 3,
+        "reason_key": "no_active",
+        "winner": 0
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:42.113446+00:00",
+      "opponent": "crustle_aware_fighting_agent",
+      "game_index": 4,
+      "agent_a": "crustle_aware_fighting_agent",
+      "agent_b": "alakazam_rule_based",
+      "winner": 0,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 138,
+      "turn": 14,
+      "status": "success",
+      "termination": {
+        "reason_code": 2,
+        "reason_key": "deck_out",
+        "winner": 0
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:42.198566+00:00",
+      "opponent": "crustle_aware_fighting_agent",
+      "game_index": 5,
+      "agent_a": "alakazam_rule_based",
+      "agent_b": "crustle_aware_fighting_agent",
+      "winner": 1,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 136,
+      "turn": 14,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 1
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:42.289580+00:00",
+      "opponent": "crustle_aware_fighting_agent",
+      "game_index": 6,
+      "agent_a": "crustle_aware_fighting_agent",
+      "agent_b": "alakazam_rule_based",
+      "winner": 0,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 159,
+      "turn": 16,
+      "status": "success",
+      "termination": {
+        "reason_code": 2,
+        "reason_key": "deck_out",
+        "winner": 0
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:42.378072+00:00",
+      "opponent": "crustle_aware_fighting_agent",
+      "game_index": 7,
+      "agent_a": "alakazam_rule_based",
+      "agent_b": "crustle_aware_fighting_agent",
+      "winner": 1,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 139,
+      "turn": 12,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 1
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:42.469360+00:00",
+      "opponent": "crustle_aware_fighting_agent",
+      "game_index": 8,
+      "agent_a": "crustle_aware_fighting_agent",
+      "agent_b": "alakazam_rule_based",
+      "winner": 0,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 134,
+      "turn": 11,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 0
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:42.571522+00:00",
+      "opponent": "crustle_aware_fighting_agent",
+      "game_index": 9,
+      "agent_a": "alakazam_rule_based",
+      "agent_b": "crustle_aware_fighting_agent",
+      "winner": 1,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 139,
+      "turn": 14,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 1
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:42.601585+00:00",
+      "opponent": "crustle_aware_fighting_agent",
+      "game_index": 10,
+      "agent_a": "crustle_aware_fighting_agent",
+      "agent_b": "alakazam_rule_based",
+      "winner": 0,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 29,
+      "turn": 5,
+      "status": "success",
+      "termination": {
+        "reason_code": 3,
+        "reason_key": "no_active",
+        "winner": 0
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:42.699871+00:00",
+      "opponent": "crustle_aware_fighting_agent",
+      "game_index": 11,
+      "agent_a": "alakazam_rule_based",
+      "agent_b": "crustle_aware_fighting_agent",
+      "winner": 1,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 126,
+      "turn": 12,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 1
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:42.765871+00:00",
+      "opponent": "crustle_aware_fighting_agent",
+      "game_index": 12,
+      "agent_a": "crustle_aware_fighting_agent",
+      "agent_b": "alakazam_rule_based",
+      "winner": 0,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 96,
+      "turn": 11,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 0
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:42.853386+00:00",
+      "opponent": "crustle_aware_fighting_agent",
+      "game_index": 13,
+      "agent_a": "alakazam_rule_based",
+      "agent_b": "crustle_aware_fighting_agent",
+      "winner": 1,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 123,
+      "turn": 10,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 1
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:42.944902+00:00",
+      "opponent": "crustle_aware_fighting_agent",
+      "game_index": 14,
+      "agent_a": "crustle_aware_fighting_agent",
+      "agent_b": "alakazam_rule_based",
+      "winner": 0,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 142,
+      "turn": 13,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 0
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:43.018299+00:00",
+      "opponent": "crustle_aware_fighting_agent",
+      "game_index": 15,
+      "agent_a": "alakazam_rule_based",
+      "agent_b": "crustle_aware_fighting_agent",
+      "winner": 1,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 105,
+      "turn": 12,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 1
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:43.120850+00:00",
+      "opponent": "crustle_aware_fighting_agent",
+      "game_index": 16,
+      "agent_a": "crustle_aware_fighting_agent",
+      "agent_b": "alakazam_rule_based",
+      "winner": 0,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 161,
+      "turn": 15,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 0
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:43.231367+00:00",
+      "opponent": "crustle_aware_fighting_agent",
+      "game_index": 17,
+      "agent_a": "alakazam_rule_based",
+      "agent_b": "crustle_aware_fighting_agent",
+      "winner": 1,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 168,
+      "turn": 16,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 1
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:43.291368+00:00",
+      "opponent": "crustle_aware_fighting_agent",
+      "game_index": 18,
+      "agent_a": "crustle_aware_fighting_agent",
+      "agent_b": "alakazam_rule_based",
+      "winner": 0,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 92,
+      "turn": 13,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 0
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:43.355879+00:00",
+      "opponent": "crustle_aware_fighting_agent",
+      "game_index": 19,
+      "agent_a": "alakazam_rule_based",
+      "agent_b": "crustle_aware_fighting_agent",
+      "winner": 1,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 112,
+      "turn": 14,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 1
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:43.501472+00:00",
+      "opponent": "crustle_aware_fighting_agent",
+      "game_index": 20,
+      "agent_a": "crustle_aware_fighting_agent",
+      "agent_b": "alakazam_rule_based",
+      "winner": 0,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 151,
+      "turn": 17,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 0
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:43.602675+00:00",
+      "opponent": "crustle_aware_fighting_agent",
+      "game_index": 21,
+      "agent_a": "alakazam_rule_based",
+      "agent_b": "crustle_aware_fighting_agent",
+      "winner": 1,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 135,
+      "turn": 13,
+      "status": "success",
+      "termination": {
+        "reason_code": 2,
+        "reason_key": "deck_out",
+        "winner": 1
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:43.687190+00:00",
+      "opponent": "crustle_aware_fighting_agent",
+      "game_index": 22,
+      "agent_a": "crustle_aware_fighting_agent",
+      "agent_b": "alakazam_rule_based",
+      "winner": 0,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 120,
+      "turn": 13,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 0
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:43.778334+00:00",
+      "opponent": "crustle_aware_fighting_agent",
+      "game_index": 23,
+      "agent_a": "alakazam_rule_based",
+      "agent_b": "crustle_aware_fighting_agent",
+      "winner": 1,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 138,
+      "turn": 12,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 1
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:43.893353+00:00",
+      "opponent": "crustle_aware_fighting_agent",
+      "game_index": 24,
+      "agent_a": "crustle_aware_fighting_agent",
+      "agent_b": "alakazam_rule_based",
+      "winner": 0,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 170,
+      "turn": 18,
+      "status": "success",
+      "termination": {
+        "reason_code": 2,
+        "reason_key": "deck_out",
+        "winner": 0
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:43.951353+00:00",
+      "opponent": "crustle_aware_fighting_agent",
+      "game_index": 25,
+      "agent_a": "alakazam_rule_based",
+      "agent_b": "crustle_aware_fighting_agent",
+      "winner": 1,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 86,
+      "turn": 12,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 1
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:44.046873+00:00",
+      "opponent": "crustle_aware_fighting_agent",
+      "game_index": 26,
+      "agent_a": "crustle_aware_fighting_agent",
+      "agent_b": "alakazam_rule_based",
+      "winner": 0,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 134,
+      "turn": 11,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 0
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:44.137386+00:00",
+      "opponent": "crustle_aware_fighting_agent",
+      "game_index": 27,
+      "agent_a": "alakazam_rule_based",
+      "agent_b": "crustle_aware_fighting_agent",
+      "winner": 1,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 140,
+      "turn": 13,
+      "status": "success",
+      "termination": {
+        "reason_code": 2,
+        "reason_key": "deck_out",
+        "winner": 1
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:44.211901+00:00",
+      "opponent": "crustle_aware_fighting_agent",
+      "game_index": 28,
+      "agent_a": "crustle_aware_fighting_agent",
+      "agent_b": "alakazam_rule_based",
+      "winner": 0,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 102,
+      "turn": 11,
+      "status": "success",
+      "termination": {
+        "reason_code": 3,
+        "reason_key": "no_active",
+        "winner": 0
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:44.298030+00:00",
+      "opponent": "crustle_aware_fighting_agent",
+      "game_index": 29,
+      "agent_a": "alakazam_rule_based",
+      "agent_b": "crustle_aware_fighting_agent",
+      "winner": 1,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 110,
+      "turn": 13,
+      "status": "success",
+      "termination": {
+        "reason_code": 2,
+        "reason_key": "deck_out",
+        "winner": 1
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:44.408551+00:00",
+      "opponent": "crustle_aware_fighting_agent",
+      "game_index": 30,
+      "agent_a": "crustle_aware_fighting_agent",
+      "agent_b": "alakazam_rule_based",
+      "winner": 0,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 160,
+      "turn": 13,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 0
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:44.531064+00:00",
+      "opponent": "crustle_aware_fighting_agent",
+      "game_index": 31,
+      "agent_a": "alakazam_rule_based",
+      "agent_b": "crustle_aware_fighting_agent",
+      "winner": 1,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 152,
+      "turn": 20,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 1
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:44.615338+00:00",
+      "opponent": "crustle_aware_fighting_agent",
+      "game_index": 32,
+      "agent_a": "crustle_aware_fighting_agent",
+      "agent_b": "alakazam_rule_based",
+      "winner": 0,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 125,
+      "turn": 12,
+      "status": "success",
+      "termination": {
+        "reason_code": 2,
+        "reason_key": "deck_out",
+        "winner": 0
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:44.723405+00:00",
+      "opponent": "crustle_aware_fighting_agent",
+      "game_index": 33,
+      "agent_a": "alakazam_rule_based",
+      "agent_b": "crustle_aware_fighting_agent",
+      "winner": 1,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 166,
+      "turn": 16,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 1
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:44.818921+00:00",
+      "opponent": "crustle_aware_fighting_agent",
+      "game_index": 34,
+      "agent_a": "crustle_aware_fighting_agent",
+      "agent_b": "alakazam_rule_based",
+      "winner": 0,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 140,
+      "turn": 12,
+      "status": "success",
+      "termination": {
+        "reason_code": 2,
+        "reason_key": "deck_out",
+        "winner": 0
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:44.913428+00:00",
+      "opponent": "crustle_aware_fighting_agent",
+      "game_index": 35,
+      "agent_a": "alakazam_rule_based",
+      "agent_b": "crustle_aware_fighting_agent",
+      "winner": 1,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 137,
+      "turn": 12,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 1
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:45.006945+00:00",
+      "opponent": "crustle_aware_fighting_agent",
+      "game_index": 36,
+      "agent_a": "crustle_aware_fighting_agent",
+      "agent_b": "alakazam_rule_based",
+      "winner": 0,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 140,
+      "turn": 16,
+      "status": "success",
+      "termination": {
+        "reason_code": 2,
+        "reason_key": "deck_out",
+        "winner": 0
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:45.080952+00:00",
+      "opponent": "crustle_aware_fighting_agent",
+      "game_index": 37,
+      "agent_a": "alakazam_rule_based",
+      "agent_b": "crustle_aware_fighting_agent",
+      "winner": 1,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 97,
+      "turn": 10,
+      "status": "success",
+      "termination": {
+        "reason_code": 3,
+        "reason_key": "no_active",
+        "winner": 1
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:45.182472+00:00",
+      "opponent": "crustle_aware_fighting_agent",
+      "game_index": 38,
+      "agent_a": "crustle_aware_fighting_agent",
+      "agent_b": "alakazam_rule_based",
+      "winner": 0,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 132,
+      "turn": 14,
+      "status": "success",
+      "termination": {
+        "reason_code": 2,
+        "reason_key": "deck_out",
+        "winner": 0
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:45.251148+00:00",
+      "opponent": "crustle_aware_fighting_agent",
+      "game_index": 39,
+      "agent_a": "alakazam_rule_based",
+      "agent_b": "crustle_aware_fighting_agent",
+      "winner": 0,
+      "outcome": "win",
+      "score": 1.0,
+      "steps": 55,
+      "turn": 7,
+      "status": "success",
+      "termination": {
+        "reason_code": 3,
+        "reason_key": "no_active",
+        "winner": 0
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:45.338668+00:00",
+      "opponent": "crustle_aware_fighting_agent",
+      "game_index": 40,
+      "agent_a": "crustle_aware_fighting_agent",
+      "agent_b": "alakazam_rule_based",
+      "winner": 0,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 123,
+      "turn": 13,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 0
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:45.415179+00:00",
+      "opponent": "crustle_aware_fighting_agent",
+      "game_index": 41,
+      "agent_a": "alakazam_rule_based",
+      "agent_b": "crustle_aware_fighting_agent",
+      "winner": 1,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 105,
+      "turn": 13,
+      "status": "success",
+      "termination": {
+        "reason_code": 2,
+        "reason_key": "deck_out",
+        "winner": 1
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:45.535685+00:00",
+      "opponent": "crustle_aware_fighting_agent",
+      "game_index": 42,
+      "agent_a": "crustle_aware_fighting_agent",
+      "agent_b": "alakazam_rule_based",
+      "winner": 0,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 150,
+      "turn": 15,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 0
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:45.589751+00:00",
+      "opponent": "crustle_aware_fighting_agent",
+      "game_index": 43,
+      "agent_a": "alakazam_rule_based",
+      "agent_b": "crustle_aware_fighting_agent",
+      "winner": 1,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 87,
+      "turn": 12,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 1
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:45.661807+00:00",
+      "opponent": "crustle_aware_fighting_agent",
+      "game_index": 44,
+      "agent_a": "crustle_aware_fighting_agent",
+      "agent_b": "alakazam_rule_based",
+      "winner": 0,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 119,
+      "turn": 13,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 0
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:45.748991+00:00",
+      "opponent": "crustle_aware_fighting_agent",
+      "game_index": 45,
+      "agent_a": "alakazam_rule_based",
+      "agent_b": "crustle_aware_fighting_agent",
+      "winner": 1,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 147,
+      "turn": 20,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 1
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:45.830047+00:00",
+      "opponent": "crustle_aware_fighting_agent",
+      "game_index": 46,
+      "agent_a": "crustle_aware_fighting_agent",
+      "agent_b": "alakazam_rule_based",
+      "winner": 0,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 106,
+      "turn": 11,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 0
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:45.923144+00:00",
+      "opponent": "crustle_aware_fighting_agent",
+      "game_index": 47,
+      "agent_a": "alakazam_rule_based",
+      "agent_b": "crustle_aware_fighting_agent",
+      "winner": 1,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 120,
+      "turn": 13,
+      "status": "success",
+      "termination": {
+        "reason_code": 2,
+        "reason_key": "deck_out",
+        "winner": 1
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:46.055187+00:00",
+      "opponent": "crustle_aware_fighting_agent",
+      "game_index": 48,
+      "agent_a": "crustle_aware_fighting_agent",
+      "agent_b": "alakazam_rule_based",
+      "winner": 0,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 154,
+      "turn": 14,
+      "status": "success",
+      "termination": {
+        "reason_code": 2,
+        "reason_key": "deck_out",
+        "winner": 0
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:46.158215+00:00",
+      "opponent": "crustle_aware_fighting_agent",
+      "game_index": 49,
+      "agent_a": "alakazam_rule_based",
+      "agent_b": "crustle_aware_fighting_agent",
+      "winner": 1,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 150,
+      "turn": 12,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 1
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:46.241728+00:00",
+      "opponent": "crustle_aware_fighting_agent",
+      "game_index": 50,
+      "agent_a": "crustle_aware_fighting_agent",
+      "agent_b": "alakazam_rule_based",
+      "winner": 0,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 114,
+      "turn": 11,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 0
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:46.354245+00:00",
+      "opponent": "dragapult_rule_based",
+      "game_index": 1,
+      "agent_a": "alakazam_rule_based",
+      "agent_b": "dragapult_rule_based",
+      "winner": 1,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 154,
+      "turn": 16,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 1
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:46.493274+00:00",
+      "opponent": "dragapult_rule_based",
+      "game_index": 2,
+      "agent_a": "dragapult_rule_based",
+      "agent_b": "alakazam_rule_based",
+      "winner": 0,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 184,
+      "turn": 28,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 0
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:46.570792+00:00",
+      "opponent": "dragapult_rule_based",
+      "game_index": 3,
+      "agent_a": "alakazam_rule_based",
+      "agent_b": "dragapult_rule_based",
+      "winner": 1,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 121,
+      "turn": 10,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 1
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:46.672121+00:00",
+      "opponent": "dragapult_rule_based",
+      "game_index": 4,
+      "agent_a": "dragapult_rule_based",
+      "agent_b": "alakazam_rule_based",
+      "winner": 0,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 162,
+      "turn": 12,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 0
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:46.704639+00:00",
+      "opponent": "dragapult_rule_based",
+      "game_index": 5,
+      "agent_a": "alakazam_rule_based",
+      "agent_b": "dragapult_rule_based",
+      "winner": 0,
+      "outcome": "win",
+      "score": 1.0,
+      "steps": 35,
+      "turn": 3,
+      "status": "success",
+      "termination": {
+        "reason_code": 3,
+        "reason_key": "no_active",
+        "winner": 0
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:46.790645+00:00",
+      "opponent": "dragapult_rule_based",
+      "game_index": 6,
+      "agent_a": "dragapult_rule_based",
+      "agent_b": "alakazam_rule_based",
+      "winner": 0,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 140,
+      "turn": 14,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 0
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:46.952995+00:00",
+      "opponent": "dragapult_rule_based",
+      "game_index": 7,
+      "agent_a": "alakazam_rule_based",
+      "agent_b": "dragapult_rule_based",
+      "winner": 1,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 202,
+      "turn": 16,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 1
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:47.061766+00:00",
+      "opponent": "dragapult_rule_based",
+      "game_index": 8,
+      "agent_a": "dragapult_rule_based",
+      "agent_b": "alakazam_rule_based",
+      "winner": 0,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 163,
+      "turn": 12,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 0
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:47.148861+00:00",
+      "opponent": "dragapult_rule_based",
+      "game_index": 9,
+      "agent_a": "alakazam_rule_based",
+      "agent_b": "dragapult_rule_based",
+      "winner": 1,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 126,
+      "turn": 12,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 1
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:47.178857+00:00",
+      "opponent": "dragapult_rule_based",
+      "game_index": 10,
+      "agent_a": "dragapult_rule_based",
+      "agent_b": "alakazam_rule_based",
+      "winner": 1,
+      "outcome": "win",
+      "score": 1.0,
+      "steps": 27,
+      "turn": 3,
+      "status": "success",
+      "termination": {
+        "reason_code": 3,
+        "reason_key": "no_active",
+        "winner": 1
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:47.296044+00:00",
+      "opponent": "dragapult_rule_based",
+      "game_index": 11,
+      "agent_a": "alakazam_rule_based",
+      "agent_b": "dragapult_rule_based",
+      "winner": 1,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 152,
+      "turn": 12,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 1
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:47.418525+00:00",
+      "opponent": "dragapult_rule_based",
+      "game_index": 12,
+      "agent_a": "dragapult_rule_based",
+      "agent_b": "alakazam_rule_based",
+      "winner": 0,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 176,
+      "turn": 12,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 0
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:47.524041+00:00",
+      "opponent": "dragapult_rule_based",
+      "game_index": 13,
+      "agent_a": "alakazam_rule_based",
+      "agent_b": "dragapult_rule_based",
+      "winner": 1,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 177,
+      "turn": 14,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 1
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:47.649792+00:00",
+      "opponent": "dragapult_rule_based",
+      "game_index": 14,
+      "agent_a": "dragapult_rule_based",
+      "agent_b": "alakazam_rule_based",
+      "winner": 0,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 157,
+      "turn": 14,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 0
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:47.762304+00:00",
+      "opponent": "dragapult_rule_based",
+      "game_index": 15,
+      "agent_a": "alakazam_rule_based",
+      "agent_b": "dragapult_rule_based",
+      "winner": 1,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 146,
+      "turn": 10,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 1
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:47.879822+00:00",
+      "opponent": "dragapult_rule_based",
+      "game_index": 16,
+      "agent_a": "dragapult_rule_based",
+      "agent_b": "alakazam_rule_based",
+      "winner": 0,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 165,
+      "turn": 12,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 0
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:48.003835+00:00",
+      "opponent": "dragapult_rule_based",
+      "game_index": 17,
+      "agent_a": "alakazam_rule_based",
+      "agent_b": "dragapult_rule_based",
+      "winner": 1,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 192,
+      "turn": 14,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 1
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:48.113857+00:00",
+      "opponent": "dragapult_rule_based",
+      "game_index": 18,
+      "agent_a": "dragapult_rule_based",
+      "agent_b": "alakazam_rule_based",
+      "winner": 0,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 175,
+      "turn": 14,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 0
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:48.207370+00:00",
+      "opponent": "dragapult_rule_based",
+      "game_index": 19,
+      "agent_a": "alakazam_rule_based",
+      "agent_b": "dragapult_rule_based",
+      "winner": 1,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 122,
+      "turn": 15,
+      "status": "success",
+      "termination": {
+        "reason_code": 2,
+        "reason_key": "deck_out",
+        "winner": 1
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:48.307412+00:00",
+      "opponent": "dragapult_rule_based",
+      "game_index": 20,
+      "agent_a": "dragapult_rule_based",
+      "agent_b": "alakazam_rule_based",
+      "winner": 0,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 158,
+      "turn": 15,
+      "status": "success",
+      "termination": {
+        "reason_code": 2,
+        "reason_key": "deck_out",
+        "winner": 0
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:48.376413+00:00",
+      "opponent": "dragapult_rule_based",
+      "game_index": 21,
+      "agent_a": "alakazam_rule_based",
+      "agent_b": "dragapult_rule_based",
+      "winner": 1,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 111,
+      "turn": 12,
+      "status": "success",
+      "termination": {
+        "reason_code": 3,
+        "reason_key": "no_active",
+        "winner": 1
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:48.476458+00:00",
+      "opponent": "dragapult_rule_based",
+      "game_index": 22,
+      "agent_a": "dragapult_rule_based",
+      "agent_b": "alakazam_rule_based",
+      "winner": 0,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 165,
+      "turn": 12,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 0
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:48.601093+00:00",
+      "opponent": "dragapult_rule_based",
+      "game_index": 23,
+      "agent_a": "alakazam_rule_based",
+      "agent_b": "dragapult_rule_based",
+      "winner": 1,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 166,
+      "turn": 12,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 1
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:48.737611+00:00",
+      "opponent": "dragapult_rule_based",
+      "game_index": 24,
+      "agent_a": "dragapult_rule_based",
+      "agent_b": "alakazam_rule_based",
+      "winner": 0,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 192,
+      "turn": 22,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 0
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:48.809118+00:00",
+      "opponent": "dragapult_rule_based",
+      "game_index": 25,
+      "agent_a": "alakazam_rule_based",
+      "agent_b": "dragapult_rule_based",
+      "winner": 1,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 118,
+      "turn": 12,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 1
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:48.927631+00:00",
+      "opponent": "dragapult_rule_based",
+      "game_index": 26,
+      "agent_a": "dragapult_rule_based",
+      "agent_b": "alakazam_rule_based",
+      "winner": 0,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 178,
+      "turn": 29,
+      "status": "success",
+      "termination": {
+        "reason_code": 2,
+        "reason_key": "deck_out",
+        "winner": 0
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:49.015038+00:00",
+      "opponent": "dragapult_rule_based",
+      "game_index": 27,
+      "agent_a": "alakazam_rule_based",
+      "agent_b": "dragapult_rule_based",
+      "winner": 1,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 145,
+      "turn": 12,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 1
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:49.143552+00:00",
+      "opponent": "dragapult_rule_based",
+      "game_index": 28,
+      "agent_a": "dragapult_rule_based",
+      "agent_b": "alakazam_rule_based",
+      "winner": 0,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 175,
+      "turn": 14,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 0
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:49.302631+00:00",
+      "opponent": "dragapult_rule_based",
+      "game_index": 29,
+      "agent_a": "alakazam_rule_based",
+      "agent_b": "dragapult_rule_based",
+      "winner": 1,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 185,
+      "turn": 14,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 1
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:49.436144+00:00",
+      "opponent": "dragapult_rule_based",
+      "game_index": 30,
+      "agent_a": "dragapult_rule_based",
+      "agent_b": "alakazam_rule_based",
+      "winner": 0,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 168,
+      "turn": 18,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 0
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:49.517656+00:00",
+      "opponent": "dragapult_rule_based",
+      "game_index": 31,
+      "agent_a": "alakazam_rule_based",
+      "agent_b": "dragapult_rule_based",
+      "winner": 1,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 123,
+      "turn": 10,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 1
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:49.636707+00:00",
+      "opponent": "dragapult_rule_based",
+      "game_index": 32,
+      "agent_a": "dragapult_rule_based",
+      "agent_b": "alakazam_rule_based",
+      "winner": 0,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 172,
+      "turn": 12,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 0
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:49.721759+00:00",
+      "opponent": "dragapult_rule_based",
+      "game_index": 33,
+      "agent_a": "alakazam_rule_based",
+      "agent_b": "dragapult_rule_based",
+      "winner": 1,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 147,
+      "turn": 12,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 1
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:49.819274+00:00",
+      "opponent": "dragapult_rule_based",
+      "game_index": 34,
+      "agent_a": "dragapult_rule_based",
+      "agent_b": "alakazam_rule_based",
+      "winner": 0,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 171,
+      "turn": 19,
+      "status": "success",
+      "termination": {
+        "reason_code": 2,
+        "reason_key": "deck_out",
+        "winner": 0
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:49.935788+00:00",
+      "opponent": "dragapult_rule_based",
+      "game_index": 35,
+      "agent_a": "alakazam_rule_based",
+      "agent_b": "dragapult_rule_based",
+      "winner": 1,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 184,
+      "turn": 14,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 1
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:50.092449+00:00",
+      "opponent": "dragapult_rule_based",
+      "game_index": 36,
+      "agent_a": "dragapult_rule_based",
+      "agent_b": "alakazam_rule_based",
+      "winner": 0,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 191,
+      "turn": 14,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 0
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:50.228481+00:00",
+      "opponent": "dragapult_rule_based",
+      "game_index": 37,
+      "agent_a": "alakazam_rule_based",
+      "agent_b": "dragapult_rule_based",
+      "winner": 1,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 194,
+      "turn": 14,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 1
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:50.266475+00:00",
+      "opponent": "dragapult_rule_based",
+      "game_index": 38,
+      "agent_a": "dragapult_rule_based",
+      "agent_b": "alakazam_rule_based",
+      "winner": 1,
+      "outcome": "win",
+      "score": 1.0,
+      "steps": 39,
+      "turn": 3,
+      "status": "success",
+      "termination": {
+        "reason_code": 3,
+        "reason_key": "no_active",
+        "winner": 1
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:50.376989+00:00",
+      "opponent": "dragapult_rule_based",
+      "game_index": 39,
+      "agent_a": "alakazam_rule_based",
+      "agent_b": "dragapult_rule_based",
+      "winner": 1,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 168,
+      "turn": 12,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 1
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:50.489505+00:00",
+      "opponent": "dragapult_rule_based",
+      "game_index": 40,
+      "agent_a": "dragapult_rule_based",
+      "agent_b": "alakazam_rule_based",
+      "winner": 0,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 145,
+      "turn": 10,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 0
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:50.601232+00:00",
+      "opponent": "dragapult_rule_based",
+      "game_index": 41,
+      "agent_a": "alakazam_rule_based",
+      "agent_b": "dragapult_rule_based",
+      "winner": 1,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 151,
+      "turn": 12,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 1
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:50.703310+00:00",
+      "opponent": "dragapult_rule_based",
+      "game_index": 42,
+      "agent_a": "dragapult_rule_based",
+      "agent_b": "alakazam_rule_based",
+      "winner": 0,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 158,
+      "turn": 14,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 0
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:50.817363+00:00",
+      "opponent": "dragapult_rule_based",
+      "game_index": 43,
+      "agent_a": "alakazam_rule_based",
+      "agent_b": "dragapult_rule_based",
+      "winner": 1,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 153,
+      "turn": 15,
+      "status": "success",
+      "termination": {
+        "reason_code": 2,
+        "reason_key": "deck_out",
+        "winner": 1
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:50.982882+00:00",
+      "opponent": "dragapult_rule_based",
+      "game_index": 44,
+      "agent_a": "dragapult_rule_based",
+      "agent_b": "alakazam_rule_based",
+      "winner": 0,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 188,
+      "turn": 14,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 0
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:51.110718+00:00",
+      "opponent": "dragapult_rule_based",
+      "game_index": 45,
+      "agent_a": "alakazam_rule_based",
+      "agent_b": "dragapult_rule_based",
+      "winner": 1,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 193,
+      "turn": 18,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 1
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:51.218228+00:00",
+      "opponent": "dragapult_rule_based",
+      "game_index": 46,
+      "agent_a": "dragapult_rule_based",
+      "agent_b": "alakazam_rule_based",
+      "winner": 0,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 149,
+      "turn": 13,
+      "status": "success",
+      "termination": {
+        "reason_code": 2,
+        "reason_key": "deck_out",
+        "winner": 0
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:51.320736+00:00",
+      "opponent": "dragapult_rule_based",
+      "game_index": 47,
+      "agent_a": "alakazam_rule_based",
+      "agent_b": "dragapult_rule_based",
+      "winner": 1,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 167,
+      "turn": 14,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 1
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:51.440428+00:00",
+      "opponent": "dragapult_rule_based",
+      "game_index": 48,
+      "agent_a": "dragapult_rule_based",
+      "agent_b": "alakazam_rule_based",
+      "winner": 0,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 174,
+      "turn": 16,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 0
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:51.511942+00:00",
+      "opponent": "dragapult_rule_based",
+      "game_index": 49,
+      "agent_a": "alakazam_rule_based",
+      "agent_b": "dragapult_rule_based",
+      "winner": 1,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 105,
+      "turn": 10,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 1
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:51.611017+00:00",
+      "opponent": "dragapult_rule_based",
+      "game_index": 50,
+      "agent_a": "dragapult_rule_based",
+      "agent_b": "alakazam_rule_based",
+      "winner": 0,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 126,
+      "turn": 12,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 0
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:51.732058+00:00",
+      "opponent": "mega_lucario_beginner",
+      "game_index": 1,
+      "agent_a": "alakazam_rule_based",
+      "agent_b": "mega_lucario_beginner",
+      "winner": 1,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 135,
+      "turn": 11,
+      "status": "success",
+      "termination": {
+        "reason_code": 2,
+        "reason_key": "deck_out",
+        "winner": 1
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:51.847573+00:00",
+      "opponent": "mega_lucario_beginner",
+      "game_index": 2,
+      "agent_a": "mega_lucario_beginner",
+      "agent_b": "alakazam_rule_based",
+      "winner": 1,
+      "outcome": "win",
+      "score": 1.0,
+      "steps": 146,
+      "turn": 13,
+      "status": "success",
+      "termination": {
+        "reason_code": 2,
+        "reason_key": "deck_out",
+        "winner": 1
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:51.930094+00:00",
+      "opponent": "mega_lucario_beginner",
+      "game_index": 3,
+      "agent_a": "alakazam_rule_based",
+      "agent_b": "mega_lucario_beginner",
+      "winner": 1,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 118,
+      "turn": 12,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 1
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:52.045720+00:00",
+      "opponent": "mega_lucario_beginner",
+      "game_index": 4,
+      "agent_a": "mega_lucario_beginner",
+      "agent_b": "alakazam_rule_based",
+      "winner": 0,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 157,
+      "turn": 13,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 0
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:52.179243+00:00",
+      "opponent": "mega_lucario_beginner",
+      "game_index": 5,
+      "agent_a": "alakazam_rule_based",
+      "agent_b": "mega_lucario_beginner",
+      "winner": 0,
+      "outcome": "win",
+      "score": 1.0,
+      "steps": 167,
+      "turn": 14,
+      "status": "success",
+      "termination": {
+        "reason_code": 2,
+        "reason_key": "deck_out",
+        "winner": 0
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:52.266754+00:00",
+      "opponent": "mega_lucario_beginner",
+      "game_index": 6,
+      "agent_a": "mega_lucario_beginner",
+      "agent_b": "alakazam_rule_based",
+      "winner": 1,
+      "outcome": "win",
+      "score": 1.0,
+      "steps": 115,
+      "turn": 15,
+      "status": "success",
+      "termination": {
+        "reason_code": 2,
+        "reason_key": "deck_out",
+        "winner": 1
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:52.397787+00:00",
+      "opponent": "mega_lucario_beginner",
+      "game_index": 7,
+      "agent_a": "alakazam_rule_based",
+      "agent_b": "mega_lucario_beginner",
+      "winner": 1,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 169,
+      "turn": 12,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 1
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:52.517303+00:00",
+      "opponent": "mega_lucario_beginner",
+      "game_index": 8,
+      "agent_a": "mega_lucario_beginner",
+      "agent_b": "alakazam_rule_based",
+      "winner": 0,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 172,
+      "turn": 15,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 0
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:52.579813+00:00",
+      "opponent": "mega_lucario_beginner",
+      "game_index": 9,
+      "agent_a": "alakazam_rule_based",
+      "agent_b": "mega_lucario_beginner",
+      "winner": 1,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 93,
+      "turn": 8,
+      "status": "success",
+      "termination": {
+        "reason_code": 3,
+        "reason_key": "no_active",
+        "winner": 1
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:52.707351+00:00",
+      "opponent": "mega_lucario_beginner",
+      "game_index": 10,
+      "agent_a": "mega_lucario_beginner",
+      "agent_b": "alakazam_rule_based",
+      "winner": 0,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 161,
+      "turn": 14,
+      "status": "success",
+      "termination": {
+        "reason_code": 2,
+        "reason_key": "deck_out",
+        "winner": 0
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:52.813862+00:00",
+      "opponent": "mega_lucario_beginner",
+      "game_index": 11,
+      "agent_a": "alakazam_rule_based",
+      "agent_b": "mega_lucario_beginner",
+      "winner": 1,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 144,
+      "turn": 12,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 1
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:52.907893+00:00",
+      "opponent": "mega_lucario_beginner",
+      "game_index": 12,
+      "agent_a": "mega_lucario_beginner",
+      "agent_b": "alakazam_rule_based",
+      "winner": 0,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 140,
+      "turn": 12,
+      "status": "success",
+      "termination": {
+        "reason_code": 2,
+        "reason_key": "deck_out",
+        "winner": 0
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:52.975658+00:00",
+      "opponent": "mega_lucario_beginner",
+      "game_index": 13,
+      "agent_a": "alakazam_rule_based",
+      "agent_b": "mega_lucario_beginner",
+      "winner": 1,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 116,
+      "turn": 10,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 1
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:53.051178+00:00",
+      "opponent": "mega_lucario_beginner",
+      "game_index": 14,
+      "agent_a": "mega_lucario_beginner",
+      "agent_b": "alakazam_rule_based",
+      "winner": 1,
+      "outcome": "win",
+      "score": 1.0,
+      "steps": 124,
+      "turn": 15,
+      "status": "success",
+      "termination": {
+        "reason_code": 2,
+        "reason_key": "deck_out",
+        "winner": 1
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:53.185345+00:00",
+      "opponent": "mega_lucario_beginner",
+      "game_index": 15,
+      "agent_a": "alakazam_rule_based",
+      "agent_b": "mega_lucario_beginner",
+      "winner": 0,
+      "outcome": "win",
+      "score": 1.0,
+      "steps": 166,
+      "turn": 16,
+      "status": "success",
+      "termination": {
+        "reason_code": 2,
+        "reason_key": "deck_out",
+        "winner": 0
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:53.222854+00:00",
+      "opponent": "mega_lucario_beginner",
+      "game_index": 16,
+      "agent_a": "mega_lucario_beginner",
+      "agent_b": "alakazam_rule_based",
+      "winner": 0,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 41,
+      "turn": 3,
+      "status": "success",
+      "termination": {
+        "reason_code": 3,
+        "reason_key": "no_active",
+        "winner": 0
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:53.377044+00:00",
+      "opponent": "mega_lucario_beginner",
+      "game_index": 17,
+      "agent_a": "alakazam_rule_based",
+      "agent_b": "mega_lucario_beginner",
+      "winner": 1,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 147,
+      "turn": 14,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 1
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:53.484601+00:00",
+      "opponent": "mega_lucario_beginner",
+      "game_index": 18,
+      "agent_a": "mega_lucario_beginner",
+      "agent_b": "alakazam_rule_based",
+      "winner": 0,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 143,
+      "turn": 15,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 0
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:53.562901+00:00",
+      "opponent": "mega_lucario_beginner",
+      "game_index": 19,
+      "agent_a": "alakazam_rule_based",
+      "agent_b": "mega_lucario_beginner",
+      "winner": 0,
+      "outcome": "win",
+      "score": 1.0,
+      "steps": 106,
+      "turn": 12,
+      "status": "success",
+      "termination": {
+        "reason_code": 2,
+        "reason_key": "deck_out",
+        "winner": 0
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:53.662243+00:00",
+      "opponent": "mega_lucario_beginner",
+      "game_index": 20,
+      "agent_a": "mega_lucario_beginner",
+      "agent_b": "alakazam_rule_based",
+      "winner": 1,
+      "outcome": "win",
+      "score": 1.0,
+      "steps": 145,
+      "turn": 19,
+      "status": "success",
+      "termination": {
+        "reason_code": 2,
+        "reason_key": "deck_out",
+        "winner": 1
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:53.736371+00:00",
+      "opponent": "mega_lucario_beginner",
+      "game_index": 21,
+      "agent_a": "alakazam_rule_based",
+      "agent_b": "mega_lucario_beginner",
+      "winner": 1,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 122,
+      "turn": 12,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 1
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:53.815884+00:00",
+      "opponent": "mega_lucario_beginner",
+      "game_index": 22,
+      "agent_a": "mega_lucario_beginner",
+      "agent_b": "alakazam_rule_based",
+      "winner": 1,
+      "outcome": "win",
+      "score": 1.0,
+      "steps": 132,
+      "turn": 15,
+      "status": "success",
+      "termination": {
+        "reason_code": 2,
+        "reason_key": "deck_out",
+        "winner": 1
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:53.890888+00:00",
+      "opponent": "mega_lucario_beginner",
+      "game_index": 23,
+      "agent_a": "alakazam_rule_based",
+      "agent_b": "mega_lucario_beginner",
+      "winner": 1,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 103,
+      "turn": 10,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 1
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:54.002712+00:00",
+      "opponent": "mega_lucario_beginner",
+      "game_index": 24,
+      "agent_a": "mega_lucario_beginner",
+      "agent_b": "alakazam_rule_based",
+      "winner": 0,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 159,
+      "turn": 15,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 0
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:54.107227+00:00",
+      "opponent": "mega_lucario_beginner",
+      "game_index": 25,
+      "agent_a": "alakazam_rule_based",
+      "agent_b": "mega_lucario_beginner",
+      "winner": 1,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 139,
+      "turn": 12,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 1
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:54.202738+00:00",
+      "opponent": "mega_lucario_beginner",
+      "game_index": 26,
+      "agent_a": "mega_lucario_beginner",
+      "agent_b": "alakazam_rule_based",
+      "winner": 0,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 150,
+      "turn": 11,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 0
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:54.278738+00:00",
+      "opponent": "mega_lucario_beginner",
+      "game_index": 27,
+      "agent_a": "alakazam_rule_based",
+      "agent_b": "mega_lucario_beginner",
+      "winner": 0,
+      "outcome": "win",
+      "score": 1.0,
+      "steps": 118,
+      "turn": 14,
+      "status": "success",
+      "termination": {
+        "reason_code": 2,
+        "reason_key": "deck_out",
+        "winner": 0
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:54.394258+00:00",
+      "opponent": "mega_lucario_beginner",
+      "game_index": 28,
+      "agent_a": "mega_lucario_beginner",
+      "agent_b": "alakazam_rule_based",
+      "winner": 0,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 142,
+      "turn": 13,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 0
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:54.486716+00:00",
+      "opponent": "mega_lucario_beginner",
+      "game_index": 29,
+      "agent_a": "alakazam_rule_based",
+      "agent_b": "mega_lucario_beginner",
+      "winner": 1,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 150,
+      "turn": 12,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 1
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:54.589401+00:00",
+      "opponent": "mega_lucario_beginner",
+      "game_index": 30,
+      "agent_a": "mega_lucario_beginner",
+      "agent_b": "alakazam_rule_based",
+      "winner": 0,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 154,
+      "turn": 15,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 0
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:54.685920+00:00",
+      "opponent": "mega_lucario_beginner",
+      "game_index": 31,
+      "agent_a": "alakazam_rule_based",
+      "agent_b": "mega_lucario_beginner",
+      "winner": 1,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 131,
+      "turn": 13,
+      "status": "success",
+      "termination": {
+        "reason_code": 2,
+        "reason_key": "deck_out",
+        "winner": 1
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:54.778428+00:00",
+      "opponent": "mega_lucario_beginner",
+      "game_index": 32,
+      "agent_a": "mega_lucario_beginner",
+      "agent_b": "alakazam_rule_based",
+      "winner": 1,
+      "outcome": "win",
+      "score": 1.0,
+      "steps": 127,
+      "turn": 11,
+      "status": "success",
+      "termination": {
+        "reason_code": 2,
+        "reason_key": "deck_out",
+        "winner": 1
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:54.897459+00:00",
+      "opponent": "mega_lucario_beginner",
+      "game_index": 33,
+      "agent_a": "alakazam_rule_based",
+      "agent_b": "mega_lucario_beginner",
+      "winner": 1,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 161,
+      "turn": 14,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 1
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:54.982467+00:00",
+      "opponent": "mega_lucario_beginner",
+      "game_index": 34,
+      "agent_a": "mega_lucario_beginner",
+      "agent_b": "alakazam_rule_based",
+      "winner": 0,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 127,
+      "turn": 11,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 0
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:55.063049+00:00",
+      "opponent": "mega_lucario_beginner",
+      "game_index": 35,
+      "agent_a": "alakazam_rule_based",
+      "agent_b": "mega_lucario_beginner",
+      "winner": 0,
+      "outcome": "win",
+      "score": 1.0,
+      "steps": 115,
+      "turn": 14,
+      "status": "success",
+      "termination": {
+        "reason_code": 2,
+        "reason_key": "deck_out",
+        "winner": 0
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:55.153561+00:00",
+      "opponent": "mega_lucario_beginner",
+      "game_index": 36,
+      "agent_a": "mega_lucario_beginner",
+      "agent_b": "alakazam_rule_based",
+      "winner": 1,
+      "outcome": "win",
+      "score": 1.0,
+      "steps": 122,
+      "turn": 11,
+      "status": "success",
+      "termination": {
+        "reason_code": 2,
+        "reason_key": "deck_out",
+        "winner": 1
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:55.236074+00:00",
+      "opponent": "mega_lucario_beginner",
+      "game_index": 37,
+      "agent_a": "alakazam_rule_based",
+      "agent_b": "mega_lucario_beginner",
+      "winner": 1,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 140,
+      "turn": 12,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 1
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:55.330582+00:00",
+      "opponent": "mega_lucario_beginner",
+      "game_index": 38,
+      "agent_a": "mega_lucario_beginner",
+      "agent_b": "alakazam_rule_based",
+      "winner": 0,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 155,
+      "turn": 13,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 0
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:55.421097+00:00",
+      "opponent": "mega_lucario_beginner",
+      "game_index": 39,
+      "agent_a": "alakazam_rule_based",
+      "agent_b": "mega_lucario_beginner",
+      "winner": 1,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 94,
+      "turn": 12,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 1
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:55.537613+00:00",
+      "opponent": "mega_lucario_beginner",
+      "game_index": 40,
+      "agent_a": "mega_lucario_beginner",
+      "agent_b": "alakazam_rule_based",
+      "winner": 1,
+      "outcome": "win",
+      "score": 1.0,
+      "steps": 167,
+      "turn": 15,
+      "status": "success",
+      "termination": {
+        "reason_code": 2,
+        "reason_key": "deck_out",
+        "winner": 1
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:55.594692+00:00",
+      "opponent": "mega_lucario_beginner",
+      "game_index": 41,
+      "agent_a": "alakazam_rule_based",
+      "agent_b": "mega_lucario_beginner",
+      "winner": 1,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 92,
+      "turn": 10,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 1
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:55.674707+00:00",
+      "opponent": "mega_lucario_beginner",
+      "game_index": 42,
+      "agent_a": "mega_lucario_beginner",
+      "agent_b": "alakazam_rule_based",
+      "winner": 0,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 106,
+      "turn": 11,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 0
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:55.748217+00:00",
+      "opponent": "mega_lucario_beginner",
+      "game_index": 43,
+      "agent_a": "alakazam_rule_based",
+      "agent_b": "mega_lucario_beginner",
+      "winner": 1,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 111,
+      "turn": 14,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 1
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:55.830427+00:00",
+      "opponent": "mega_lucario_beginner",
+      "game_index": 44,
+      "agent_a": "mega_lucario_beginner",
+      "agent_b": "alakazam_rule_based",
+      "winner": 0,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 111,
+      "turn": 11,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 0
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:55.935449+00:00",
+      "opponent": "mega_lucario_beginner",
+      "game_index": 45,
+      "agent_a": "alakazam_rule_based",
+      "agent_b": "mega_lucario_beginner",
+      "winner": 1,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 159,
+      "turn": 12,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 1
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:56.031960+00:00",
+      "opponent": "mega_lucario_beginner",
+      "game_index": 46,
+      "agent_a": "mega_lucario_beginner",
+      "agent_b": "alakazam_rule_based",
+      "winner": 0,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 155,
+      "turn": 14,
+      "status": "success",
+      "termination": {
+        "reason_code": 2,
+        "reason_key": "deck_out",
+        "winner": 0
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:56.125473+00:00",
+      "opponent": "mega_lucario_beginner",
+      "game_index": 47,
+      "agent_a": "alakazam_rule_based",
+      "agent_b": "mega_lucario_beginner",
+      "winner": 1,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 146,
+      "turn": 13,
+      "status": "success",
+      "termination": {
+        "reason_code": 2,
+        "reason_key": "deck_out",
+        "winner": 1
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:56.195478+00:00",
+      "opponent": "mega_lucario_beginner",
+      "game_index": 48,
+      "agent_a": "mega_lucario_beginner",
+      "agent_b": "alakazam_rule_based",
+      "winner": 0,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 97,
+      "turn": 13,
+      "status": "success",
+      "termination": {
+        "reason_code": 3,
+        "reason_key": "no_active",
+        "winner": 0
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:56.294615+00:00",
+      "opponent": "mega_lucario_beginner",
+      "game_index": 49,
+      "agent_a": "alakazam_rule_based",
+      "agent_b": "mega_lucario_beginner",
+      "winner": 1,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 129,
+      "turn": 12,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 1
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:56.429563+00:00",
+      "opponent": "mega_lucario_beginner",
+      "game_index": 50,
+      "agent_a": "mega_lucario_beginner",
+      "agent_b": "alakazam_rule_based",
+      "winner": 0,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 147,
+      "turn": 11,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 0
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:56.502075+00:00",
+      "opponent": "multiply_agent_best_940",
+      "game_index": 1,
+      "agent_a": "alakazam_rule_based",
+      "agent_b": "multiply_agent_best_940",
+      "winner": 1,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 92,
+      "turn": 11,
+      "status": "success",
+      "termination": {
+        "reason_code": 2,
+        "reason_key": "deck_out",
+        "winner": 1
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:56.593599+00:00",
+      "opponent": "multiply_agent_best_940",
+      "game_index": 2,
+      "agent_a": "multiply_agent_best_940",
+      "agent_b": "alakazam_rule_based",
+      "winner": 0,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 129,
+      "turn": 13,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 0
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:56.696757+00:00",
+      "opponent": "multiply_agent_best_940",
+      "game_index": 3,
+      "agent_a": "alakazam_rule_based",
+      "agent_b": "multiply_agent_best_940",
+      "winner": 1,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 148,
+      "turn": 13,
+      "status": "success",
+      "termination": {
+        "reason_code": 2,
+        "reason_key": "deck_out",
+        "winner": 1
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:56.803777+00:00",
+      "opponent": "multiply_agent_best_940",
+      "game_index": 4,
+      "agent_a": "multiply_agent_best_940",
+      "agent_b": "alakazam_rule_based",
+      "winner": 0,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 146,
+      "turn": 13,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 0
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:56.869778+00:00",
+      "opponent": "multiply_agent_best_940",
+      "game_index": 5,
+      "agent_a": "alakazam_rule_based",
+      "agent_b": "multiply_agent_best_940",
+      "winner": 1,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 100,
+      "turn": 12,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 1
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:56.965828+00:00",
+      "opponent": "multiply_agent_best_940",
+      "game_index": 6,
+      "agent_a": "multiply_agent_best_940",
+      "agent_b": "alakazam_rule_based",
+      "winner": 0,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 148,
+      "turn": 13,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 0
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:57.046892+00:00",
+      "opponent": "multiply_agent_best_940",
+      "game_index": 7,
+      "agent_a": "alakazam_rule_based",
+      "agent_b": "multiply_agent_best_940",
+      "winner": 1,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 136,
+      "turn": 16,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 1
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:57.108929+00:00",
+      "opponent": "multiply_agent_best_940",
+      "game_index": 8,
+      "agent_a": "multiply_agent_best_940",
+      "agent_b": "alakazam_rule_based",
+      "winner": 0,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 96,
+      "turn": 11,
+      "status": "success",
+      "termination": {
+        "reason_code": 3,
+        "reason_key": "no_active",
+        "winner": 0
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:57.174929+00:00",
+      "opponent": "multiply_agent_best_940",
+      "game_index": 9,
+      "agent_a": "alakazam_rule_based",
+      "agent_b": "multiply_agent_best_940",
+      "winner": 1,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 110,
+      "turn": 12,
+      "status": "success",
+      "termination": {
+        "reason_code": 3,
+        "reason_key": "no_active",
+        "winner": 1
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:57.210440+00:00",
+      "opponent": "multiply_agent_best_940",
+      "game_index": 10,
+      "agent_a": "multiply_agent_best_940",
+      "agent_b": "alakazam_rule_based",
+      "winner": 0,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 40,
+      "turn": 3,
+      "status": "success",
+      "termination": {
+        "reason_code": 3,
+        "reason_key": "no_active",
+        "winner": 0
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:57.376092+00:00",
+      "opponent": "multiply_agent_best_940",
+      "game_index": 11,
+      "agent_a": "alakazam_rule_based",
+      "agent_b": "multiply_agent_best_940",
+      "winner": 1,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 177,
+      "turn": 14,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 1
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:57.457606+00:00",
+      "opponent": "multiply_agent_best_940",
+      "game_index": 12,
+      "agent_a": "multiply_agent_best_940",
+      "agent_b": "alakazam_rule_based",
+      "winner": 0,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 112,
+      "turn": 11,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 0
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:57.541118+00:00",
+      "opponent": "multiply_agent_best_940",
+      "game_index": 13,
+      "agent_a": "alakazam_rule_based",
+      "agent_b": "multiply_agent_best_940",
+      "winner": 1,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 125,
+      "turn": 12,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 1
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:57.637214+00:00",
+      "opponent": "multiply_agent_best_940",
+      "game_index": 14,
+      "agent_a": "multiply_agent_best_940",
+      "agent_b": "alakazam_rule_based",
+      "winner": 0,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 137,
+      "turn": 13,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 0
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:57.734497+00:00",
+      "opponent": "multiply_agent_best_940",
+      "game_index": 15,
+      "agent_a": "alakazam_rule_based",
+      "agent_b": "multiply_agent_best_940",
+      "winner": 1,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 148,
+      "turn": 12,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 1
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:57.816556+00:00",
+      "opponent": "multiply_agent_best_940",
+      "game_index": 16,
+      "agent_a": "multiply_agent_best_940",
+      "agent_b": "alakazam_rule_based",
+      "winner": 0,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 122,
+      "turn": 11,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 0
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:57.884563+00:00",
+      "opponent": "multiply_agent_best_940",
+      "game_index": 17,
+      "agent_a": "alakazam_rule_based",
+      "agent_b": "multiply_agent_best_940",
+      "winner": 1,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 98,
+      "turn": 12,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 1
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:57.985119+00:00",
+      "opponent": "multiply_agent_best_940",
+      "game_index": 18,
+      "agent_a": "multiply_agent_best_940",
+      "agent_b": "alakazam_rule_based",
+      "winner": 0,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 154,
+      "turn": 13,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 0
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:58.067589+00:00",
+      "opponent": "multiply_agent_best_940",
+      "game_index": 19,
+      "agent_a": "alakazam_rule_based",
+      "agent_b": "multiply_agent_best_940",
+      "winner": 1,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 125,
+      "turn": 10,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 1
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:58.157099+00:00",
+      "opponent": "multiply_agent_best_940",
+      "game_index": 20,
+      "agent_a": "multiply_agent_best_940",
+      "agent_b": "alakazam_rule_based",
+      "winner": 0,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 126,
+      "turn": 14,
+      "status": "success",
+      "termination": {
+        "reason_code": 2,
+        "reason_key": "deck_out",
+        "winner": 0
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:58.276614+00:00",
+      "opponent": "multiply_agent_best_940",
+      "game_index": 21,
+      "agent_a": "alakazam_rule_based",
+      "agent_b": "multiply_agent_best_940",
+      "winner": 1,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 138,
+      "turn": 18,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 1
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:58.429638+00:00",
+      "opponent": "multiply_agent_best_940",
+      "game_index": 22,
+      "agent_a": "multiply_agent_best_940",
+      "agent_b": "alakazam_rule_based",
+      "winner": 0,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 124,
+      "turn": 11,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 0
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:58.534149+00:00",
+      "opponent": "multiply_agent_best_940",
+      "game_index": 23,
+      "agent_a": "alakazam_rule_based",
+      "agent_b": "multiply_agent_best_940",
+      "winner": 1,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 142,
+      "turn": 10,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 1
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:58.638617+00:00",
+      "opponent": "multiply_agent_best_940",
+      "game_index": 24,
+      "agent_a": "multiply_agent_best_940",
+      "agent_b": "alakazam_rule_based",
+      "winner": 0,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 135,
+      "turn": 11,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 0
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:58.729128+00:00",
+      "opponent": "multiply_agent_best_940",
+      "game_index": 25,
+      "agent_a": "alakazam_rule_based",
+      "agent_b": "multiply_agent_best_940",
+      "winner": 1,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 139,
+      "turn": 12,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 1
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:58.803372+00:00",
+      "opponent": "multiply_agent_best_940",
+      "game_index": 26,
+      "agent_a": "multiply_agent_best_940",
+      "agent_b": "alakazam_rule_based",
+      "winner": 0,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 129,
+      "turn": 11,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 0
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:58.888375+00:00",
+      "opponent": "multiply_agent_best_940",
+      "game_index": 27,
+      "agent_a": "alakazam_rule_based",
+      "agent_b": "multiply_agent_best_940",
+      "winner": 1,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 129,
+      "turn": 12,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 1
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:58.985441+00:00",
+      "opponent": "multiply_agent_best_940",
+      "game_index": 28,
+      "agent_a": "multiply_agent_best_940",
+      "agent_b": "alakazam_rule_based",
+      "winner": 0,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 147,
+      "turn": 13,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 0
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:59.072668+00:00",
+      "opponent": "multiply_agent_best_940",
+      "game_index": 29,
+      "agent_a": "alakazam_rule_based",
+      "agent_b": "multiply_agent_best_940",
+      "winner": 1,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 125,
+      "turn": 11,
+      "status": "success",
+      "termination": {
+        "reason_code": 2,
+        "reason_key": "deck_out",
+        "winner": 1
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:59.159176+00:00",
+      "opponent": "multiply_agent_best_940",
+      "game_index": 30,
+      "agent_a": "multiply_agent_best_940",
+      "agent_b": "alakazam_rule_based",
+      "winner": 0,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 135,
+      "turn": 14,
+      "status": "success",
+      "termination": {
+        "reason_code": 2,
+        "reason_key": "deck_out",
+        "winner": 0
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:59.215687+00:00",
+      "opponent": "multiply_agent_best_940",
+      "game_index": 31,
+      "agent_a": "alakazam_rule_based",
+      "agent_b": "multiply_agent_best_940",
+      "winner": 1,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 82,
+      "turn": 8,
+      "status": "success",
+      "termination": {
+        "reason_code": 3,
+        "reason_key": "no_active",
+        "winner": 1
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:59.305942+00:00",
+      "opponent": "multiply_agent_best_940",
+      "game_index": 32,
+      "agent_a": "multiply_agent_best_940",
+      "agent_b": "alakazam_rule_based",
+      "winner": 0,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 137,
+      "turn": 14,
+      "status": "success",
+      "termination": {
+        "reason_code": 2,
+        "reason_key": "deck_out",
+        "winner": 0
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:59.419111+00:00",
+      "opponent": "multiply_agent_best_940",
+      "game_index": 33,
+      "agent_a": "alakazam_rule_based",
+      "agent_b": "multiply_agent_best_940",
+      "winner": 1,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 153,
+      "turn": 14,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 1
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:59.511135+00:00",
+      "opponent": "multiply_agent_best_940",
+      "game_index": 34,
+      "agent_a": "multiply_agent_best_940",
+      "agent_b": "alakazam_rule_based",
+      "winner": 0,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 149,
+      "turn": 13,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 0
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:59.592141+00:00",
+      "opponent": "multiply_agent_best_940",
+      "game_index": 35,
+      "agent_a": "alakazam_rule_based",
+      "agent_b": "multiply_agent_best_940",
+      "winner": 1,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 130,
+      "turn": 12,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 1
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:59.682110+00:00",
+      "opponent": "multiply_agent_best_940",
+      "game_index": 36,
+      "agent_a": "multiply_agent_best_940",
+      "agent_b": "alakazam_rule_based",
+      "winner": 0,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 131,
+      "turn": 13,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 0
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:59.756232+00:00",
+      "opponent": "multiply_agent_best_940",
+      "game_index": 37,
+      "agent_a": "alakazam_rule_based",
+      "agent_b": "multiply_agent_best_940",
+      "winner": 1,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 116,
+      "turn": 12,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 1
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:59.834747+00:00",
+      "opponent": "multiply_agent_best_940",
+      "game_index": 38,
+      "agent_a": "multiply_agent_best_940",
+      "agent_b": "alakazam_rule_based",
+      "winner": 0,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 123,
+      "turn": 14,
+      "status": "success",
+      "termination": {
+        "reason_code": 2,
+        "reason_key": "deck_out",
+        "winner": 0
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:59.923260+00:00",
+      "opponent": "multiply_agent_best_940",
+      "game_index": 39,
+      "agent_a": "alakazam_rule_based",
+      "agent_b": "multiply_agent_best_940",
+      "winner": 1,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 142,
+      "turn": 10,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 1
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:58:59.994263+00:00",
+      "opponent": "multiply_agent_best_940",
+      "game_index": 40,
+      "agent_a": "multiply_agent_best_940",
+      "agent_b": "alakazam_rule_based",
+      "winner": 0,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 116,
+      "turn": 11,
+      "status": "success",
+      "termination": {
+        "reason_code": 3,
+        "reason_key": "no_active",
+        "winner": 0
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:59:00.074776+00:00",
+      "opponent": "multiply_agent_best_940",
+      "game_index": 41,
+      "agent_a": "alakazam_rule_based",
+      "agent_b": "multiply_agent_best_940",
+      "winner": 1,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 140,
+      "turn": 14,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 1
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:59:00.158070+00:00",
+      "opponent": "multiply_agent_best_940",
+      "game_index": 42,
+      "agent_a": "multiply_agent_best_940",
+      "agent_b": "alakazam_rule_based",
+      "winner": 0,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 138,
+      "turn": 13,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 0
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:59:00.196597+00:00",
+      "opponent": "multiply_agent_best_940",
+      "game_index": 43,
+      "agent_a": "alakazam_rule_based",
+      "agent_b": "multiply_agent_best_940",
+      "winner": 1,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 48,
+      "turn": 6,
+      "status": "success",
+      "termination": {
+        "reason_code": 3,
+        "reason_key": "no_active",
+        "winner": 1
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:59:00.276108+00:00",
+      "opponent": "multiply_agent_best_940",
+      "game_index": 44,
+      "agent_a": "multiply_agent_best_940",
+      "agent_b": "alakazam_rule_based",
+      "winner": 0,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 105,
+      "turn": 11,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 0
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:59:00.340172+00:00",
+      "opponent": "multiply_agent_best_940",
+      "game_index": 45,
+      "agent_a": "alakazam_rule_based",
+      "agent_b": "multiply_agent_best_940",
+      "winner": 1,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 106,
+      "turn": 10,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 1
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:59:00.433688+00:00",
+      "opponent": "multiply_agent_best_940",
+      "game_index": 46,
+      "agent_a": "multiply_agent_best_940",
+      "agent_b": "alakazam_rule_based",
+      "winner": 0,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 136,
+      "turn": 13,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 0
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:59:00.502200+00:00",
+      "opponent": "multiply_agent_best_940",
+      "game_index": 47,
+      "agent_a": "alakazam_rule_based",
+      "agent_b": "multiply_agent_best_940",
+      "winner": 1,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 106,
+      "turn": 10,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 1
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:59:00.604184+00:00",
+      "opponent": "multiply_agent_best_940",
+      "game_index": 48,
+      "agent_a": "multiply_agent_best_940",
+      "agent_b": "alakazam_rule_based",
+      "winner": 0,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 159,
+      "turn": 13,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 0
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:59:00.705239+00:00",
+      "opponent": "multiply_agent_best_940",
+      "game_index": 49,
+      "agent_a": "alakazam_rule_based",
+      "agent_b": "multiply_agent_best_940",
+      "winner": 1,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 143,
+      "turn": 13,
+      "status": "success",
+      "termination": {
+        "reason_code": 2,
+        "reason_key": "deck_out",
+        "winner": 1
+      }
+    },
+    {
+      "label": "alakazam_vs_requested_4",
+      "played_at": "2026-06-25T14:59:00.771236+00:00",
+      "opponent": "multiply_agent_best_940",
+      "game_index": 50,
+      "agent_a": "multiply_agent_best_940",
+      "agent_b": "alakazam_rule_based",
+      "winner": 0,
+      "outcome": "loss",
+      "score": 0.0,
+      "steps": 101,
+      "turn": 11,
+      "status": "success",
+      "termination": {
+        "reason_code": 1,
+        "reason_key": "prize_out",
+        "winner": 0
+      }
+    }
+  ]
+}

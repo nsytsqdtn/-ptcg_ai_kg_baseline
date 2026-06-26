@@ -56,9 +56,10 @@ def test_play_match_completes_between_sample_agents():
     assert result["history"][0]["select_type_name"]
     assert isinstance(result["history"][0]["available_options"], list)
     assert isinstance(result["history"][0]["selected_options"], list)
-    assert result["steps_data"][0]["step"] == 1
-    assert "current" in result["steps_data"][0]
-    assert isinstance(result["steps_data"][0]["current"], dict)
+    assert result["steps_data"][0]["obs"] == ""
+    assert result["steps_data"][0]["action"] == [None, None]
+    assert isinstance(result["steps_data"][1]["obs"], dict)
+    assert isinstance(result["steps_data"][1]["action"], list)
 
 
 def test_play_match_exposes_metrics_and_rl_fields():
@@ -100,11 +101,11 @@ def test_save_match_record_writes_json(tmp_path: Path):
     runner.save_match_record(result, output_path)
 
     saved = json.loads(output_path.read_text(encoding="utf-8"))
-    assert saved["winner"] == result["winner"]
-    assert saved["history"]
-    assert saved["steps"]
-    assert saved["step_count"] == result["steps"]
-    assert saved["metrics"]["total_steps"] == result["steps"]
+    assert isinstance(saved, list)
+    assert saved[0]["obs"] == ""
+    assert saved[0]["action"] == [None, None]
+    assert isinstance(saved[1]["obs"], dict)
+    assert isinstance(saved[1]["action"], list)
 
 
 def test_save_human_log_writes_text(tmp_path: Path):
@@ -136,17 +137,37 @@ def test_save_summary_log_writes_turn_summary(tmp_path: Path):
     assert "第 1 回合" in text
 
 
-def test_save_replay_html_writes_viewer_page(tmp_path: Path):
-    runner = load_module("battle_env_runner_replay_html", ROOT / "battle_env" / "runner.py")
+def test_save_visualizer_json_writes_notebook_payload(tmp_path: Path):
+    runner = load_module("battle_env_runner_visualizer_json", ROOT / "battle_env" / "runner.py")
 
     result = runner.play_match("dragapult_rule_based", "mega_lucario_beginner")
-    output_path = tmp_path / "match.replay.html"
-    runner.save_replay_html(result, output_path)
+    output_path = tmp_path / "match.vis.json"
+    runner.save_visualizer_json(result, output_path)
 
-    text = output_path.read_text(encoding="utf-8")
-    assert "<title>PTCG Battle Replay v2</title>" in text
-    assert 'id="eval-strip"' in text
-    assert 'id="decision-list"' in text
+    saved = json.loads(output_path.read_text(encoding="utf-8"))
+    assert isinstance(saved, list)
+    assert saved[0]["obs"] == ""
+    assert saved[0]["action"] == [None, None]
+    assert isinstance(saved[1]["obs"], dict)
+    assert isinstance(saved[1]["action"], list)
+
+
+def test_build_visualizer_path_prefers_vis_extension():
+    recording = load_module("battle_env_recording_visualizer_path", ROOT / "battle_env" / "recording.py")
+
+    path = recording.build_visualizer_path("battle_records\\sample_match.json", "", "", 1)
+
+    assert path.name.endswith(".vis.json")
+
+
+def test_cli_accepts_vis_file_flag():
+    cli = load_module("battle_env_cli_vis_flag", ROOT / "battle_env" / "cli.py")
+
+    parser = cli.argparse.ArgumentParser(description="Run a local PTCG battle environment.")
+    parser.add_argument("--vis-file", default="")
+
+    args = parser.parse_args(["--vis-file", "battle_records\\sample_match.vis.json"])
+    assert args.vis_file.endswith(".vis.json")
 
 
 def test_play_series_returns_aggregate_stats():
@@ -1969,6 +1990,67 @@ def test_crustle_kangaskhan_v2_evaluate_runs_matches_with_v2_agent_name(monkeypa
     assert calls[0][0] == "crustle_mega_kangaskhan_rule_rl_p1_v2"
     assert won is True
     assert result["agent_a"] == "crustle_mega_kangaskhan_rule_rl_p1_v2"
+
+
+def test_alakazam_evaluate_defaults_to_requested_opponents(monkeypatch, tmp_path: Path):
+    module = load_module(
+        "alakazam_rule_based_evaluate_module",
+        ROOT / "agents" / "alakazam_rule_based" / "evaluate.py",
+    )
+
+    def fake_play_match(left, right, verbose=False, capture_details=False):
+        return {
+            "status": "success",
+            "winner": 0,
+            "agent_a": left,
+            "agent_b": right,
+            "steps": 10,
+            "turn": 3,
+            "termination": {"reason_key": "prize_out", "reason_code": 1},
+        }
+
+    monkeypatch.setattr(module, "play_match", fake_play_match)
+
+    report = module.run_evaluation(
+        "alakazam_rule_based",
+        games=2,
+        label="alakazam_eval_test",
+        output=tmp_path / "eval_report.json",
+        progress_every=10,
+    )
+
+    assert list(report["matchups"]) == [
+        "crustle_aware_fighting_agent",
+        "dragapult_rule_based",
+        "mega_lucario_beginner",
+        "multiply_agent_best_940",
+    ]
+    assert all(matchup["games"] == 2 for matchup in report["matchups"].values())
+    assert len(report["games"]) == 8
+
+
+def test_agents_load_deck_from_their_own_directory(monkeypatch, tmp_path: Path):
+    agents_module = load_module("battle_env_agents_deck_paths", ROOT / "battle_env" / "agents.py")
+
+    monkeypatch.chdir(tmp_path)
+    (tmp_path / "deck.csv").write_text("999\n" * 60, encoding="utf-8")
+
+    for agent_name in [
+        "alakazam_rule_based",
+        "crustle_aware_fighting_agent",
+        "multiply_agent_best_940",
+    ]:
+        agent_path = agents_module.resolve_agent(agent_name)
+        expected = [
+            int(line.strip())
+            for line in agent_path.with_name("deck.csv").read_text(encoding="utf-8").splitlines()
+            if line.strip()
+        ]
+        module = agents_module.load_agent_module(agent_path)
+
+        assert list(module.my_deck) == expected
+
+    assert (tmp_path / "deck.csv").read_text(encoding="utf-8") == ("999\n" * 60)
 
 
 def test_crustle_kangaskhan_v2_runtime_marks_hidden_id_ex_as_ex():

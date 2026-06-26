@@ -1,0 +1,5 @@
+{
+  "name": "alakazam_rule_based",
+  "entry": "main.py",
+  "deck": "deck.csv"
+}
