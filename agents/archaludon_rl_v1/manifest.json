@@ -1,0 +1,5 @@
+{
+  "name": "archaludon_rl_v1",
+  "entry": "main.py",
+  "deck": "deck.csv"
+}

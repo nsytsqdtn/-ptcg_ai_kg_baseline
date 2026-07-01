@@ -2053,6 +2053,62 @@ def test_agents_load_deck_from_their_own_directory(monkeypatch, tmp_path: Path):
     assert (tmp_path / "deck.csv").read_text(encoding="utf-8") == ("999\n" * 60)
 
 
+def test_agents_loader_supports_agent_local_sibling_imports():
+    agents_module = load_module("battle_env_agents_local_imports", ROOT / "battle_env" / "agents.py")
+
+    agent_path = agents_module.resolve_agent("alakazam_rule_rl_numeric_v4")
+    module = agents_module.load_agent_module(agent_path)
+
+    assert hasattr(module, "agent")
+
+
+def test_alakazam_rule_rl_numeric_opponents_cover_all_agent_dirs_except_self():
+    module = load_module(
+        "alakazam_rule_rl_numeric_evaluate_module",
+        ROOT / "agents" / "alakazam_rule_rl_numeric" / "evaluate.py",
+    )
+
+    assert module.DEFAULT_AGENT_NAME == "alakazam_rule_rl_numeric"
+    assert module.DEFAULT_OPPONENTS == [
+        "alakazam_rule_based",
+        "archaludon_rule_based",
+        "crustle_aware_fighting_agent",
+        "crustle_mega_kangaskhan_rule_compact_v3",
+        "crustle_mega_kangaskhan_rule_contract_v1",
+        "day2_beater_rule_based",
+        "dragapult_rule_based",
+        "lucario_anti_crustle_lab",
+        "lucario_baseline_1084_5",
+        "mega_lucario_beginner",
+        "mega_lucario_ex_v63",
+        "multiply_agent_best_940",
+    ]
+
+
+def test_train_all_agents_audit_lists_every_non_self_agent():
+    module = load_module(
+        "alakazam_rule_rl_numeric_train_all_agents_module",
+        ROOT / "agents" / "alakazam_rule_rl_numeric" / "train_all_agents.py",
+    )
+
+    opponents = module.discover_opponents()
+
+    assert opponents == [
+        "alakazam_rule_based",
+        "archaludon_rule_based",
+        "crustle_aware_fighting_agent",
+        "crustle_mega_kangaskhan_rule_compact_v3",
+        "crustle_mega_kangaskhan_rule_contract_v1",
+        "day2_beater_rule_based",
+        "dragapult_rule_based",
+        "lucario_anti_crustle_lab",
+        "lucario_baseline_1084_5",
+        "mega_lucario_beginner",
+        "mega_lucario_ex_v63",
+        "multiply_agent_best_940",
+    ]
+
+
 def test_crustle_kangaskhan_v2_runtime_marks_hidden_id_ex_as_ex():
     runtime = _load_crustle_module("runtime", agent_name="crustle_mega_kangaskhan_rule_rl_p1_v2")
 

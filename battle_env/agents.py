@@ -29,6 +29,9 @@ def resolve_agent(agent_ref: str | Path) -> Path:
 
 def load_agent_module(agent_path: Path):
     module_name = f"agent_{agent_path.parent.name}"
+    agent_dir_str = str(agent_path.parent)
+    if agent_dir_str not in sys.path:
+        sys.path.insert(0, agent_dir_str)
     spec = importlib.util.spec_from_file_location(module_name, agent_path)
     module = importlib.util.module_from_spec(spec)
     sys.modules[module_name] = module
